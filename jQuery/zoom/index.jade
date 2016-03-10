@@ -1,156 +1,152 @@
 doctype html
 html(lang='ja')
-  head
-    meta(charset="utf-8")
-    meta(http-equiv="content-language" content="ja")
-    meta(name="keywords" content="IRON HEART,アイアンハート,BUZZ RICKSON'S,バズリクソンズ,SUGAR CANE,シュガーケーン,MISTER FREEDOM,ミスターフリーダム,TEDMAN,テッドマン,KAMINARI,カミナリ,鬼デニム,ONI DENIM,VANSON,バンソン,アメカジ,セレクトショップ,メンズ,ファッション")
-    meta(name="description" content="【全品送料無料】創業から40年の老舗セレクトショップ、ロデオブロス（RODEO BROS）")
-    title 商品ページ
-    link(rel="shortcut icon" href="http://www.rakuten.ne.jp/gold/auc-rodeo/images/favicon.ico" type="image/x-icon")
-    meta(name="viewport" content="initial-scale=1")
-    style.
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="content-language" content="ja")
+		meta(name="keywords" content="IRON HEART,アイアンハート,BUZZ RICKSON'S,バズリクソンズ,SUGAR CANE,シュガーケーン,MISTER FREEDOM,ミスターフリーダム,TEDMAN,テッドマン,KAMINARI,カミナリ,鬼デニム,ONI DENIM,VANSON,バンソン,アメカジ,セレクトショップ,メンズ,ファッション")
+		meta(name="description" content="【全品送料無料】創業から40年の老舗セレクトショップ、ロデオブロス（RODEO BROS）")
+		title 商品ページ
+		link(rel="shortcut icon" href="http://www.rakuten.ne.jp/gold/auc-rodeo/images/favicon.ico" type="image/x-icon")
+		meta(name="viewport" content="initial-scale=1")
+		style.
 
-      .arrows {
-        float:left;
-        padding-top:290px;
-      }
+			.arrows {
+				float:left;
+				padding-top:290px;
+			}
 
-      .itemImagesWrapper {
-      overflow: hidden;
-      position: relative;
-      border:1px solid #ddd;
-      float:left;
-      margin-left:30px;
-      margin-right:30px;
-      width:778px;
-      height:600px;
-      }
-      .itemImagesWrapper img {
-      position: absolute;
-      top:0;
-      left:0;
-      width: 778px;
-      height: 600px;
-      display:none;
-      }
-      
-      .thumbnailsWrapper {
-        clear:both;
-      }
+			.itemImagesWrapper {
+			overflow: hidden;
+			position: relative;
+			border:1px solid #ddd;
+			float:left;
+			margin-left:30px;
+			margin-right:30px;
+			width:778px;
+			height:600px;
+			}
+			.itemImagesWrapper img {
+			position: absolute;
+			top:0;
+			left:0;
+			width: 778px;
+			height: 600px;
+			}
+			
+			.thumbnailsWrapper {
+				clear:both;
+			}
 
-      .thumbnailsWrapper ul {
-        list-style:none;
-        padding:0;
-        margin:0;
-      }
+			.thumbnailsWrapper ul {
+				list-style:none;
+				padding:0;
+				margin:0;
+			}
 
-      .thumbnailsWrapper li {
-        width: 70px;
-        margin:5px;
-        float:left;
-      }
+			.thumbnailsWrapper li {
+				width: 70px;
+				margin:5px;
+				float:left;
+			}
 
-      .thumbImages {
-        width: 100%;
-        border:1px solid #ddd;
-      }
+			.thumbImages {
+				width: 100%;
+				border:1px solid #ddd;
+			}
 
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js')
-    script.
-      $(function() {
-        var current = 5;
-        var images = $(".itemImages")[current];
-        $(images).css('display', 'block');
-        console.log(images);
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js')
+		script.
+			$(function() {
+				var current = 5;
+				var images = $(".itemImages")[current];
+				$(images).css('display', 'block');
+				console.log(images);
 
-        var W_WRAP = 778;
-        var H_WRAP = 600;
-        var W_IMG = 1200;
-        var H_IMG = 926;
-        var zoomin = false;
-        //サムネ画像をいれる配列
-        
-        $('.itemImagesWrapper').css({width: W_WRAP, height: H_WRAP});
-        $('.itemImages').dblclick(function(e) {
-        if (zoomin) {
-        $(this).animate({width: W_WRAP, height: H_WRAP, left: 0, top: 0}, 250);
-        zoomin = false;
-        console.log('dbclick if');
-        } else {
-        var x = (e.pageX - $(this).offset().left) * (W_IMG / W_WRAP) - W_WRAP / 2;
-        if (x < 0) x = 0;
-        if (x > W_IMG - W_WRAP) x = W_IMG - W_WRAP;
-        var y = (e.pageY - $(this).offset().top) * (H_IMG / H_WRAP) - H_WRAP / 2;
-        if (y < 0) y = 0;
-        if (y > H_IMG - H_WRAP) y = H_IMG - H_WRAP;
-        $(this).animate({width: W_IMG, height: H_IMG, left: -x, top: -y}, 250);
-        $(this).animate({width: W_IMG , height: H_IMG, left: -x, top: -y}, 250);
-        zoomin = true;
-        console.log('dbclick else');
-        }
-        
-      var thumbs;
-      function init() {
-        
-            $('.thumbImages').on('click', function() {
-              
-              var test = $(this).attr('src');
-              console.log(test);
-               $('#mainImage').attr('src', test);
-              
-            });
-        
-      };
+				var W_WRAP = 778;
+				var H_WRAP = 600;
+				var W_IMG = 1200;
+				var H_IMG = 926;
+				var zoomin = false;
+				//サムネ画像をいれる配列
+				
+				$('.itemImagesWrapper').css({width: W_WRAP, height: H_WRAP});
+				$('.itemImages').dblclick(function(e) {
+				if (zoomin) {
+				$(this).animate({width: W_WRAP, height: H_WRAP, left: 0, top: 0}, 250);
+				zoomin = false;
+				console.log('dbclick if');
+				} else {
+				var x = (e.pageX - $(this).offset().left) * (W_IMG / W_WRAP) - W_WRAP / 2;
+				if (x < 0) x = 0;
+				if (x > W_IMG - W_WRAP) x = W_IMG - W_WRAP;
+				var y = (e.pageY - $(this).offset().top) * (H_IMG / H_WRAP) - H_WRAP / 2;
+				if (y < 0) y = 0;
+				if (y > H_IMG - H_WRAP) y = H_IMG - H_WRAP;
+				$(this).animate({width: W_IMG, height: H_IMG, left: -x, top: -y}, 250);
+				$(this).animate({width: W_IMG , height: H_IMG, left: -x, top: -y}, 250);
+				zoomin = true;
+				console.log('dbclick else');
+				}
 
-        init();
+				});
 
+				$('img.thumbImages').mouseover(function(){
+								// "_thumb"を削った画像ファイル名を取得
+					var selectedSrc = $(this).attr('src');
 
+					$("#mainImage").attr("src",selectedSrc);
+					console.log('hover');
+					// 画像入れ替え
+					$('img.mainImage').stop().fadeOut(50,
+						function(){
+							$('img.mainImage').attr('src', selectedSrc);
+							$('img.mainImage').stop().fadeIn(200);
+						}
+					);
+					
+					$('img.thumbImages').css({"border":""});
+					$(this).css({"border":"1px solid #000"});
+					
+				});
 
+				$('img.thumbImages').mouseout(function(){
+					$(this).css({"border":"1px solid #000"});
+				});
 
-      });
-      });
+			});
 
+			
 
-  body
-    div#left.arrows
-      img(src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_left.png")
-    div.itemImagesWrapper
-      img#mainImage.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-1.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-2.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-3.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-4.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-5.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-6.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-7.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-8.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-9.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-10.jpg')
-      img.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-11.jpg')
-    div#right.arrows
-      img(src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_right.png")
-    div.thumbnailsWrapper
-      ul#tnlist
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-1.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-2.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-3.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-4.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-5.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-6.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-7.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-8.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-9.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-10.jpg')
-        li
-          img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-11.jpg')
+	body
+		div#left.arrows
+			img(src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_left.png")
+		div.itemImagesWrapper
+			img#mainImage.itemImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-1.jpg')
+		div#right.arrows
+			img(src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_right.png")
+		div.thumbnailsWrapper
+			ul#tnlist
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-1.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-2.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-3.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-4.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-5.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-6.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-7.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-8.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-9.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-10.jpg')
+				li
+					img.thumbImages(src='http://image.rakuten.co.jp/auc-rodeo/cabinet/cropped/chsk-04-11.jpg')
 
 
