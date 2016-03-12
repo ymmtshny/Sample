@@ -1,0 +1,125 @@
+body {
+
+	font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px; 
+  line-height: 1.6;
+  font-family: "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+.wrapper{
+	width: 840px;
+	padding-bottom: 200px;
+}
+.attention {
+	margin:4px 0;
+	padding:0;
+	padding-left:30px;
+}
+
+.arrows {
+	float:left;
+	padding:270px 0px;
+
+	&:hover {
+		opacity: 0.4;
+	}
+
+}
+
+#left {
+	padding-right:10px;
+}
+
+#right {
+	padding-left:10px;
+}
+
+.itemImagesWrapper {
+overflow: hidden;
+position: relative;
+float:left;
+width:778px;
+height:600px;
+}
+.itemImagesWrapper img {
+position: absolute;
+top:0;
+left:0;
+width: 778px;
+height: 600px;
+}
+
+.thumbnailsWrapper {
+	clear:both;
+}
+
+.thumbnailsWrapper ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	position: relative;
+	padding-top:40px;
+}
+
+.thumbnailsWrapper li {
+	width: 60px;
+	height: 60px;
+	margin-left:6px;
+	float:left;
+	overflow: hidden;
+	margin-left: 10px;
+	border: 1px solid #ddd;
+	background: #000;
+}
+
+.thumbnailsWrapper img {
+	width: 80px;
+	height: 60px;
+	margin-left: -10px;
+}
+
+.thumbnailsWrapper li p{
+	width: 778px;
+	position:absolute;
+	left:0;
+	top:0;
+	padding-left:30px;
+}
+
+.thumbImages {
+	width: 100%;
+}
+
+.textForImages {
+	display: none;
+}
+
+/*ブランド説明ここから*/
+.brandImage {
+	max-height: 75px;
+}
+
+.brandConcept {
+	border:1px solid #E6E6E6;
+	margin-bottom:0px;
+	padding: 30px;
+}
+
+
+//以下編集のためのクラス
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-red {
+	color:red;
+}
