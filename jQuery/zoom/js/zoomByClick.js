@@ -1,6 +1,4 @@
-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js')
-script.
-	$(function() {
+$(function() {
 		
 		var imageArray = $('img.thumbImages');
 		var index = 0;
@@ -16,7 +14,7 @@ script.
 			var selectedSrc = $(this).attr('src');
 			$("#mainImage").attr("src",selectedSrc);
 			transparentImage($(this));
-
+	
 			index = $('img.thumbImages').index(this);
 			showTextForImages(index);
 			
@@ -26,7 +24,7 @@ script.
 		$('img.thumbImages').mouseout(function(){
 			
 		});
-
+	
 		//矢印押した時の処理ここから
 		$('#right').click(function(){
 			zoomout(0);
@@ -35,7 +33,7 @@ script.
 			if(index == imageArray.length ) {
 				index = 0;
 			}
-
+	
 			changeImagesByClickingArrows(index);
 			showTextForImages(index);
 			
@@ -52,10 +50,10 @@ script.
 			showTextForImages(index);
 			
 		});
-
+	
 		//メイン画像がクリックされた時の処理、ズーム機能
 		$('#mainImage').click(function(e) {
-
+	
 			if (zoomin) {
 				zoomout(250);
 			} else {
@@ -69,40 +67,40 @@ script.
 				$(this).animate({width: W_IMG , height: H_IMG, left: -x, top: -y}, 250);
 				zoomin = true;
 			}
-
+	
 		});
-
+	
 		//この関数は、矢印が押された時、メイン画像を切り替える。
 		function changeImagesByClickingArrows(index) {
 			var imagesWillShown = $(imageArray[index]).attr('src');
 			$('#mainImage').attr('src', imagesWillShown);
 			transparentImage($(imageArray[index]));
 		}
-
+	
 		//この関数は、画像が切り替わった時に、ズーム状態からデフォルト状態にもどす。
 		function zoomout(duration) {
 			$('#mainImage').animate({width: W_WRAP, height: H_WRAP, left: 0, top: 0}, duration);
 			zoomin = false;
 		}
-
+	
 		//この関数は、画像が切り替わった時に、画像の説明文を切り替える。
 		function showTextForImages (index) {
 			var textForImages = $('p.textForImages');
 			$(textForImages).css({"display":"none"});
 			$(textForImages[index]).css({"display":"block"});
 		}
-
+	
 		function transparentImage (target) {
 			$('img.thumbImages').css({"opacity":""});
 			target.css({"opacity":"0.6"});
 		}
-
+	
 		//この関数は、初期設定を行う。
 		function init() {
 			//画像の説明文の処理ここから
 			showTextForImages(0);
 		}
-
+	
 		init();
 		
 	
