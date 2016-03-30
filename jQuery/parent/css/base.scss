@@ -1,0 +1,100 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	letter-spacing: 0px;
+	font-family: 'Noto Sans Japanese',Arial, Helvetica, sans-serif!important;
+}
+
+img {
+	width:100%;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.text-center {
+	text-align: center;
+}
+
+
+#wrapper {
+	width:1040px;
+	margin: 0 auto;
+}
+
+#left-nav {
+	width: 18%;
+	float: left;
+	margin-right: 2%;
+}
+
+#main {
+	width: 70%;
+	float: left;
+}
+
+a {
+	color:#0044CC;
+
+	&:hover {
+		color:#000;
+	}
+}
+
+.myGrayBorder {
+	border: 1px solid #ddd;
+}
+
+.myButtonWhiteBlack {
+		margin: auto;
+		background: #fff;
+		border: 1px solid #ddd;
+		text-align: center;
+		letter-spacing: 1px;
+		color: #000;
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+
+		&:hover {
+			background: #000;
+			color: #fff;
+		}
+}
+
+@media (max-width: 768px) {
+	
+	.pc-header-box {
+		display: none;
+	}
+
+	#left-nav {
+		display: none;
+	}
+
+
+	#wrapper {
+		width:100%;
+		margin: 0 auto;
+	}
+
+	#main {
+		width:100%;
+	}
+
+	footer {
+		display: none;
+	}
+
+}

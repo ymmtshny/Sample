@@ -1,0 +1,61 @@
+@import 'vendor/normalize';
+@import 'base';
+@import 'utility';
+
+//overload
+.col-sm-2 {
+	width:20%;
+}
+
+.title {
+	font-size: 1.5em;
+	border-bottom:1px solid #ddd;
+	clear: both;
+	padding-top: 3em;
+	padding-bottom: 0.2em;
+	//text-align: left;
+
+	span {
+		padding-left: 1em;
+	}
+}
+
+
+
+.brandbox1 {
+	margin-bottom: 3em;
+}
+
+#goToTop {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+.col-sm-2 {
+	width:50%;
+	float: left;
+}
+
+.top-menu {
+
+	height: 3em;
+	overflow: hidden;
+
+}
+
+.text-top {
+	font-size: 1.1em;
+	padding: 0 0.5em;
+	text-align: left;
+}
+
+body {
+	padding-top: 3em;
+}
+
+}
