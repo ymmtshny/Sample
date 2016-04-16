@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="keywords" content="IRON HEART,アイアンハート,BUZZ RICKSON'S,バズリクソンズ,SUGAR CANE,シュガーケーン,MISTER FREEDOM,ミスターフリーダム,TEDMAN,テッドマン,KAMINARI,カミナリ,鬼デニム,ONI DENIM,VANSON,バンソン,アメカジ,セレクトショップ,メンズ,ファッション">
+    <meta name="description" content="【全品送料無料】創業から40年の老舗セレクトショップ、ロデオブロス（RODEO BROS）">
+    <title>Facebook API</title>
+    <link rel="shortcut icon" href="http://www.rakuten.ne.jp/gold/auc-rodeo/images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <div id="facebook"></div>
+    <div id="entries"></div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script>
+    $(function() {
+    	
+    	
+    	$.ajax({
+    		type: 'GET',
+    		url: 'https://graph.facebook.com/v2.3/193392457478722/feed?access_token=EAACEdEose0cBAGz8Six58pp5ZBrcU0pYCnhlyJrzHw6zmhFYQKr6J02WmW21z8EpkFR7rZBmZCjrYyespLcmRNZA1aZCWK6ZC8YK9e4HEdjSjBphnho7hwmEjR77MJfJPJVEiFk5Xkln8WJ7lAeWB5aqkLYWwyNeONmJuZBuVrkHgZDZD', 
+    		dataType: 'json',
+    		success: function(json) {
+    			// 成功処理
+    			var display_cnt = 10; //表示件数
+    			for (var i=0; i<=(display_cnt-1); i++) {
+    				var obj = json.data[i];
+    				//console.log(obj.child_attachments[i].picture);
+    				//console.log(obj.child_attachments[i].link);
+    				var image_src = obj.child_attachments[i].picture;
+    				var image_name = obj.child_attachments[i].name;
+    				var image_link = obj.child_attachments[i].link;
+    				image_src = image_src.replace("w=158&h=158", "w=500&h=500"); 
+    				//console.log(image_src);
+    				$("#facebook").append('<div id=\"FB' + i + '\"></div>');
+    				$("#FB"+i).append('<a href="'+ image_link +'"><img src='+ image_src +'></a>');
+    				$("#FB"+i).append('<p>'+image_name+'</p>');
+    				$("#FB"+i).append('<p>'+ obj.message+'</p>');
+    				
+    				
+    				
+    			}
+    		},
+    		error: function() {
+    			// 失敗処理
+    			console.log("ERROR");
+    		}
+    	});
+    
+    	
+    
+    });
+  </script>
+</html>

@@ -1,0 +1,28 @@
+body {
+
+	font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px; 
+  line-height: 1.6;
+  font-family: "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+#facebook div{
+	overflow: hidden;
+	padding: 2em 0;
+	border-bottom: 1px solid #ddd;
+}
+
+#facebook img {
+	clear: both;
+	width: 40%;
+	float: left;
+}
+
+#facebook p {
+	width: 55%;
+	padding-left: 5%;
+	float: left;
+	margin: 0;
+}
+

@@ -3,6 +3,37 @@ script.
 	$(function() {
 		
 		
+		$.ajax({
+			type: 'GET',
+			url: 'https://graph.facebook.com/v2.3/193392457478722/feed?access_token=EAACEdEose0cBAGz8Six58pp5ZBrcU0pYCnhlyJrzHw6zmhFYQKr6J02WmW21z8EpkFR7rZBmZCjrYyespLcmRNZA1aZCWK6ZC8YK9e4HEdjSjBphnho7hwmEjR77MJfJPJVEiFk5Xkln8WJ7lAeWB5aqkLYWwyNeONmJuZBuVrkHgZDZD', 
+			dataType: 'json',
+			success: function(json) {
+				// 成功処理
+				var display_cnt = 10; //表示件数
+				for (var i=0; i<=(display_cnt-1); i++) {
+					var obj = json.data[i];
+					//console.log(obj.child_attachments[i].picture);
+					//console.log(obj.child_attachments[i].link);
+					var image_src = obj.child_attachments[i].picture;
+					var image_name = obj.child_attachments[i].name;
+					var image_link = obj.child_attachments[i].link;
+					image_src = image_src.replace("w=158&h=158", "w=500&h=500"); 
+					//console.log(image_src);
+					$("#facebook").append('<div id=\"FB' + i + '\"></div>');
+					$("#FB"+i).append('<a href="'+ image_link +'"><img src='+ image_src +'></a>');
+					$("#FB"+i).append('<p>'+image_name+'</p>');
+					$("#FB"+i).append('<p>'+ obj.message+'</p>');
+					
+					
+					
+				}
+			},
+			error: function() {
+				// 失敗処理
+				console.log("ERROR");
+			}
+		});
+
 		
 	
 	});
