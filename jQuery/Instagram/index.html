@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="keywords" content="IRON HEART,アイアンハート,BUZZ RICKSON'S,バズリクソンズ,SUGAR CANE,シュガーケーン,MISTER FREEDOM,ミスターフリーダム,TEDMAN,テッドマン,KAMINARI,カミナリ,鬼デニム,ONI DENIM,VANSON,バンソン,アメカジ,セレクトショップ,メンズ,ファッション">
+    <meta name="description" content="【全品送料無料】創業から40年の老舗セレクトショップ、ロデオブロス（RODEO BROS）">
+    <title>Facebook API</title>
+    <link rel="shortcut icon" href="http://www.rakuten.ne.jp/gold/auc-rodeo/images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <div class="instagram"></div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script>
+    
+    	
+    	
+    $(function() {
+    	$(".instagram").text("loading...");
+    		$.ajax({
+    			url: "https://api.instagram.com/v1/users/self/media/recent",
+    			data: { access_token: "556311006.d3b116e.e6504c52bbdf40c397a40e1adc24207b" },
+    			dataType: "jsonp",
+    			error: function(jqXHR, textStatus, errorThrown) {
+    				$(".instagram").text(textStatus);
+    			},
+    			success: function(data, textStatus, jqXHR) {
+    				$(".instagram").text("");
+    				for (var i = 0, length = 5; i < length; i++) {
+    					var d = data.data[i];
+    					console.log(data.data[i]);
+    					$(".instagram").append(
+    					$("<div>").addClass("image").append($("<a>").attr("href", d.link).attr("target", "_blank").append($("<img>").attr("src", d.images.standard_resolution.url))));}
+    			}
+    	});
+    });
+    
+    	
+  </script>
+</html>
