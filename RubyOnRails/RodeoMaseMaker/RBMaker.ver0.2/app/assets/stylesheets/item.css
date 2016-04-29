@@ -1,0 +1,492 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+
+.breadcrumb a {
+	display: inline-block;
+	padding:0.3em;
+	font-size:12px;
+}
+
+/* CSS Document */
+
+#brand_img a:hover {
+	opacity: 0.4 ;
+	filter: alpha(opacity=40) ;	/* Ie用 */
+}
+
+
+#left:hover{
+	opacity: 0.4 ;
+	filter: alpha(opacity=40) ;	/* Ie用 */
+}
+
+#right:hover{
+	opacity: 0.4 ;
+	filter: alpha(opacity=40) ;	/* Ie用 */
+}
+
+#arrow {
+
+	width:750px;
+	height:50px;
+	position:relative;
+	top: 300px;
+}
+
+#right{float:right;padding-right:20px;position:relative;cursor: pointer;
+	top: -650px; padding-left:40px;}
+
+#left{padding-left:20px;position:relative;cursor: pointer;
+	top: -650px; padding-right:40px;}
+
+body {
+	/*width:850px;	*/
+}
+
+body {
+	font-size:11px;
+	font-family: 'Noto Sans Japanese', "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif!important;
+	font-weight:400;
+	letter-spacing: 1px;
+}
+
+a {
+	color:#000000;
+}
+
+
+/* Style for rollove begins here */
+figure.item {
+	float:left;
+	width:835px;
+	margin: 0px 70px 30px 0px;
+	height:665px;
+}
+ul,li {
+	padding:0;
+	margin:0;
+
+
+}
+div#rollover {
+    height:665px;
+    width:835px;
+}
+div#rollover p {
+    float:left;
+    margin:0;
+    border: 1px solid #E6E6E6;
+}
+div#rollover ul {
+    float:right;
+    width:72px;
+    list-style:none;
+}
+div#rollover li {
+    height:70px;
+    margin:0px 0px 14px 0px;
+}
+div#rollover a img {
+
+    border: 1px solid #E6E6E6;
+}
+/* Style for rollover ends here */
+
+
+/* Style for other things strats here*/
+
+
+#brand {
+	width:835px;
+	height:130px;
+	border:1px #E6E6E6 solid;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+
+#brand_description{
+	float:left;
+	width:650px;
+	height:100px;
+}
+
+#brand_description p{
+	line-height:150%;
+}
+
+#brand_logo {
+	width:110px;
+	height:70px;
+	padding:20px 20px 20px 20px;
+	margin-top:10px;
+}
+
+#brand_img {
+	float:left;
+}
+
+
+#m-size {
+	width:50px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-bottom:10px;
+}
+
+#m-detail {
+	width:60px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+#m-total {
+	width:60px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	height:auto;
+	clear: both;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+
+#m-model{
+	width:60px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+#m-detail {
+	width:60px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+#m-brand {
+	width:60px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-bottom:10px;
+}
+
+#m-mate {
+	width:80px;
+	background-color:#333333;
+	color:#FFFFFF;
+	text-align:center;
+	padding:1px;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+
+#clear{
+	clear:both;
+	margin-top:10px;
+}
+
+
+#shouhin {
+	clear:both;
+}
+
+#shouhin_main_left, #shouhin_main_right {
+	float:left;
+	width: 400px;
+	height:100%;
+	margin-bottom:20px;
+}
+
+#shouhin_main_bottom {
+	clear:both;
+}
+
+.staff {
+	width:108px;
+	text-align:right;
+	float:left;
+	margin-right:10px;
+	margin-top:-10px;
+	color:#727171;
+
+}
+
+#stafimg {
+	margin-top:10px;
+	margin-bottom:5px;
+	height:73px;
+	width:835px;
+}
+
+.size_person {
+	float:left;
+	width:150px;
+	height:80px;
+}
+
+.size_person p{
+	line-height:150%;
+}
+
+.size_person img{
+	width:60px;
+	height:65px;
+	float:left;
+	margin:0px 5px 5px 0px;
+}
+
+
+
+*{
+	font-size:11px;
+  	letter-spacing:1px;
+	 font-family: 'Noto Sans Japanese',Arial, Helvetica, sans-serif!important;
+}
+
+body html {
+	margin:0;
+	padding:0;
+}
+
+td tr table {
+	margin:0;
+	padding:0;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+.item-wrapper {
+	width: 840px;
+}
+
+/*ブランド説明ここから*/
+#brand-image {
+  max-height: 75px;
+}
+
+#brand-concept {
+	border:1px solid #E6E6E6;
+	margin-bottom:20px;
+  padding: 2.7rem;
+}
+
+/*商品画像ここから*/
+  .easyzoom a {
+    display: inline-block;
+  }
+  .easyzoom-wrap {
+		box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .easyzoom-wrap > div {
+    float: left;
+  }
+
+  .easyzoom-wrap.disable .easyzoom-flyout {
+  	 display: none;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 555px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .arrow:hover {
+    opacity: 0.8;
+  }
+
+  .arrow img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 18px;
+    height: 35px;
+  }
+
+  #next img {
+    right: 0;
+  }
+
+  #prev img {
+    left: 0;
+  }
+
+  .thumbnails {
+		padding:0;
+		margin:0;
+		width: 840px;
+    overflow: hidden;
+  }
+  .thumbnails li {
+    float: left;
+    box-sizing: border-box;
+    list-style-type: none;
+    margin-right: 1.2%;
+    border: 1px #E6E6E6 solid;
+    width: 7.23%;
+    margin-bottom: 0.5rem;
+  }
+
+  .thumbnails li:last-child {
+    margin-right: 0;
+  }
+
+  .thumbnails li:nth-child(12n+0) {
+  	margin-right: 0;
+  }
+
+  .thumbnails li a img {
+		width: 100%;
+  }
+
+  #thumnail-container {
+		width:840px;
+		position:relative;
+		top:-22px;
+		overflow:hidden;
+  }
+
+
+/*矢印・オンオフボタンここから*/
+#buttoms {
+	margin: 0.5rem 0;
+}
+
+#easyzoom-on {
+	color:white;
+	background:gray;
+	border:none;
+	cursor: pointer;
+	margin: 0 4px 0 0;
+}
+
+#easyzoom-off {
+	color:white;
+	cursor: pointer;
+	background:gray;
+	border:none;
+}
+
+#right {
+	padding-left:25px;
+}
+
+.enable{
+		color:white!important;
+	background:black!important;
+}
+
+button.disable {
+	color:white;
+	background:gray;
+}
+
+
+/*商品詳細情報ここから*/
+#item-explanation {
+	margin:20px 0;
+}
+
+#pierre {
+	background-image:url("http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff07.png");
+	background-size:contain;
+	width:150px;
+	background-repeat:no-repeat;
+	background-position:right;
+	margin-top:0px;
+}
+
+#hide {
+	background-image:url("http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff07.png");
+	background-size:contain;
+	width:150px;
+	background-repeat:no-repeat;
+	background-position:right;
+	margin-top:0px;
+}
+
+#sizechart {
+border-collapse: collapse; /* 枠線の表示方法 */
+border: 1px #E6E6E6 solid; /* テーブル全体の枠線（太さ・色・スタイル） */
+}
+
+#sizechart  td {
+border: 1px #E6E6E6 solid; /* セルの枠線（太さ・色・スタイル） */
+}
+
+#material-chart  {
+	border-collapse: collapse; /* 枠線の表示方法 */
+border: 1px #E6E6E6 solid; /* テーブル全体の枠線（太さ・色・スタイル） */
+}
+
+#material-chart  td {
+border: 1px #E6E6E6 solid; /* セルの枠線（太さ・色・スタイル） */
+}
+
+#staff-size {
+position:relative;
+top:-16px;
+color:gray;
+}
+
+#staff-size  tr td {
+	font-size:10px;
+}
+
+#glabal {
+	margin-top:10px;
+}
+
+#glabal img:hover {
+	opacity:0.7;
+}
+
+#more {clear:both;text-align:center;margin-top:25px;margin-bottom:25px;}
+#more div {
+	width: 816px;
+    font-size: 13px;
+    padding: 9px;
+    color: #fff;
+    background-color: #000;
+    /* margin: 0 auto; */
+    border: 1px solid #ddd;
+}
+#more div:hover {background:#fff; color:#000;transition:all 1s;}
+#more a { text-decoration:none;}
+
+
+#global {
+	margin-left:38px;
+}
+#global img:hover{
+	opacity:0.7;
+}

@@ -1,0 +1,46 @@
+
+<h1 style="text-align:left;">商品データ一覧</h1>
+[<br>
+<% @item.each do |item| %>
+{<br>
+  "number" : "<%= item.itemNumber %>",<br>
+  "image"  : "<%= item.imgURL %>",<br>
+  "brand"  : "<%= item.brand_id %>",<br>
+  "name"   : "<%= item.itemName %>"<br>
+},<br>
+<% end %>
+]
+
+<!--:itemNumber, -->
+<!--                                 :imgURL,-->
+<!--                                 :itemName,-->
+<!--                                 :itemDescription,-->
+<!--                                 :modelSizeA,-->
+<!--                                 :modelSizeB,-->
+<!--                                 :totalItemsNameA,-->
+<!--                                 :totalItemsURLA,-->
+<!--                                 :totalItemsNameB,-->
+<!--                                 :totalItemsURLB,-->
+<!--                                 :totalItemsNameC,-->
+<!--                                 :totalItemsURLC,-->
+<!--                                 :size00,-->
+<!--                                 :size01,-->
+<!--                                 :size02,-->
+<!--                                 :size03,-->
+<!--                                 :size04,-->
+<!--                                 :size05,-->
+<!--                                 :size06,-->
+<!--                                 :size07,-->
+<!--                                 :size10,-->
+<!--                                 :size11,-->
+<!--                                 :size12,-->
+<!--                                 :size13,-->
+<!--                                 :size14,-->
+<!--                                 :size15,-->
+<!--                                 :size16,-->
+<!--                                 :size17,-->
+<!--                                 :material,-->
+<!--                                 :madein,-->
+<!--                                 :process,-->
+<!--                                 :brand_id,-->
+<!--                                 :category-->

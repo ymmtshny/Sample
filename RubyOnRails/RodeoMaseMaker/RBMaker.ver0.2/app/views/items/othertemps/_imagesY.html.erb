@@ -1,0 +1,280 @@
+<!--商品画像ここから-->
+<!--商品メイン画像ここから-->
+<div class="easyzoom-wrap disable">
+<div class="arrow" id="prev"><img src=
+"http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_left.png"></div>
+<div class="easyzoom easyzoom--adjacent easyzoom--with-thumbnails">
+<!--ZOOM画像URL-->
+<a href=
+"http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-1.jpg">
+<!--メイン画像-->
+<img alt="" class="easyzoom-main" height="600" src=
+"http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-1.jpg"
+width="778"></a>
+</div>
+<div class="arrow" id="next"><img src=
+"http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/img/item_right.png"></div>
+</div>
+<!--商品メイン画像ここまで-->
+<!--ここに詳細説明が来ます。２行まで対応しています。-->
+    <!-- 不要ならば空欄にしてください。必要に応じて増やせます。-->
+    <!--アンダーバーの画像には対応していません。-->
+    <div class="js-details-caption details-caption">
+    <!--1--><p class="js-details text-center"><%= @item.details01 %></p>
+    <!--2--><p class="js-details text-center"><%= @item.details02 %></p>
+    <!--3--><p class="js-details text-center"><%= @item.details03 %></p>
+    <!--4--><p class="js-details text-center"><%= @item.details04 %></p>
+    <!--5--><p class="js-details text-center"><%= @item.details05 %></p>
+    <!--6--><p class="js-details text-center"><%= @item.details06 %></p>
+    <!--7--><p class="js-details text-center"><%= @item.details07 %></p>
+    <!--8--><p class="js-details text-center"><%= @item.details08 %></p>
+    <!--9--><p class="js-details text-center"><%= @item.details09 %></p>
+    <!--10--><p class="js-details text-center"><%= @item.details10 %></p>
+    <!--11--><p class="js-details text-center"><%= @item.details11 %></p>
+    <!--12--><p class="js-details text-center"><%= @item.details12 %></p>
+    <!--13--><p class="js-details text-center"><%= @item.details13 %></p>
+    <!--14--><p class="js-details text-center"><%= @item.details14 %></p>
+    <!--15--><p class="js-details text-center"><%= @item.details15 %></p>
+    <!--16--><p class="js-details text-center"><%= @item.details16 %></p>
+    <!--17--><p class="js-details text-center"><%= @item.details17 %></p>
+    <!--18--><p class="js-details text-center"><%= @item.details18 %></p>
+    <!--19--><p class="js-details text-center"><%= @item.details19 %></p>
+    <!--20--><p class="js-details text-center"><%= @item.details20 %></p>
+    <!--21--><p class="js-details text-center"><%= @item.details21 %></p>
+    <!--22--><p class="js-details text-center"><%= @item.details22 %></p>
+    <!--23--><p class="js-details text-center"><%= @item.details23 %></p>
+    <!--24--><p class="js-details text-center"><%= @item.details24 %></p>
+    </div>
+    
+<!--商品サムネイル画像ここから-->
+<ul class="thumbnails">
+
+<!--画像＃０１-->
+<% unless @item.details01.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-1.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-1.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-1.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０2-->
+<% unless @item.details02.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-2.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-2.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-2.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０3-->
+<% unless @item.details03.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-3.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-3.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-3.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０4-->
+<% unless @item.details04.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-4.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-4.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-4.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０5-->
+<% unless @item.details05.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-5.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-5.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-5.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０6-->
+<% unless @item.details06.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-6.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-6.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-6.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０7-->
+<% unless @item.details07.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-7.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-7.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-7.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０8-->
+<% unless @item.details08.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-8.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-8.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-8.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃０9-->
+<% unless @item.details09.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-9.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-9.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-9.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃1０-->
+<% unless @item.details10.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-10.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-10.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-10.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃11-->
+<% unless @item.details11.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-11.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-11.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-11.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃12-->
+<% unless @item.details12.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-12.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-12.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-12.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃13-->
+<% unless @item.details13.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-13.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-13.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-13.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃14-->
+<% unless @item.details14.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-14.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-14.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-14.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃15-->
+<% unless @item.details15.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-15.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-15.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-15.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃16-->
+<% unless @item.details16.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-16.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-16.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-16.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃17-->
+<% unless @item.details17.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-17.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-17.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-17.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃18-->
+<% unless @item.details18.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-18.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-18.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-18.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃19-->
+<% unless @item.details19.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-19.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-19.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-19.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃20-->
+<% unless @item.details20.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-20.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-20.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-20.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃21-->
+<% unless @item.details21.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-21.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-21.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-21.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃22-->
+<% unless @item.details22.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-22.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-22.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-22.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃23-->
+<% unless @item.details23.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-23.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-23.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-23.jpg"></a>
+</li>
+<% end %>
+
+<!--画像＃24-->
+<% unless @item.details24.blank? %>
+<li>
+<a class="thum-images" data-standard= "http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-24.jpg"
+href="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-24.jpg">
+<img alt="" src="http://shopping.c.yimg.jp/lib/rodeobros/<%= @item.itemNumber %>-24.jpg"></a>
+</li>
+<% end %>
+
+
+</ul><!--商品サムネイル画像ここまで-->
+<!--ON/OFFボタンここから-->
+<div id="buttoms">
+<span>拡大表示</span> <button  id="easyzoom-on">ON</button>
+<button id="easyzoom-off" class="enable">OFF</button>
+</div><!--ON/OFFボタンここまで--><!--商品画像ここまで-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js">
+</script>
+<script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/lib/easyzoom.js">
+</script>
+    <script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/item0120-1.js">
+  </script>

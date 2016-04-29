@@ -1,0 +1,34 @@
+<h1>ボトムス</h1>
+<%= form_for(@item) do |f| %>
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" style="height: 100px; border-collapse: separate;">
+
+<tr align="center" bgcolor="EEEEEE">
+<td width="20%">サイズ(cm)</td>
+<td width="16%">身幅</td>
+<td width="16%">着丈</td>
+<td width="16%">肩幅</td>
+<td width="16%">袖丈</td>
+<td width="16%">重量(g)</td>
+</tr>
+
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= f.text_field :size00, placeholder: "サイズ", class: "form-control"  %></td>
+<td><%= f.text_field :size01, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size02, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size03, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size04, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size05, placeholder: "", class: "form-control"  %></td>
+</tr>
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= f.text_field :size10, placeholder: "サイズ", class: "form-control"  %></td>
+<td><%= f.text_field :size11, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size12, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size13, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size14, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size15, placeholder: "", class: "form-control"  %></td>
+</tr>
+
+</table>
+<p>サイズは若干前後します。
+<a href="http://shopping.c.yimg.jp/lib/rodeobros/size_long_tee.jpg" target="_blank">サイズの測り方</a></p>
+<% end %>

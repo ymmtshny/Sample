@@ -1,0 +1,82 @@
+<div id="shouhin">
+<p><br><br><%= @item.itemName %><br><br>
+<%= @item.itemDescription %>
+</p>
+<br>
+</div>
+
+
+<!--//商品説明「左」ここから //-->
+<div id="shouhin_main" >
+<div id="shouhin_main_left">
+
+
+<!--//ブランド //-->
+
+<!--//ブランド //-->
+<p id="m-brand">BRAND</p>
+<%= render 'items/othertemps/brandlinksAR',  var:params[:brand_id] %>
+ 
+<!--//詳細 //-->
+<p id="m-detail">DETAIL</p>
+<p><%= @item.itemDetail %></p>
+
+<!--//モデル//-->
+<p id="m-model">MODEL</p>
+
+<div class="size_person" >
+<img src="http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff02.png" style="width:50px; height:55px;float:left;margin:0px 5px 0px 0px;" /> 
+モデル: Hide<br>
+身長: 170cm<br>
+体重: 62kg<br>
+サイズ: <%= @item.modelSizeA %>
+</div>
+
+<!--//関連 //-->
+<div id="clear">
+<p id="m-total">TOTAL</p>
+モデル着用商品 Hide:<% unless @item.totalItemsURLA.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLA %>/"><%= @item.totalItemsNameA %></a><% end %>
+<% unless @item.totalItemsURLB.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLB %>/"><%= @item.totalItemsNameB %></a><% end %>
+<% unless @item.totalItemsURLC.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLC %>/"><%= @item.totalItemsNameC %></a><% end %>
+<br><br>
+モデル着用商品 Hide:<% unless @item.totalItemsURLD.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLD %>/"><%= @item.totalItemsNameD %></a><% end %>
+<% unless @item.totalItemsURLE.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLE %>/"><%= @item.totalItemsNameE %></a><% end %>
+<% unless @item.totalItemsURLF.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLF %>/"><%= @item.totalItemsNameF %></a><% end %>
+<br><br>
+モデル着用商品 Hide:<% unless @item.totalItemsURLG.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLG %>/"><%= @item.totalItemsNameG %></a><% end %>
+<% unless @item.totalItemsURLH.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLH %>/"><%= @item.totalItemsNameH %></a><% end %>
+<% unless @item.totalItemsURLI.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLI %>/"><%= @item.totalItemsNameI %></a><% end %>
+
+</div>
+<br />
+
+</div>
+<br />
+
+
+<!--//商品説明「右」ここから //-->
+<div id="shouhin_main_right">
+
+<!--//サイズ表//-->
+<p id="m-size">SIZE</p>
+<%= render 'items/categoryout/sizechartout', var:params[:category] %>
+
+<% unless @item.material.blank? && @item.madein.blank? && @item.process.blank? %>
+<!--//素材生産加工など//-->
+<p id="m-mate">MATERIAL</p>
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" STYLE="height: 60px; border-collapse: separate;">
+<% unless @item.material.blank? %><tr bgcolor="ffffff"><td align="center" bgcolor="EEEEEE" width="20%">素材</td>
+<td><%= @item.material %></td></tr><% end %>
+<% unless @item.madein.blank? %><tr bgcolor="ffffff"><td align="center" bgcolor="EEEEEE" width="20%">生産</td>
+<td><% if @item.madein == "日本製" %><a href="http://item.rakuten.co.jp/auc-rodeo/c/0000001351/" target="_top">日本製</a><% else %><%= @item.madein %><% end %></td></tr><% end %>
+<% unless @item.process.blank? %><tr bgcolor="ffffff"><td align="center" bgcolor="EEEEEE" width="20%">加工</td>
+<td><%= @item.process %></td></tr><% end %>
+</table>
+<% end %>
+
+</div>
+
+
+<div id="more" >
+<%= render 'items/othertemps/brandlinksBR',  var:params[:brand_id] %>
+</div>

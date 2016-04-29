@@ -1,0 +1,34 @@
+<div class="texts__contacts texts__chat">
+    <%= form_for(@message) do |f| %>
+      <!--アラート-->          
+      <% if @message.errors.present? %>
+        <div class="alert alert-danger">
+          <%= alert %>
+          <ul>
+            <% @message.errors.full_messages.each do |full_message| %>
+              <li>
+                <%= full_message %>
+              </li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>
+      
+      <!--入力ここから--> 
+      <ul>
+        <li><h2>お名前</h2></li>
+        <li>    <%= f.text_field :name  %>     </li>
+      </ul>
+      <ul>
+        <li>    <h2 class="contacts__quesion">内容</h2>     </li>
+        <li>    <%= f.text_area :body %>     </li>
+      </ul>
+</div>
+
+<div class="texts__submit-button">
+    <div class="contact-mail__submit">
+        <%= f.submit class: "btn btn-default btn-default btn-block" %>
+        <% end %>
+    </div>
+</div>
+

@@ -1,0 +1,122 @@
+<!--商品画像ここから-->
+<!--商品メイン画像ここから-->
+<div class="easyzoom-wrap">
+<div class="arrow" id="prev"><img src=
+"assets_20151105/img/item_left.png"></div>
+<div class="easyzoom easyzoom--adjacent easyzoom--with-thumbnails">
+<!--ZOOM画像URL-->
+<a href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+<!--メイン画像-->
+<img alt="" class="easyzoom-main" height="600" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg"
+width="778"></a>
+</div>
+<div class="arrow" id="next"><img src=
+"assets_20151105/img/item_right.png"></div>
+</div>
+<!--商品メイン画像ここまで-->
+<!--商品サムネイル画像ここから-->
+<ul class="thumbnails">
+<!--画像＃０１-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+</a>
+</li><!--画像＃０２-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg">
+</a>
+</li><!--画像＃０３-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg">
+</a>
+</li><!--画像＃０４-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg">
+</a>
+</li>
+<!--画像＃０５-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg">
+</a>
+</li><!--画像＃０６-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg">
+</a>
+</li><!--画像＃０７-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg">
+</a>
+</li><!--画像＃０８-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg">
+</a>
+</li>
+</ul><!--商品サムネイル画像ここまで-->
+<!--ON/OFFボタンここから-->
+<div id="buttoms">
+<span>拡大表示</span> <button class="enable" id="easyzoom-on">ON</button>
+<button id="easyzoom-off">OFF</button>
+</div><!--ON/OFFボタンここまで--><!--商品画像ここまで-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js">
+</script>
+<script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/lib/easyzoom.js">
+</script>
+<script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/item.js">
+</script>

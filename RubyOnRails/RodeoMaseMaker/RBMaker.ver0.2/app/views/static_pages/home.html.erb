@@ -1,0 +1,210 @@
+<div class="wrapper　row">
+	<div class="col-sm-12 text-center">
+    	<header>
+        	<!--<img src="http://www.aun-wa.com/images/logo.png" alt="rodeo bros">
+        --></header>
+    </div>
+	<div class="menu col-sm-3">
+    <div class="panel panel-primary">
+      	<div class="panel-heading">ログイン</div>
+    	<form>
+  			<div class="form-group col-sm-12 username">
+    			<label for="exampleInputEmail1">ユーザーネーム</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="User Name">
+  			</div>
+  			<div class="form-group col-sm-12">
+                <label for="exampleInputPassword1">パスワード</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+			
+			<div class="button-center">
+          	<button type="submit" class="btn btn-success ">ログイン</button>
+            </div>
+        </form>
+       	</div>
+        
+        <div class="panel panel-primary">
+      	<div class="panel-heading">商品データベース</div>
+      	<div class="panel-body row">
+ 
+     <!--       <div class="col-sm-12">-->
+     <!--       <p>品番検索</p>-->
+    	<!--		<div class="input-group">-->
+     <!-- 				<input type="text" class="form-control" placeholder="Search for...">-->
+     <!-- 				<span class="input-group-btn">-->
+     <!--   				<button class="btn btn-success" type="button">検索</button>-->
+     <!-- 				</span>-->
+    	<!--		</div><!-- /input-group -->
+  			<!--</div><!-- /.col-lg-6 -->
+            
+     <!--       <div class="col-sm-12">-->
+     <!--       <p>ブランド検索</p>-->
+    	<!--		<div class="input-group">-->
+     <!-- 				<input type="text" class="form-control" placeholder="Search for...">-->
+     <!-- 				<span class="input-group-btn">-->
+     <!--   				<button class="btn btn-success" type="button">検索</button>-->
+     <!-- 				</span>-->
+    	<!--		</div><!-- /input-group -->
+  			<!--</div><!-- /.col-lg-6 -->
+     
+            <div class="button-center"><%= link_to "すべてのデータを参照", showingalldata_path, class: "btn btn-success"%></div>
+            <!--<div class="button-center"><button type="button" class="btn btn-success">編集</button></div>-->
+        </div>
+      </div>
+	</div>
+    <div class="main-content col-sm-9 ">
+    <div class="panel panel-primary">
+      <div class="panel-heading">商品のベース作成</div>
+      <div class="panel-body">
+      	<p>以下から選択してください。</p>
+      	<ol class="breadcrumb">
+  			<li class="active">ALPHA</li>
+            <li><%= link_to "アウター", new_item_path(:alpha, :outer) %></li>
+  			    <li><%= link_to "トップス", new_item_path(:alpha, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:alpha, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:alpha, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:alpha, :other) %></li>
+		</ol>
+
+    	<ol class="breadcrumb">
+  			<li class="active">BUZZ RICKSON'S</li>
+            <li><%= link_to "アウター", new_item_path(:buzzricksons, :outer) %></li>
+  			    <li><%= link_to "トップス", new_item_path(:buzzricksons, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:buzzricksons, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:buzzricksons, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:buzzricksons, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">CROWS WORST</li>
+            <li><%= link_to "アウター", new_item_path(:crowsworst, :outer) %></li>
+  			    <li><%= link_to "トップス", new_item_path(:crowsworst, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:crowsworst, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:crowsworst, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:crowsworst, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">Disney</li>
+            <li><%= link_to "アウター", new_item_path(:disney, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:disney, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:disney, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:disney, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:disney, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">Eternal</li>
+            <li><%= link_to "アウター", new_item_path(:eternal, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:eternal, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:eternal, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:eternal, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:eternal, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">Indian Motocycle</li>
+            <li><%= link_to "アウター", new_item_path(:indianmotocycle, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:indianmotocycle, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:indianmotocycle, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:indianmotocycle, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:indianmotocycle, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">IRON HEART</li>
+            <li><%= link_to "アウター", new_item_path(:ironheart, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:ironheart, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:ironheart, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:ironheart, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:ironheart, :other) %></li>
+		</ol>
+		<ol class="breadcrumb">
+  			<li class="active">KAMINARI</li>
+            <li><%= link_to "アウター", new_item_path(:kaminari, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:kaminari, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:kaminari, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:kaminari, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:kaminari, :other) %></li>
+		</ol>
+     	<ol class="breadcrumb">
+  			<li class="active">Mister Freedom</li>
+            <li><%= link_to "アウター", new_item_path(:misterfreedom, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:misterfreedom, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:misterfreedom, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:misterfreedom, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:misterfreedom, :other) %></li>
+		</ol>
+		<ol class="breadcrumb">
+  			<li class="active">NISHIKI</li>
+            <li><%= link_to "アウター", new_item_path(:nishiki, :outer) %></li>
+  			<li><%= link_to "トップス", new_item_path(:nishiki, :tops) %></li>
+            <li><%= link_to "ラグラン", new_item_path(:nishiki, :ragran) %></li>
+            <li><%= link_to "ボトムス", new_item_path(:nishiki, :bottoms) %></li>
+            <li><%= link_to "その他", new_item_path(:nishiki, :other) %></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">ONI DENIM</li>
+            <li><%= link_to "アウター", new_item_path(:onidenim, :outer) %></li>
+  		    	<li><%= link_to "トップス", new_item_path(:onidenim, :tops) %></li>
+  	    		<li><%= link_to "ラグラン", new_item_path(:onidenim, :ragran) %></li>
+  		    	<li><%= link_to "ボトムス", new_item_path(:onidenim, :bottoms) %></li>
+  		    	<li><%= link_to "その他", new_item_path(:onidenim, :other) %></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">SUGAR CANE</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:sugarcane, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:sugarcane, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:sugarcane, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:sugarcane, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:sugarcane, :other) %></a></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">SUN SURF</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:sunsurf, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:sunsurf, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:sunsurf, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:sunsurf, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:sunsurf, :other) %></a></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">TEDMAN</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:tedman, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:tedman, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:tedman, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:tedman, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:tedman, :other) %></a></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">THE FLAT HEAD</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:theflathead, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:theflathead, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:theflathead, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:theflathead, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:theflathead, :other) %></a></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">VANSON</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:vanson, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:vanson, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:vanson, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:vanson, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:vanson, :other) %></a></li>
+		</ol>
+		<ol class="breadcrumb">
+  			<li class="active">William Gibson</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:williamgibson, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:williamgibson, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:williamgibson, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:williamgibson, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:williamgibson, :other) %></a></li>
+		</ol>
+       <ol class="breadcrumb">
+  			<li class="active">YOROI</li>
+            <li><a href="#"><%= link_to "アウター", new_item_path(:yoroi, :outer) %></a></li>
+  			    <li><a href="#"><%= link_to "トップス", new_item_path(:yoroi, :tops) %></a></li>
+            <li><a href="#"><%= link_to "ラグラン", new_item_path(:yoroi, :ragran) %></a></li>
+            <li><a href="#"><%= link_to "ボトムス", new_item_path(:yoroi, :bottoms) %></a></li>
+            <li><a href="#"><%= link_to "その他", new_item_path(:yoroi, :other) %></a></li>
+		</ol>
+        
+        <img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/buzzricksons/br11554-1.jpg" width="330px">
+	  </div>
+      </div>
+    </div>
+</div>

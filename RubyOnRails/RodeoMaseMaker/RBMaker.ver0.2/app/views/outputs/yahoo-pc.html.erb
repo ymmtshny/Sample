@@ -1,0 +1,85 @@
+<center>
+<div class="showcontainer">
+<h1>YAHOO PC説明文</h1>
+<h2>インラインフレーム</h2>
+<textarea rows="30" cols="100">
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="euc-jp">
+    <link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/easyzoom.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://www.rakuten.ne.jp/gold/auc-rodeo/css/itempage.css">
+    <link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/itempage.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>商品カルーセル</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+  </head>
+  <body>
+    <div class="item-wrapper">
+<!--ブランド説明ここ-->
+<%= render 'items/brand-concept/brandconceptY',  var:params[:brand_id] %>
+<!--商品画像ここ-->
+<%= render 'items/othertemps/imagesY' %>
+</div><!--item-wrapperここまで-->
+</body>
+</html>
+</textarea>
+
+<h2>インラインフレ-ム下PC説明文</h2>
+<textarea rows="30" cols="100">
+  <% unless @item.details13.blank? %>
+<iframe id="rodeoh" src="http://shopping.geocities.jp/rodeobros/items/<%= @item.itemNumber %>.html" width="850" height="1000" scrolling="no" frameborder="0" style="border:none; display:block; margin:0;" ></iframe>
+<% else %>
+<iframe id="rodeoh" src="http://shopping.geocities.jp/rodeobros/items/<%= @item.itemNumber %>.html" width="850" height="950" scrolling="no" frameborder="0" style="border:none; display:block; margin:0;" ></iframe>
+<% end %>
+  <!--//商品説明文章ここから //-->
+  <%= render 'items/othertemps/itemExplainationY' %>
+</textarea>
+
+<h2>PC説明文（下）</h2>
+<textarea rows="30" cols="100">
+  <center><%= render 'items/othertemps/imagesBottomPCY' %></center>
+    <!--//商品説明文章ここから //-->
+    <%= render 'items/othertemps/itemExplainationY' %>
+</textarea>
+
+<div style="padding:50px 0">
+   <img src="http://shopping.c.yimg.jp/lib/rodeobros/detail.jpg">
+    <textarea rows="3" cols="100">
+      <br><br><br><br><img src="http://shopping.c.yimg.jp/lib/rodeobros/detail.jpg"><br><br><br><br><br><br>
+    </textarea>
+    <br><br>
+    <img src="http://shopping.c.yimg.jp/lib/rodeobros/coordination.jpg">
+    <textarea rows="3" cols="100">
+      <br><br><br><br><img src="http://shopping.c.yimg.jp/lib/rodeobros/coordination.jpg"><br><br><br><br><br><br>
+    </textarea>
+    
+<p>商品リンク</p>
+<textarea rows="9" cols="100">
+モデル着用商品 Hide:<% unless @item.totalItemsURLA.blank? %><a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLA %>.html"><%= @item.totalItemsNameA %></a><% end %>
+<% unless @item.totalItemsURLB.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLB %>.html"><%= @item.totalItemsNameB %></a><% end %>
+<% unless @item.totalItemsURLC.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLC %>.html"><%= @item.totalItemsNameC %></a><% end %><br><br><br>
+
+モデル着用商品 Hide:<% unless @item.totalItemsURLD.blank? %><a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLD %>.html"><%= @item.totalItemsNameD %></a><% end %>
+<% unless @item.totalItemsURLE.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLE %>.html"><%= @item.totalItemsNameE %></a><% end %>
+<% unless @item.totalItemsURLF.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLF %>.html"><%= @item.totalItemsNameF %></a><% end %><br><br><br>
+
+モデル着用商品 Hide:<% unless @item.totalItemsURLG.blank? %><a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLG %>.html"><%= @item.totalItemsNameG %></a><% end %>
+<% unless @item.totalItemsURLH.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLH %>.html"><%= @item.totalItemsNameH %></a><% end %>
+<% unless @item.totalItemsURLI.blank? %> / <a href="http://store.shopping.yahoo.co.jp/rodeobros/<%= @item.totalItemsURLI %>.html"><%= @item.totalItemsNameI %></a><% end %><br><br><br>
+</textarea>
+</div>
+
+<!--showcontainer-->
+</div>
+</center>
+
+
+
+
+
+ 
+
+
+
+

@@ -1,0 +1,213 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/easyzoom.css" rel="stylesheet">
+<link rel="stylesheet" href="http://www.rakuten.ne.jp/gold/auc-rodeo/css/itempage.css">
+<link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/itempage.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="showcontainer">
+    
+<div class="item-wrapper">
+<!--ブランド説明ここ-->
+<%= render 'items/brand-concept/brandconceptR',  var:params[:brand_id] %>
+    
+<!--商品画像ここ コメントアウト中-->
+<% render 'items/othertemps/images' %>
+    
+  
+  <% if @item.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @item.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
+  
+
+
+ 
+<!--//商品説明文章ここから //-->
+<%= form_for(@item) do |f| %>
+
+<div class="form-group">
+<%= f.text_field :details01, placeholder: "画像＃01の詳細", class: "form-control"  %>
+<%= f.text_field :details02, placeholder: "画像＃02の詳細", class: "form-control"  %>
+<%= f.text_field :details03, placeholder: "画像＃03の詳細", class: "form-control"  %>
+<%= f.text_field :details04, placeholder: "画像＃04の詳細", class: "form-control"  %>
+<%= f.text_field :details05, placeholder: "画像＃05の詳細", class: "form-control"  %>
+<%= f.text_field :details06, placeholder: "画像＃06の詳細", class: "form-control"  %>
+<%= f.text_field :details07, placeholder: "画像＃07の詳細", class: "form-control"  %>
+<%= f.text_field :details08, placeholder: "画像＃08の詳細", class: "form-control"  %>
+<%= f.text_field :details09, placeholder: "画像＃09の詳細", class: "form-control"  %>
+<%= f.text_field :details10, placeholder: "画像＃10の詳細", class: "form-control"  %>
+<%= f.text_field :details11, placeholder: "画像＃11の詳細", class: "form-control"  %>
+<%= f.text_field :details12, placeholder: "画像＃12の詳細", class: "form-control"  %>
+<%= f.text_field :details13, placeholder: "画像＃13の詳細", class: "form-control"  %>
+<%= f.text_field :details14, placeholder: "画像＃14の詳細", class: "form-control"  %>
+<%= f.text_field :details15, placeholder: "画像＃15の詳細", class: "form-control"  %>
+<%= f.text_field :details16, placeholder: "画像＃16の詳細", class: "form-control"  %>
+<%= f.text_field :details17, placeholder: "画像＃17の詳細", class: "form-control"  %>
+<%= f.text_field :details18, placeholder: "画像＃18の詳細", class: "form-control"  %>
+<%= f.text_field :details19, placeholder: "画像＃19の詳細", class: "form-control"  %>
+<%= f.text_field :details20, placeholder: "画像＃20の詳細", class: "form-control"  %>
+<%= f.text_field :details21, placeholder: "画像＃21の詳細", class: "form-control"  %>
+<%= f.text_field :details22, placeholder: "画像＃22の詳細", class: "form-control"  %>
+<%= f.text_field :details23, placeholder: "画像＃23の詳細", class: "form-control"  %>
+<%= f.text_field :details24, placeholder: "画像＃24の詳細", class: "form-control"  %>
+
+</div>
+
+<div class="form-group">
+<p>品番</p>
+<%= f.text_field :itemNumber, placeholder: "品番", class: "form-control"  %>
+</div>
+<div class="form-group">
+<p>http://image.rakuten.co.jp/auc-rodeo/cabinet/</p>
+<%= f.text_field :imgURL, placeholder: "画像フォルダ/品番", class: "form-control"  %>
+<p>-0.jpg</p>
+</div>
+<div id="shouhin">
+<p>商品名<div class="form-group"><%= f.text_field :itemName, placeholder: "商品名", class: "form-control"  %></div></p>
+<p>商品説明<div class="form-group"><%= f.text_area :itemDescription, placeholder: "商品説明", class: "form-control"  %></div></p><br>
+</div>
+
+<div id="shouhin_main" >
+<div id="shouhin_main_left">
+    
+<!--//ブランド //-->
+<p id="m-brand">BRAND</p>
+<%= render 'items/othertemps/brandlinksAR',  var:params[:brand_id] %>
+ 
+<!--//詳細 //-->
+<p id="m-detail">DETAIL</p>
+<p><div class="form-group"><%= f.text_area :itemDetail, placeholder: "商品詳細、HTML可", class: "form-control"  %></div></p>
+
+<!--//モデル//-->
+<p id="m-model">MODEL</p>
+<div class="size_person" >
+<img src="http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff02.png" style="width:50px; height:55px;float:left;margin:0px 5px 0px 0px;" /> 
+モデル: Hide<br>
+身長: 170cm<br>
+体重: 62kg<br>
+サイズ:<br>
+<div class="form-group"><%= f.text_field :modelSizeA, placeholder: "モデルサイズ", class: "form-control"  %></div>
+</div>
+<div class="size_person" >
+<img src="http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff02.png" style="width:50px; height:55px;float:left;margin:0px 5px 0px 0px;" /> 
+モデル: Pierre<br>
+身長: 173cm<br>
+体重: 54kg<br>
+サイズ:<br> 
+<div class="form-group"><%= f.text_field :modelSizeB, placeholder: "モデルサイズ", class: "form-control"  %></div>
+</div>
+<!--//関連 //-->
+<div id="clear"></div>
+<br><br>
+<p id="m-total">TOTAL</p>
+モデル着用商品<br><br><br>
+<div class="form-group">
+<p>着用商品＃1-1</p>
+<%= f.text_field :totalItemsNameA, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLA, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃1-2</p>
+<%= f.text_field :totalItemsNameB, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLB, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃1-3</p>
+<%= f.text_field :totalItemsNameC, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLC, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃2-1</p>
+<%= f.text_field :totalItemsNameD, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLD, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃2-2</p>
+<%= f.text_field :totalItemsNameE, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLE, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃2-3</p>
+<%= f.text_field :totalItemsNameF, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLF, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃3-1</p>
+<%= f.text_field :totalItemsNameG, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLG, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃3-2</p>
+<%= f.text_field :totalItemsNameH, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLH, placeholder: "品番", class: "form-control"  %><br><br>
+<p>着用商品＃3-3</p>
+<%= f.text_field :totalItemsNameI, placeholder: "表示名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLI, placeholder: "品番", class: "form-control"  %><br><br>
+</div>
+</div>
+<br>
+
+
+<!--//商品説明「右」ここから //-->
+<div id="shouhin_main_right">
+
+<!--//サイズ表//-->
+<p id="m-size">SIZE</p>
+<%= render 'items/category/sizechart',  var:params[:category], f:f %>
+
+
+
+<!--//素材生産加工など//-->
+<p id="m-mate">MATERIAL</p>
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" STYLE="height: 60px; border-collapse: separate;">
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">素材</td>
+<td><%= f.text_area :material, placeholder: "商品詳細、HTML可", class: "form-control"  %>
+</td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">生産</td>
+<td><%= f.text_field :madein, placeholder: "", class: "form-control"  %></td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">加工</td>
+<td><%= f.text_area :process, placeholder: "商品詳細、HTML可", class: "form-control"  %>
+</td>
+</tr>
+</table>
+</div>
+
+<div id="shouhin_main_bottom">
+
+
+
+<!--// 再入荷等ここから //-->
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/bana/notes.jpg" style="width:835px; padding-top:18px;margin-bottom:30px;">
+</div>
+
+<!--// ブランドリンクここから //-->
+<div id="more" >
+<%= render 'items/othertemps/brandlinksBR',  var:params[:brand_id] %>
+</div>
+<!--showcontainer-->
+</div>
+
+<%= f.hidden_field :brand_id, :value => params[:brand_id] %>
+<%= f.hidden_field :category, :value => params[:category] %> 
+<style>
+.submitButtons {
+position:fixed;
+right:30px; 
+top:100px;
+width:150px;
+}
+.submitButtons .btn {
+width:100%;	
+margin:5px;
+}
+.field_with_errors{
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #f00;
+}
+</style>
+
+<!--保存ボタンここ-->
+
+<div class="submitButtons"><%= f.submit "保存", class: "btn btn-danger" %></div>
+
+<% end %>
+

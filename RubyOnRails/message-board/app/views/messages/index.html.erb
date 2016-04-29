@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--IE表示崩れを防ぐ-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--レスポンシヴ対応-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--SEOキーワード-->
+    <meta name="keywords" content="Lesson 6 Message Board">
+    <!--SEOサイト説明-->
+    <meta name="description" content="Lesson 6 Message Board">
+    <!--ページタイトル-->
+    <title>Lesson 6 Message Board</title>
+    <!--外部CSSファイルの読みこみここから-->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  　<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  　<%= csrf_meta_tags %>
+    <!--スクリプトここから-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--注意、必ずBootstrapのJSより、jQueryを先に読み込むこと。-->
+  </head>
+  <body>
+    <section class="nva-position-fixed">
+      <nav class="navbar navbar-default">
+        <div class="menu row">
+          <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#site-menu" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          </div>
+          <div class="menu__logo col-md-3"> <a href="http://sample.com"><img src="http://placehold.jp/200x35.png"></a></div>
+          <div class="menu__list col-md-9"> 
+            <div id="site-menu" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li> <a href="#">
+                    <p>会社概要	</p></a></li>
+                <li> <a href="#">
+                    <p>事業情報</p></a></li>
+                <li> <a href="#">
+                    <p>ニュース</p></a></li>
+                <li class="active"> <a href="#">
+                    <p>お問い合わせ</p></a></li>
+                <li class="dropdown"> <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">
+                    <p>採用情報 <span class="caret"></span></p></a>
+                  <ul role="menu" class="dropdown-menu">
+                    <li><a href="#">新卒採用</a></li>
+                    <li><a href="#">キャリア採用</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <div class="wrapper u-pt-100">
+      <section class="page-title u-mb-50">
+        <h1>お問い合わせ</h1>
+      </section>
+      <section class="u-mb-100">
+        <article class="contact-mail clear row">
+          <figure class="contact-mail__image col-md-3 text-center"><span class="glyphicon glyphicon-comment"></span>
+            <figcaption>チャット</figcaption>
+          </figure>
+          <div class="contact-mail__texts col-md-9"> 
+            <h1 class="u-mb-30">チャットによるお問い合わせ</h1>
+            <section class="chat-history row u-mb-20">
+              <h2 class="u-mb-20">チャット履歴</h2>
+                <% @messages.each do |message| %>
+                <!--名前ここ-->
+                    <p class="name col-md-2">
+                        <%= message.name %>
+                    </p>
+                <!--内容ここ-->
+                    <p class="contents col-md-10">
+                        <%= message.body %> |
+                        <%= link_to "edit" , edit_message_path(message) %> |
+                        <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+
+                    </p>
+                <% end %>
+             
+            </section>
+  
+            
+            <% #部分テンプレートを読み込んでいる %>
+            <%= render 'form' %>
+            
+          </div>
+        </article>
+      </section>
+      <section class="u-mb-100">
+        <article class="contact-phone clear row">
+          <figure class="contact-phone__image col-md-3 text-center u-mb-30"><span class="glyphicon glyphicon-earphone u-mb-10"></span>
+            <figcaption>お電話</figcaption>
+          </figure>
+          <div class="contact-phone__texts col-md-9"> 
+            <h1 class="u-mb-30"> お電話によるお問い合わせ</h1>
+            <p class="u-mb-20"> 該当する内容の電話番号にお掛けください。</p>
+            <div class="texts__contacts">
+              <ul>
+                <li>
+                  <h2>内容</h2>
+                </li>
+                <li>
+                  <h2>電話番号</h2>
+                </li>
+                <li>
+                  <h2>担当</h2>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>サービスに関するお問い合わせ</p>
+                </li>
+                <li>
+                  <p>00-0000-0000</p>
+                </li>
+                <li>
+                  <p>鈴木</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>採用に関するお問い合わせ</p>
+                </li>
+                <li>
+                  <p>00-0000-0000</p>
+                </li>
+                <li>
+                  <p>増田</p>
+                </li>
+              </ul>
+              <ul class="u-mb-20"> 
+                <li>
+                  <p>取材に関するお問い合わせ</p>
+                </li>
+                <li>
+                  <p>00-0000-0000</p>
+                </li>
+                <li>
+                  <p>遠山</p>
+                </li>
+              </ul>
+            </div>
+            <div class="texts__open-time">
+              <h2> <span class="glyphicon glyphicon-info-sign"></span>営業時間　平日１０時〜１９時（土日、祝日は対応しておりません。）</h2>
+            </div>
+          </div>
+        </article>
+      </section>
+      <ection class="u-mb-100">
+        <article class="contact-mail clear row">
+          <figure class="contact-mail__image col-md-3 text-center"><span class="glyphicon glyphicon-envelope"></span>
+            <figcaption>メール</figcaption>
+          </figure>
+          <div class="contact-mail__texts col-md-9"> 
+            <h1 class="u-mb-30">メールによるお問い合わせ</h1>
+            <p class="u-mb-20">
+              プライバシーポリシーを五感九人、ご同意の上、送信ボタンを押してください。
+              お問い合わせの回答は、受付日から３日営業日以内をめどにご返信差し上げます。
+            </p>
+            <div class="texts__contacts">
+              <ul>
+                <li>
+                  <h2>会社名</h2>
+                </li>
+                <li>
+                  <input id="inputCompanu" type="text" placeholder="例）サンプル株式会社" class="form-control">
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <h2>氏名</h2>
+                </li>
+                <li>
+                  <input id="inputName" type="text" placeholder="例）山田太郎" class="form-control">
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <h2>メールアドレス</h2>
+                </li>
+                <li>
+                  <input id="inputEmail" type="text" placeholder="例）yamadataro@taro.co.jp" class="form-control">
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <h2>電話</h2>
+                </li>
+                <li>
+                  <input id="inputTel" type="text" placeholder="0312345678" class="form-control">
+                </li>
+              </ul>
+              <ul class="u-mb-20">
+                <li>
+                  <h2 class="contacts__quesion">お問い合わせ内容</h2>
+                </li>
+                <li>
+                  <textarea id="inputContent" type="text" rows="6" placeholder="具体的にお書きください" class="form-control"></textarea>
+                </li>
+              </ul>
+            </div>
+            <div class="texts__submit-button">
+              <label class="u-mb-20">
+                <input type="checkbox">プライバシーポリシーに同意
+              </label>
+              <div class="contact-mail__submit">
+                <button type="submit" class="btn btn-default btn-default btn-block">お問い合わせを送信</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </ection>
+    </div>
+    <section>
+      <footer class="clear row"> 
+        <div class="copyright col-md-12">
+          <p>&copy; 2015 Sample Inc.</p>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
+<!--修正箇所-->
+<!--へっだー-->
+<!--レスポンシヴ時のセンター寄せなど。-->
+
+
+
+

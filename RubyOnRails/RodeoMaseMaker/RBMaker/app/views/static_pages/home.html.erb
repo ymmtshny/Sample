@@ -1,0 +1,89 @@
+<div class="wrapper　row">
+	<div class="col-sm-12 text-center">
+    	<header>
+        	<img src="http://www.aun-wa.com/images/logo.png" alt="rodeo bros">
+        </header>
+    </div>
+	<div class="menu col-sm-3">
+    <div class="panel panel-primary">
+      	<div class="panel-heading">ログイン</div>
+    	<form>
+  			<div class="form-group col-sm-12 username">
+    			<label for="exampleInputEmail1">ユーザーネーム</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="User Name">
+  			</div>
+  			<div class="form-group col-sm-12">
+                <label for="exampleInputPassword1">パスワード</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+			
+			<div class="button-center">
+          	<button type="submit" class="btn btn-success ">ログイン</button>
+            </div>
+        </form>
+       	</div>
+        
+        <div class="panel panel-primary">
+      	<div class="panel-heading">商品データベース</div>
+      	<div class="panel-body row">
+ 
+            <div class="col-sm-12">
+            <p>品番検索</p>
+    			<div class="input-group">
+      				<input type="text" class="form-control" placeholder="Search for...">
+      				<span class="input-group-btn">
+        				<button class="btn btn-success" type="button">検索</button>
+      				</span>
+    			</div><!-- /input-group -->
+  			</div><!-- /.col-lg-6 -->
+            
+            <div class="col-sm-12">
+            <p>ブランド検索</p>
+    			<div class="input-group">
+      				<input type="text" class="form-control" placeholder="Search for...">
+      				<span class="input-group-btn">
+        				<button class="btn btn-success" type="button">検索</button>
+      				</span>
+    			</div><!-- /input-group -->
+  			</div><!-- /.col-lg-6 -->
+     
+            <div class="button-center"><button type="button" class="btn btn-success">すべて</button></div>
+            <div class="button-center"><button type="button" class="btn btn-success">編集</button></div>
+        </div>
+      </div>
+	</div>
+    <div class="main-content col-sm-9 ">
+    <div class="panel panel-primary">
+      <div class="panel-heading">商品のベース作成</div>
+      <div class="panel-body">
+      	<p>以下から選択してください。</p>
+    	<ol class="breadcrumb">
+  			<li class="active">BUZZ RICKSON'S</li>
+            <li><%= link_to "アウター", 'new_buzz_outer' %></li>
+  			    <li><%= link_to "トップス", 'new_buzz_tops' %></li>
+            <li><%= link_to "ラグラン", 'new_buzz_ragran' %></li>
+            <li><%= link_to "ボトムス", 'new_buzz_bottoms' %></li>
+            <li><%= link_to "その他", 'new_buzz_other' %></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">SUGAR CANE</li>
+            <li><%= link_to "アウター", 'new_sugar_outer' %></li>
+  			<li><a href="#">トップス</a></li>
+            <li><a href="#">ラグラン</a></li>
+            <li><a href="#">ボトムス</a></li>
+            <li><a href="#">その他</a></li>
+		</ol>
+        <ol class="breadcrumb">
+  			<li class="active">TEDMAN</li>
+            <li><a href="#">アウター</a></li>
+  			<li><a href="#">トップス</a></li>
+            <li><a href="#">ラグラン</a></li>
+            <li><a href="#">ボトムス</a></li>
+            <li><a href="#">その他</a></li>
+		</ol>
+        
+        <img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/buzzricksons/br11554-1.jpg" width="330px">
+	  </div>
+      </div>
+    </div>
+</div>

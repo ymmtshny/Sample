@@ -1,0 +1,179 @@
+
+<%= render 'items/brand-concept/buzzricksons' %>
+
+<%= @item.itemNumber %>
+<%= render 'items/images' %>
+
+
+
+
+ <br><br>
+<!--//商品説明文章ここから //-->
+<div id="shouhin">
+<p><%= @item.itemName %></p>
+<p><%= @item.itemDescription %></p>
+<br>
+</div>
+
+<!--//商品説明ここから //-->
+<div id="shouhin_main" >
+<!--//商品説明「左」ここから //-->
+<div id="shouhin_main_left">
+<!--//ブランド //-->
+<p id="m-brand">BRAND</p>
+<p><a href="http://store.shopping.yahoo.co.jp/rodeobros/buzzrickso.html" target="_top">BUZZ RICKSON'S (バズリクソンズ)</a></p>
+
+<!--//詳細 //-->
+<p id="m-detail">DETAIL</p>
+<p><div class="form-group"><%= @item.itemDetail %></div></p>
+
+<!--//モデル//-->
+<p id="m-model">MODEL</p>
+<div class="size_person" >
+<img src="http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff02.png" style="width:50px; height:55px;float:left;margin:0px 5px 0px 0px;" /> 
+モデル: Hide<br>
+身長: 170cm<br>
+体重: 62kg<br>
+サイズ: <%= @item.modelSizeA %>
+</div>
+<!--//関連 //-->
+<div id="clear">
+<p id="m-total">TOTAL</p>
+モデル着用商品<br />
+Hide: <%= @item.totalItemsNameA %><%= @item.totalItemsURLA %>
+</div>
+
+
+<%= @item.modelSizeB %>
+<%= @item.totalItemsNameB %>
+<%= @item.totalItemsURLB %>
+<%= @item.totalItemsNameC %>
+<%= @item.totalItemsURLC %>
+
+</div><!--//左側ここまで//-->
+
+<!--//商品説明「右」ここから //-->
+<div id="shouhin_main_right">
+<!--//サイズ表//-->
+<p id="m-size">SIZE</p>
+
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" style="height: 100px; border-collapse: separate;">
+
+<tr align="center" bgcolor="EEEEEE">
+<td width="20%">サイズ(cm)</td>
+<td width="16%">身幅</td>
+<td width="16%">着丈</td>
+<td width="16%">肩幅</td>
+<td width="16%">袖丈</td>
+<td width="16%">重量(g)</td>
+</tr>
+
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= @item.size00 %></td>
+<td><%= @item.size01 %></td>
+<td><%= @item.size02 %></td>
+<td><%= @item.size03 %></td>
+<td><%= @item.size04 %></td>
+<td><%= @item.size05 %></td>
+</tr>
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= @item.size10 %></td>
+<td><%= @item.size11 %></td>
+<td><%= @item.size12 %></td>
+<td><%= @item.size13 %></td>
+<td><%= @item.size14 %></td>
+<td><%= @item.size15 %></td>
+</tr>
+
+</table>
+<p>サイズは若干前後します。
+<a href="http://image.rakuten.co.jp/auc-rodeo/cabinet/size_long_tee.jpg" target="_blank">サイズの測り方</a></p>
+
+<%= @item.size06 %>
+<%= @item.size07 %>
+<%= @item.size16 %>
+<%= @item.size17 %>
+<!--//素材生産加工など//-->
+<p id="m-mate">MATERIAL</p>
+
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" STYLE="height: 60px; border-collapse: separate;">
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">素材</td>
+<td><%= @item.material %></td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">生産</td>
+<td><%= @item.madein %></td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">加工</td>
+<td><%= @item.process %></td>
+</tr>
+</table>
+
+</div>
+</div>
+
+
+<style>
+  	.submitButtons {
+		position:fixed;
+		 right:30px; 
+		 bottom:0px;
+		 width:150px;
+		 height:600px;
+	}
+	
+	.submitButtons .btn {
+		width:100%;	
+		margin:5px;
+	}
+	
+	.deletebutton {
+	    position:absolute;
+	    bottom: 0;
+
+	}
+	
+  </style>
+  
+  <div class="submitButtons">
+  <%= link_to "楽天PC", output_rakutenPC_item_path, class: "btn btn-primary" %>
+  <%= link_to "楽天SP", output_rakutenSP_item_path, class: "btn btn-primary" %>
+  <%= link_to "楽天モバイル", output_rakutenMobile_item_path, class: "btn btn-primary" %>
+  <%= link_to "ヤフーPC", output_YahooPC_item_path, class: "btn btn-primary" %>
+  <%= link_to "公式PC", output_OfficialPC_item_path, class: "btn btn-primary" %>
+  <%= link_to "DeNA", output_DeNA_item_path, class: "btn btn-primary" %>
+ <br>
+ 
+ 
+    <%= link_to "編集", edit_item_path, class:"btn btn-primary" %>  
+    <%= link_to "削除"  , @item, method: :delete, data: { confirm: '削除してもよろしいですか？' }, class:"btn btn-danger" %>
+        
+    
+    
+  </div>
+
+
+
+
+<!--<xmp>-->
+    
+    <!--商品メイン画像ここから-->
+<!--<div class="easyzoom-wrap">-->
+<!--<div class="arrow" id="prev"><img src=-->
+<!--"assets_20151105/img/item_left.png"></div>-->
+<!--<div class="easyzoom easyzoom--adjacent easyzoom--with-thumbnails">-->
+<!--ZOOM画像URL-->
+<!--<a href=-->
+<!--"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">-->
+<!--メイン画像-->
+<!--<img alt="" class="easyzoom-main" height="600" src=-->
+<!--"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg"-->
+<!--width="778"></a>-->
+<!--</div>-->
+<!--<div class="arrow" id="next"><img src=-->
+<!--"assets_20151105/img/item_right.png"></div>-->
+<!--</div>-->
+<!--商品メイン画像ここまで-->
+<!--</xmp>-->

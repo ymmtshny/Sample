@@ -1,0 +1,314 @@
+<h1>EDIT</h1>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/easyzoom.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://www.rakuten.ne.jp/gold/auc-rodeo/css/itempage.css">
+  <link href="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/css/itempage.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <div class="item-wrapper">
+    <!--ブランド説明ここ-->
+    <%= render 'items/brand-concept/buzzricksons' %>
+    <!--商品画像ここ-->
+    <%= @item.itemNumber %>
+<!--商品画像ここから-->
+<!--商品メイン画像ここから-->
+<div class="easyzoom-wrap">
+<div class="arrow" id="prev"><img src=
+"assets_20151105/img/item_left.png"></div>
+<div class="easyzoom easyzoom--adjacent easyzoom--with-thumbnails">
+<!--ZOOM画像URL-->
+<a href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+<!--メイン画像-->
+<img alt="" class="easyzoom-main" height="600" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg"
+width="778"></a>
+</div>
+<div class="arrow" id="next"><img src=
+"assets_20151105/img/item_right.png"></div>
+</div>
+<!--商品メイン画像ここまで-->
+<!--商品サムネイル画像ここから-->
+<ul class="thumbnails">
+<!--画像＃０１-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg">
+</a>
+</li><!--画像＃０２-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg">
+</a>
+</li><!--画像＃０３-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg">
+</a>
+</li><!--画像＃０４-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg">
+</a>
+</li>
+<!--画像＃０５-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_1.jpg">
+</a>
+</li><!--画像＃０６-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_2.jpg">
+</a>
+</li><!--画像＃０７-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_3.jpg">
+</a>
+</li><!--画像＃０８-->
+<li>
+<!--ZOOM画像-->
+<a class="thum-images" data-standard=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg"
+href=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg">
+<!--サムネイル画像-->
+<img alt="" src=
+"http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>_4.jpg">
+</a>
+</li>
+</ul><!--商品サムネイル画像ここまで-->
+<!--ON/OFFボタンここから-->
+<div id="buttoms">
+<span>拡大表示</span> <button class="enable" id="easyzoom-on">ON</button>
+<button id="easyzoom-off">OFF</button>
+</div><!--ON/OFFボタンここまで--><!--商品画像ここまで-->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js">
+</script>
+<script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/lib/easyzoom.js">
+</script>
+<script src="http://www.rakuten.ne.jp/gold/auc-rodeo/items/assets_20151105/js/item.js">
+</script>
+
+    
+  
+
+
+ 
+<!--//商品説明文章ここから //-->
+<%= form_for(@item) do |f| %>
+<div class="form-group">
+    <%= f.text_field :itemNumber, placeholder: "品番", class: "form-control"  %>
+</div>
+<div class="form-group">
+    <%= f.text_field :imgURL, placeholder: "http://image.rakuten.co.jp/auc-rodeo/cabinet/vanson/画像フォルダ/品番-0.jpg", class: "form-control"  %>
+</div>
+<div id="shouhin">
+<p>
+　<div class="form-group">
+    <%= f.text_field :itemName, placeholder: "商品名", class: "form-control"  %>
+  </div>
+  </p>
+<p>
+	<div class="form-group">
+　　　　<%= f.text_area :itemDescription, placeholder: "商品説明", class: "form-control"  %>
+　　</div>
+</p>
+<br>
+</div>
+
+
+<!--//商品説明「左」ここから //-->
+<div id="shouhin_main" >
+<div id="shouhin_main_left">
+
+
+<!--//ブランド //-->
+
+<!--//ブランド //-->
+<p id="m-brand">BRAND</p>
+<p><a href="http://store.shopping.yahoo.co.jp/rodeobros/buzzrickso.html" target="_top">BUZZ RICKSON'S (バズリクソンズ)</a></p>
+ 
+<!--//詳細 //-->
+<p id="m-detail">DETAIL</p>
+<p><div class="form-group">
+    <%= f.text_area :itemDetail, placeholder: "商品詳細、HTML可", class: "form-control"  %>
+</div></p>
+
+<!--//モデル//-->
+<p id="m-model">MODEL</p>
+
+<div class="size_person" >
+<img src="http://www.rakuten.ne.jp/gold/auc-rodeo/staff_img/staff02.png" style="width:50px; height:55px;float:left;margin:0px 5px 0px 0px;" /> 
+モデル: Hide<br>
+身長: 170cm<br>
+体重: 62kg<br>
+サイズ: <div class="form-group"><%= f.text_field :modelSizeA, placeholder: "モデルサイズ", class: "form-control"  %></div>
+</div>
+<!--//関連 //-->
+<div id="clear">
+<p id="m-total">TOTAL</p>
+モデル着用商品<br />
+Hide: 
+<div class="form-group">
+<%= f.text_field :totalItemsNameA, placeholder: "1着用商品、品名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLA, placeholder: "1着用商品、品番", class: "form-control"  %>
+<%= f.text_field :totalItemsNameB, placeholder: "2着用商品、品名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLB, placeholder: "2着用商品、品番", class: "form-control"  %>
+<%= f.text_field :totalItemsNameC, placeholder: "3着用商品、品名", class: "form-control"  %>
+<%= f.text_field :totalItemsURLC, placeholder: "3着用商品、品番", class: "form-control"  %>
+</div>
+</div>
+<br />
+
+</div>
+<br />
+
+
+<!--//商品説明「右」ここから //-->
+<div id="shouhin_main_right">
+
+<!--//サイズ表//-->
+<p id="m-size">SIZE</p>
+
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" style="height: 100px; border-collapse: separate;">
+
+<tr align="center" bgcolor="EEEEEE">
+<td width="20%">サイズ(cm)</td>
+<td width="16%">身幅</td>
+<td width="16%">着丈</td>
+<td width="16%">肩幅</td>
+<td width="16%">袖丈</td>
+<td width="16%">重量(g)</td>
+</tr>
+
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= f.text_field :size00, placeholder: "サイズ", class: "form-control"  %></td>
+<td><%= f.text_field :size01, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size02, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size03, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size04, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size05, placeholder: "", class: "form-control"  %></td>
+</tr>
+<tr align="center" bgcolor="FFFFFF">
+<td bgcolor="EEEEEE" width="60"><%= f.text_field :size10, placeholder: "サイズ", class: "form-control"  %></td>
+<td><%= f.text_field :size11, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size12, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size13, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size14, placeholder: "", class: "form-control"  %></td>
+<td><%= f.text_field :size15, placeholder: "", class: "form-control"  %></td>
+</tr>
+
+</table>
+<p>サイズは若干前後します。
+<a href="http://shopping.c.yimg.jp/lib/rodeobros/size_long_tee.jpg" target="_blank">サイズの測り方</a></p>
+
+<!--//素材生産加工など//-->
+<p id="m-mate">MATERIAL</p>
+
+<table border="0" width="435" cellspacing="1" cellpadding="5" bgcolor="C0C0C0" STYLE="height: 60px; border-collapse: separate;">
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">素材</td>
+<td><%= f.text_area :material, placeholder: "商品詳細、HTML可", class: "form-control"  %>
+</td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">生産</td>
+<td><%= f.text_field :madein, placeholder: "", class: "form-control"  %></td>
+</tr>
+<tr bgcolor="ffffff">
+<td align="center" bgcolor="EEEEEE" width="20%">加工</td>
+<td><%= f.text_area :process, placeholder: "商品詳細、HTML可", class: "form-control"  %>
+</td>
+</tr>
+</table>
+</div>
+
+
+<div id="shouhin_main_bottom">
+
+
+
+<!--// 再入荷等ここから //-->
+
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/bana/notes.jpg" style="width:835px; padding-top:18px;margin-bottom:30px;">
+
+
+
+</div>
+
+<div id="more" >
+<a href="http://store.shopping.yahoo.co.jp/rodeobros/buzzrickso.html" target="_top">
+<div>
+BUZZ RICKSON'S 商品一覧へ
+</div>
+</a>
+</div>
+  
+
+<style>
+  	.submitButtons {
+		position:fixed;
+		 right:30px; 
+		 bottom:0px;
+		 width:150px;
+		 height:600px;
+	}
+	
+	.submitButtons .btn {
+		width:100%;	
+		margin:5px;
+	}
+	
+	
+</style>
+
+  <div class="submitButtons">
+       <%= link_to "更新"  , @item, method: :put , class:"btn btn-danger" %>
+  </div>
+
+<% end %>

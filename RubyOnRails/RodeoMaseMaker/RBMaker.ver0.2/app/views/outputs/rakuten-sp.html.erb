@@ -1,0 +1,121 @@
+<div class="showcontainer">
+
+<center>
+<h1>楽天スマフォ説明文</h1>
+<textarea rows="40" cols="100">
+<!--送料無料-->
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td align="center">
+<br>
+送料無料 ＋ 土日祝日も営業<br><br>
+15:00 までのご注文は 即日配送
+<br><br></td>
+</tr>
+
+<!--商品画像-->
+<tr>
+<td>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-1.jpg" width="100%">
+<%= @item.details01 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-2.jpg" width="100%">
+<%= @item.details02 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-3.jpg" width="100%">
+<%= @item.details03 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-4.jpg" width="100%">
+<%= @item.details04 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-5.jpg" width="100%">
+<%= @item.details05 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-6.jpg" width="100%">
+<%= @item.details06 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-7.jpg" width="100%">
+<%= @item.details07 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-8.jpg" width="100%">
+<%= @item.details08 %><br><br><br>
+<img src="http://image.rakuten.co.jp/auc-rodeo/cabinet/<%= @item.imgURL %>-9.jpg" width="100%">
+<%= @item.details09 %><br><br><br>
+</td>
+</tr>
+<tr align="center"><td></td></tr>
+<tr><td align="center">&nbsp;</td></tr>
+
+<!--//商品説明文章ここから //-->
+<tr><td><%= @item.itemName %><br><br>
+<%= @item.itemDescription %></td></tr>
+
+<!--ブランド-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■BRAND</font></td></tr>
+<tr><td><%= render 'items/othertemps/brandlinksAR',  var:params[:brand_id] %></td></tr>
+
+
+<!--この条件文により値が空なら出力されない-->
+<% unless @item.itemDetail.blank? %>
+<!--詳細説明-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■DETAIL</font></td></tr>
+<tr><td><%= @item.itemDetail %></td></tr>
+<% end %>
+
+<!--モデル情報-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■MODEL</font></td></tr>
+<tr><td>Hide/ 170cm/62kg サイズ: <%= @item.modelSizeA %></td></tr>
+
+<!--関連-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■TOTAL</font></td></tr>
+<tr><td> 
+モデル着用商品 Hide:<% unless @item.totalItemsURLA.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLA %>/"><%= @item.totalItemsNameA %></a><% end %>
+<% unless @item.totalItemsURLB.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLB %>/"><%= @item.totalItemsNameB %></a><% end %>
+<% unless @item.totalItemsURLC.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLC %>/"><%= @item.totalItemsNameC %></a><% end %>
+<br><br>
+モデル着用商品 Hide:<% unless @item.totalItemsURLD.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLD %>/"><%= @item.totalItemsNameD %></a><% end %>
+<% unless @item.totalItemsURLE.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLE %>/"><%= @item.totalItemsNameE %></a><% end %>
+<% unless @item.totalItemsURLF.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLF %>/"><%= @item.totalItemsNameF %></a><% end %>
+<br><br>
+モデル着用商品 Hide:<% unless @item.totalItemsURLG.blank? %><a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLG %>/"><%= @item.totalItemsNameG %></a><% end %>
+<% unless @item.totalItemsURLH.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLH %>/"><%= @item.totalItemsNameH %></a><% end %>
+<% unless @item.totalItemsURLI.blank? %> / <a href="http://item.rakuten.co.jp/auc-rodeo/<%= @item.totalItemsURLI %>/"><%= @item.totalItemsNameI %></a><% end %>
+</td></tr>
+
+<!--素材、生産、加工-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■MATERIAL</font></td></tr>
+<tr><td>
+  <table border="0" width="100%" cellspacing="1" cellpadding="5" bgcolor="C0C0C0">
+  <% unless @item.material.blank? %>
+    <tr bgcolor="ffffff">
+    <td align="center" bgcolor="EEEEEE" width="20%">素材</td>
+    <td><%= @item.material %></td>
+    </tr>
+  <% end %>
+  
+  <% unless @item.madein.blank? %>
+  <tr bgcolor="ffffff">
+  <td align="center" bgcolor="EEEEEE" width="20%">生産</td>
+  <td><%= @item.madein %></td>
+  </tr>
+  <% end %>
+  
+  <% unless @item.process.blank? %>
+  <tr bgcolor="ffffff">
+  <td align="center" bgcolor="EEEEEE" width="20%">加工</td>
+  <td><%= @item.process %></td>
+  </tr>
+  <% end %>
+  
+  </table>
+</td></tr>
+
+<!--サイズ表-->
+<tr><td bgcolor="#000000"><font color="#FFFFFF">■SIZE</font></td></tr>
+<tr><td><%= render 'items/categoryout/sizechartout', var:params[:category] %></td></tr>
+</table>
+
+
+
+<br>
+<br>
+<%= render 'items/othertemps/brandlinksCR',  var:params[:brand_id] %>
+
+
+</textarea>
+</center>
+<!--showcontainer-->
+</div>
