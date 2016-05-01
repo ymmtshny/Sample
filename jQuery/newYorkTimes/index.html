@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
+    <meta name="keywords" content="IRON HEART,アイアンハート,BUZZ RICKSON'S,バズリクソンズ,SUGAR CANE,シュガーケーン,MISTER FREEDOM,ミスターフリーダム,TEDMAN,テッドマン,KAMINARI,カミナリ,鬼デニム,ONI DENIM,VANSON,バンソン,アメカジ,セレクトショップ,メンズ,ファッション">
+    <meta name="description" content="【全品送料無料】創業から40年の老舗セレクトショップ、ロデオブロス（RODEO BROS）">
+    <title>NEW YORK TIMES API</title>
+    <link rel="shortcut icon" href="http://www.rakuten.ne.jp/gold/auc-rodeo/images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body></body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.min.js"></script>
+  <script></script>
+  <script>
+    new Vue({
+    	el: '#Vue',
+    	//template: '#VueTopsTemplate',
+    
+    	data: {
+    		Souvenir: []
+    	},
+    	
+    	created: function() {
+    		
+    		var _this = this;
+    		//get json file
+    		$.ajax({
+    			url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=tokyo&begin_date=20150101&sort=newest&api-key=sample-key', //index.jadeに対してのURL
+    			dataType: 'json'
+    		}).done(function(data) {
+    			
+    			 console.log(data.response.docs); 
+    
+    			 for (i = 0; i < data.response.docs.length; i++) { 
+    			 		console.log(data.response.docs[i].web_url); 
+    			 		console.log(data.response.docs[i].headline.main); 
+    					console.log(data.response.docs[i].lead_paragraph); 
+    					console.log(data.response.docs[i].word_count); 
+    					console.log(data.response.docs[i].pub_date); 
+    					//console.log(data.response.docs[i].multimedia[0].url); 
+    			}
+    			
+    
+    		});
+    
+    	}
+    });
+  </script>
+</html>

@@ -1,0 +1,38 @@
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.min.js")
+script.
+	
+script.
+	new Vue({
+		el: '#Vue',
+		//template: '#VueTopsTemplate',
+
+		data: {
+			Souvenir: []
+		},
+		
+		created: function() {
+			
+			var _this = this;
+			//get json file
+			$.ajax({
+				url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=tokyo&begin_date=20150101&sort=newest&api-key=sample-key', //index.jadeに対してのURL
+				dataType: 'json'
+			}).done(function(data) {
+				
+				 console.log(data.response.docs); 
+
+				 for (i = 0; i < data.response.docs.length; i++) { 
+				 		console.log(data.response.docs[i].web_url); 
+				 		console.log(data.response.docs[i].headline.main); 
+						console.log(data.response.docs[i].lead_paragraph); 
+						console.log(data.response.docs[i].word_count); 
+						console.log(data.response.docs[i].pub_date); 
+						//console.log(data.response.docs[i].multimedia[0].url); 
+				}
+				
+
+			});
+
+		}
+	});
