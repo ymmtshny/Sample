@@ -10,7 +10,9 @@
     <meta name="viewport" content="initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
-  <body></body>
+  <body>
+    <div class="articles"></div>
+  </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.min.js"></script>
   <script></script>
@@ -28,7 +30,7 @@
     		var _this = this;
     		//get json file
     		$.ajax({
-    			url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=tokyo&begin_date=20150101&sort=newest&api-key=sample-key', //index.jadeに対してのURL
+    			url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=tokyo+food&begin_date=20150101&sort=newest&api-key=sample-key', //index.jadeに対してのURL
     			dataType: 'json'
     		}).done(function(data) {
     			
@@ -40,12 +42,15 @@
     					console.log(data.response.docs[i].lead_paragraph); 
     					console.log(data.response.docs[i].word_count); 
     					console.log(data.response.docs[i].pub_date); 
-    					//console.log(data.response.docs[i].multimedia[0].url); 
+    					if(data.response.docs[i].multimedia.length > 0) {
+    						console.log(data.response.docs[i].multimedia[0].url); 
+    
+    					$(".articles").append(
+    						$("<div>").append($("<a>").attr("href", data.response.docs[i].web_url).attr("target", "_blank").append($("<h1>").text(data.response.docs[i].headline.main)).append($("<p>").text("文字数 "+data.response.docs[i].word_count)).append($("<img>").attr("src", "http://www.nytimes.com/" + data.response.docs[i].multimedia[0].url))));
+    
+    					}
     			}
-    			
-    
     		});
-    
     	}
     });
   </script>
