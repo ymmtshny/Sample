@@ -18,7 +18,6 @@ class StartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
         startButton.addTarget(self, action: #selector(StartViewController.tapStartButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
     }

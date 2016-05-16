@@ -18,18 +18,19 @@ class QuizData: NSObject {
         
         super.init()
         
-        
         loadCSVData()
-        createOneQuiz()
         
     }
     
     func createOneQuiz (){
         
+        quiz.removeAll()
+        
         let questionNumber = getRandomNumber()
         let dummyAnsNumber1 = getRandomNumber()
         let dummyAnsNumber2 = getRandomNumber()
         let dummyAnsNumber3 = getRandomNumber()
+        
         quiz.append(englishArray[questionNumber])
         quiz.append(japaneseArray[questionNumber])
         quiz.append(japaneseArray[dummyAnsNumber1])
@@ -52,10 +53,11 @@ class QuizData: NSObject {
     }
     
     
-    func checkCorrect(eng: String, jp :String) -> Bool {
+    func checkCorrect(eng:String, jp:String) -> Bool {
         
-        let idxOfEng = getIndexOfEnglishArray(eng)
-        if(jp == japaneseArray[idxOfEng + 1]) {
+        let idx = getIndexOfEnglishArray(eng)
+        
+        if(jp == japaneseArray[idx]) {
             
             return true
             
@@ -105,7 +107,6 @@ class QuizData: NSObject {
             
             do {
                 if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
-                    
                     
                     let array = csvStringData.characters.split{$0 == ","}.map(String.init)
                     

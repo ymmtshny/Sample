@@ -18,6 +18,7 @@
 		C562C8E11CE88E6C00C1567F /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C562C8DF1CE88E6C00C1567F /* ResultViewController.xib */; };
 		C562C8E81CE897A100C1567F /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8E71CE897A100C1567F /* QuizData.swift */; };
 		C562C8F01CE8A1DA00C1567F /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C562C8EF1CE8A1DA00C1567F /* words.csv */; };
+		C5D06A721CEA286400BB0379 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D06A711CEA286400BB0379 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C562C8DF1CE88E6C00C1567F /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultViewController.xib; path = Assets.xcassets/ResultViewController.xib; sourceTree = "<group>"; };
 		C562C8E71CE897A100C1567F /* QuizData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		C562C8EF1CE8A1DA00C1567F /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
+		C5D06A711CEA286400BB0379 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D06A721CEA286400BB0379 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 		C562C8B61CE8894000C1567F = {
 			isa = PBXGroup;
 			children = (
+				C5D06A711CEA286400BB0379 /* AudioToolbox.framework */,
 				C562C8C11CE8894000C1567F /* MyQuiz */,
 				C562C8C01CE8894000C1567F /* Products */,
 			);
