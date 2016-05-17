@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StartViewController: UIViewController {
 
@@ -14,13 +15,22 @@ class StartViewController: UIViewController {
     let quizVC: QuizViewController = QuizViewController()
     let tableVC: WordListViewController = WordListViewController()
     
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         self.addToolBarButtons()
+        
+        myUtterance = AVSpeechUtterance(string: "hello, my name is Mike. How are you doing today?")
+        myUtterance.rate = 0.5
+        synth.speakUtterance(myUtterance)
+        
     }
+    
     
     private func addToolBarButtons() {
      

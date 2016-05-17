@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class WordListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var wordListTableView: UITableView!
     let quizData = QuizData()
+    
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +58,13 @@ class WordListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       
+        let str = quizData.englishArray[indexPath.row] as String
+        myUtterance = AVSpeechUtterance(string: str)
+        myUtterance.rate = 0.5
+        synth.speakUtterance(myUtterance)
     }
     
     
-
     
     /*
     // MARK: - Navigation
