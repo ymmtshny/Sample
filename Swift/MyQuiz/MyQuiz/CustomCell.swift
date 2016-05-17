@@ -1,15 +1,18 @@
 //
-//  CustomTableViewCell.swift
+//  CustomCell.swift
 //  MyQuiz
 //
-//  Created by Shinya Yamamoto on 2016/05/17.
+//  Created by Shinya Yamamoto on 2016/05/18.
 //  Copyright © 2016年 Shinya Yamamoto. All rights reserved.
 //
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class CustomCell: UITableViewCell {
 
+    @IBOutlet weak var engLabel: UILabel!
+    @IBOutlet weak var jpLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

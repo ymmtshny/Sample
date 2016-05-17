@@ -10,14 +10,16 @@ import UIKit
 
 class WordListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var wordListTableView: UITableView!
+    @IBOutlet var wordListTableView: UITableView!
+    let quizData = QuizData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        wordListTableView.delegate = self
-        
+        self.wordListTableView.delegate = self
+        self.wordListTableView.dataSource =  self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,19 +29,34 @@ class WordListViewController: UIViewController, UITableViewDelegate, UITableView
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return quizData.englishArray.count
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath);
-      
-        return cell
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
     }
+    
+
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        
+        let cell = NSBundle.mainBundle().loadNibNamed("CustomCell", owner: self, options: nil).first as! CustomCell
+        
+        cell.engLabel.text = quizData.englishArray[indexPath.row]
+        cell.jpLabel.text = quizData.japaneseArray[indexPath.row]
+        return cell
+    
+    }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       
     }
+    
+    
 
     
     /*

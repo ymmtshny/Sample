@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C5210E6A1CEAE8AA0053BADD /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5210E681CEAE8AA0053BADD /* WordListViewController.swift */; };
 		C5210E6B1CEAE8AA0053BADD /* WordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5210E691CEAE8AA0053BADD /* WordListViewController.xib */; };
-		C5210E6E1CEAE9C80053BADD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */; };
-		C5210E6F1CEAE9C80053BADD /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */; };
 		C562C8C31CE8894000C1567F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8C21CE8894000C1567F /* AppDelegate.swift */; };
 		C562C8CA1CE8894000C1567F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C562C8C91CE8894000C1567F /* Assets.xcassets */; };
 		C562C8CD1CE8894000C1567F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C562C8CB1CE8894000C1567F /* LaunchScreen.storyboard */; };
@@ -23,13 +21,13 @@
 		C562C8E81CE897A100C1567F /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8E71CE897A100C1567F /* QuizData.swift */; };
 		C562C8F01CE8A1DA00C1567F /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C562C8EF1CE8A1DA00C1567F /* words.csv */; };
 		C5D06A721CEA286400BB0379 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D06A711CEA286400BB0379 /* AudioToolbox.framework */; };
+		C5D7EEDD1CEBD0C60023AF7F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7EEDB1CEBD0C60023AF7F /* CustomCell.swift */; };
+		C5D7EEDE1CEBD0C60023AF7F /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D7EEDC1CEBD0C60023AF7F /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C5210E681CEAE8AA0053BADD /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
 		C5210E691CEAE8AA0053BADD /* WordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewController.xib; sourceTree = "<group>"; };
-		C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		C562C8BF1CE8894000C1567F /* MyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C562C8C21CE8894000C1567F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C562C8C91CE8894000C1567F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +42,8 @@
 		C562C8E71CE897A100C1567F /* QuizData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		C562C8EF1CE8A1DA00C1567F /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
 		C5D06A711CEA286400BB0379 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C5D7EEDB1CEBD0C60023AF7F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		C5D7EEDC1CEBD0C60023AF7F /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 				C562C8D71CE88D2D00C1567F /* StartViewController.xib */,
 				C5210E681CEAE8AA0053BADD /* WordListViewController.swift */,
 				C5210E691CEAE8AA0053BADD /* WordListViewController.xib */,
-				C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */,
-				C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */,
+				C5D7EEDB1CEBD0C60023AF7F /* CustomCell.swift */,
+				C5D7EEDC1CEBD0C60023AF7F /* CustomCell.xib */,
 				C562C8DA1CE88E5F00C1567F /* QuizViewController.swift */,
 				C562C8DB1CE88E5F00C1567F /* QuizViewController.xib */,
 				C562C8DE1CE88E6C00C1567F /* ResultViewController.swift */,
@@ -163,7 +163,7 @@
 				C562C8CA1CE8894000C1567F /* Assets.xcassets in Resources */,
 				C562C8E11CE88E6C00C1567F /* ResultViewController.xib in Resources */,
 				C562C8DD1CE88E5F00C1567F /* QuizViewController.xib in Resources */,
-				C5210E6F1CEAE9C80053BADD /* CustomTableViewCell.xib in Resources */,
+				C5D7EEDE1CEBD0C60023AF7F /* CustomCell.xib in Resources */,
 				C5210E6B1CEAE8AA0053BADD /* WordListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,9 +178,9 @@
 				C562C8DC1CE88E5F00C1567F /* QuizViewController.swift in Sources */,
 				C562C8C31CE8894000C1567F /* AppDelegate.swift in Sources */,
 				C5210E6A1CEAE8AA0053BADD /* WordListViewController.swift in Sources */,
-				C5210E6E1CEAE9C80053BADD /* CustomTableViewCell.swift in Sources */,
 				C562C8D81CE88D2D00C1567F /* StartViewController.swift in Sources */,
 				C562C8E81CE897A100C1567F /* QuizData.swift in Sources */,
+				C5D7EEDD1CEBD0C60023AF7F /* CustomCell.swift in Sources */,
 				C562C8E01CE88E6C00C1567F /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
