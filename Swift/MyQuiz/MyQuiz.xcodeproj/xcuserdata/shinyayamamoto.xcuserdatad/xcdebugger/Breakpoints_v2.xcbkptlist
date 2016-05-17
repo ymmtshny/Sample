@@ -76,11 +76,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyQuiz/StartViewController.swift"
-            timestampString = "485104852.813243"
+            timestampString = "485157501.378516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "tapStartButton(_:)"
             landmarkType = "5">
          </BreakpointContent>

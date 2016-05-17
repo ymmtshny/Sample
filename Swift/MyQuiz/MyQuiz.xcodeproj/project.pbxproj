@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5210E6A1CEAE8AA0053BADD /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5210E681CEAE8AA0053BADD /* WordListViewController.swift */; };
+		C5210E6B1CEAE8AA0053BADD /* WordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5210E691CEAE8AA0053BADD /* WordListViewController.xib */; };
+		C5210E6E1CEAE9C80053BADD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */; };
+		C5210E6F1CEAE9C80053BADD /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */; };
 		C562C8C31CE8894000C1567F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8C21CE8894000C1567F /* AppDelegate.swift */; };
 		C562C8CA1CE8894000C1567F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C562C8C91CE8894000C1567F /* Assets.xcassets */; };
 		C562C8CD1CE8894000C1567F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C562C8CB1CE8894000C1567F /* LaunchScreen.storyboard */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5210E681CEAE8AA0053BADD /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
+		C5210E691CEAE8AA0053BADD /* WordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewController.xib; sourceTree = "<group>"; };
+		C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		C562C8BF1CE8894000C1567F /* MyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C562C8C21CE8894000C1567F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C562C8C91CE8894000C1567F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 				C562C8C21CE8894000C1567F /* AppDelegate.swift */,
 				C562C8D61CE88D2D00C1567F /* StartViewController.swift */,
 				C562C8D71CE88D2D00C1567F /* StartViewController.xib */,
+				C5210E681CEAE8AA0053BADD /* WordListViewController.swift */,
+				C5210E691CEAE8AA0053BADD /* WordListViewController.xib */,
+				C5210E6C1CEAE9C80053BADD /* CustomTableViewCell.swift */,
+				C5210E6D1CEAE9C80053BADD /* CustomTableViewCell.xib */,
 				C562C8DA1CE88E5F00C1567F /* QuizViewController.swift */,
 				C562C8DB1CE88E5F00C1567F /* QuizViewController.xib */,
 				C562C8DE1CE88E6C00C1567F /* ResultViewController.swift */,
@@ -151,6 +163,8 @@
 				C562C8CA1CE8894000C1567F /* Assets.xcassets in Resources */,
 				C562C8E11CE88E6C00C1567F /* ResultViewController.xib in Resources */,
 				C562C8DD1CE88E5F00C1567F /* QuizViewController.xib in Resources */,
+				C5210E6F1CEAE9C80053BADD /* CustomTableViewCell.xib in Resources */,
+				C5210E6B1CEAE8AA0053BADD /* WordListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +177,8 @@
 			files = (
 				C562C8DC1CE88E5F00C1567F /* QuizViewController.swift in Sources */,
 				C562C8C31CE8894000C1567F /* AppDelegate.swift in Sources */,
+				C5210E6A1CEAE8AA0053BADD /* WordListViewController.swift in Sources */,
+				C5210E6E1CEAE9C80053BADD /* CustomTableViewCell.swift in Sources */,
 				C562C8D81CE88D2D00C1567F /* StartViewController.swift in Sources */,
 				C562C8E81CE897A100C1567F /* QuizData.swift in Sources */,
 				C562C8E01CE88E6C00C1567F /* ResultViewController.swift in Sources */,
