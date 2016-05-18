@@ -5,6 +5,15 @@
 //  Created by Shinya Yamamoto on 2016/05/15.
 //  Copyright © 2016年 Shinya Yamamoto. All rights reserved.
 //
+//
+// ver1.0 magical record with swift 変数保存できるようにする
+// ver1.1 エンビバンスの忘却曲線方程式を組む。
+// ver1.2 単語のレベルを増やす。
+// ver1.3 例文を追加。保存。
+// ver1.3 並び替え問題を追加。
+// ver1.4 記事を追加,単語を保存できる。(センター試験で良い)
+// ver1.5 サーバー連携 => データを取れるようにする。(200問以上解いた人のデータ)
+
 
 import UIKit
 
@@ -26,27 +35,32 @@ class QuizData: NSObject {
         
         quiz.removeAll()
         
-        let questionNumber = getRandomNumber()
-        let dummyAnsNumber1 = getRandomNumber()
-        let dummyAnsNumber2 = getRandomNumber()
-        let dummyAnsNumber3 = getRandomNumber()
+        let questionNumber = getRandomNumber(englishArray.count)
+        let dummyAnsNumber1 = getRandomNumber(englishArray.count)
+        let dummyAnsNumber2 = getRandomNumber(englishArray.count)
+        let dummyAnsNumber3 = getRandomNumber(englishArray.count)
         
         quiz.append(englishArray[questionNumber])
         quiz.append(japaneseArray[questionNumber])
         quiz.append(japaneseArray[dummyAnsNumber1])
         quiz.append(japaneseArray[dummyAnsNumber2])
         quiz.append(japaneseArray[dummyAnsNumber3])
-        
-        
+        self.shuffleAnswers()
     }
     
     private func shuffleAnswers() {
         
+        let answer = quiz[1]
+        let random = getRandomNumber(4) + 1 //1 to 5
+        let dummy = quiz[random]
+        quiz[1] = dummy
+        quiz[random] = answer
+        
     }
     
-    private func getRandomNumber() -> Int{
+    private func getRandomNumber(maximun: Int) -> Int{
      
-        let count = UInt32(englishArray.count)
+        let count = UInt32(maximun)
         let random = arc4random_uniform(count)
         let randomInt = Int(random)
         return randomInt
