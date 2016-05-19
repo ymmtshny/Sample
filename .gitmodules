@@ -1,3 +1,6 @@
 [submodule "Swift/MyQuiz/Vendor/MagicalRecord"]
 	path = Swift/MyQuiz/Vendor/MagicalRecord
 	url = https://github.com/magicalpanda/MagicalRecord.git
+[submodule "Swift/eWords/Vendor/MagicalRecord"]
+	path = Swift/eWords/Vendor/MagicalRecord
+	url = https://github.com/magicalpanda/MagicalRecord.git
