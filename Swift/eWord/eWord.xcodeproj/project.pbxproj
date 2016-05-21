@@ -17,6 +17,9 @@
 		C5A2B37E1CEFBE2400AEE0FE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */; };
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
 		C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */; };
+		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
+		C5DBA4CC1CF0CEF20056AB8C /* ArticleViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */; };
+		C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDB.swift; sourceTree = "<group>"; };
+		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
+		C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewContrller.swift; sourceTree = "<group>"; };
+		C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +98,15 @@
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
 				C570195C1CEF1D2600D9B213 /* ViewController.swift */,
+				C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */,
+				C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */,
 				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
 				C570195E1CEF1D2600D9B213 /* Main.storyboard */,
 				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C57019691CEF1D2600D9B213 /* Info.plist */,
 				C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */,
+				C5DBA4C71CF0C6FB0056AB8C /* words.csv */,
 			);
 			path = eWord;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 			files = (
 				C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */,
 				C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */,
+				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C57019601CEF1D2600D9B213 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DBA4CC1CF0CEF20056AB8C /* ArticleViewContrller.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
+				C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
 				C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */,
 			);

@@ -10,51 +10,51 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        // スキーマバージョンを上げる。デフォルトのスキーマバージョンは0
-//        let config = Realm.Configuration(schemaVersion: 1)
-//        Realm.Configuration.defaultConfiguration = config
-        
-        self.userReact()
-        self.saveUserData()
-        self.getUserData()
-        self.Content()
+        //let config = Realm.Configuration(schemaVersion: 1)
+        //Realm.Configuration.defaultConfiguration = config
 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-    let word = WordsDB()
-    var userdata = UsersDB()
-    
-    func userReact() {
-        userdata.answer_time = "5"
-        userdata.correct_times = "3"
-        userdata.solve_times = "10"
     }
     
-    func saveUserData() {
+    //MARK:setter
+    func setUsersData(userdata:UsersDB,
+                   answer_time: String,
+                 correct_times: String,
+                   solve_times:String) {
         
-        do {
-            let realm = try Realm()
-            
-            try realm.write {
-                realm.add(self.userdata)
-            }
-        } catch {
-            // Error handling...
-            
+        userdata.answer_time = answer_time
+        userdata.correct_times = correct_times
+        userdata.solve_times = solve_times
+        
+    }
+    
+    func setUserData(userdata:UsersDB, word:WordsDB) {
+        word.usersData.append(userdata);
+    }
+    
+    func setWordsData(word:WordsDB,
+                        id:String,
+                  eng_word:String,
+                   jp_word:String,
+              eng_sentence:String,
+               jp_sentence:String,
+             userDataArray:[UsersDB]) {
+        
+        word.id = id
+        word.eng_word = eng_word
+        word.jp_word = jp_word
+        word.eng_sentence = eng_sentence
+        word.jp_sentence = jp_sentence
+        
+        for userdata in userDataArray {
+            word.usersData.append(userdata)
         }
     }
     
-    func getUserData() {
+    //MARK:getter
+    func getUsersDB() {
         
         let realm = try! Realm()
         let dataContent = realm.objects(UsersDB)
@@ -62,66 +62,109 @@ class ViewController: UIViewController {
         
     }
     
-    
-    // 内容
-    func addUserData() {
-        word.usersData.append(userdata);
+    func getWordsDB() {
+        
+        let realm = try! Realm()
+        let dataContent = realm.objects(WordsDB)
+        print(dataContent)
+        
     }
     
-    func Content() {
+    //MARK:save
+    func saveUsersDB(userdata:UsersDB) {
         
-        word.id = "1"
-        word.eng_word = "hello"
-        word.jp_word = "こんにちは"
-        word.eng_sentence = "hello everyone"
-        word.jp_sentence = "皆さん、こんにちは"
-        word.usersData.append(self.userdata)
-        
-            
-        self.save()
-        //self.dataUpdate()
-        //self.dataDelete()
-        self.dataGet()
-    }
-    
-    
-    // データの保存
-    func save() {
         do {
             let realm = try Realm()
             
             try realm.write {
-                realm.add(self.word)
+                realm.add(userdata)
             }
         } catch {
-            // Error handling...
+            print("saveUsersDB ERROR")
             
         }
+        
     }
     
-    // データの取得
-    func dataGet() {
-       
-        let realm = try! Realm()
-        let dataContent = realm.objects(WordsDB)
-        print(dataContent)
-       
+    func saveWordsDB(word:WordsDB) {
+        
+        do {
+            let realm = try Realm()
+            
+            try realm.write {
+                realm.add(word)
+            }
+        } catch {
+            print("saveWordsDB ERROR")
+            
+        }
+        
     }
     
-    // データの更新
-    func dataUpdate() {
+    //MARK:update
+    func updateUsersDB(answer_time: String,
+                       correct_times: String,
+                       solve_times:String) {
         
         do {
             let realm = try! Realm()
-        
-            let user = realm.objects(WordsDB).last!
+            
+            let userdata = realm.objects(UsersDB).last!
             try  realm.write {
-                //user.name = "Yamasaki Tarou"
+                userdata.answer_time = answer_time
+                userdata.correct_times = correct_times
+                userdata.solve_times = solve_times
             }
+            
         } catch {
+            
+            print("updateUsersDB ERROR")
             
         }
     }
+
+    
+    func updateWordsDB(word:WordsDB,
+                       id:String,
+                       eng_word:String,
+                       jp_word:String,
+                       eng_sentence:String,
+                       jp_sentence:String,
+                       userDataArray:[UsersDB]) {
+
+        
+        do {
+            let realm = try! Realm()
+            
+            let word = realm.objects(WordsDB).last!
+            try  realm.write {
+                word.id = id
+                word.eng_word = eng_word
+                word.jp_word = jp_word
+                word.eng_sentence = eng_sentence
+                word.jp_sentence = jp_sentence
+                
+                for userdata in userDataArray {
+                    word.usersData.append(userdata)
+                }
+            }
+            
+        } catch {
+            
+            print("updateWordsDB ERROR")
+            
+        }
+    }
+
+    
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
     
     // データの削除
     func dataDelete() {
@@ -142,5 +185,64 @@ class ViewController: UIViewController {
         }
     }
     
+    func deleteLastUsersData() {
+        
+        do {
+            
+            let realm = try! Realm()
+            let user = realm.objects(UsersDB).last!
+            try  realm.write {
+                // 最後のデータ
+                realm.delete(user)
+                // 全てのデータ
+                // realm.deleteAll()
+                
+            }
+            
+        } catch {
+            print("deleteLastUsersData ERROR")
+            }
+    }
+
+    func deleteAllUsersData() {
+        
+        do {
+            
+            let realm = try! Realm()
+            try  realm.write {
+            
+                realm.deleteAll()
+                
+            }
+            
+        } catch {
+            
+            print("deleteAllUsersData ERROR")
+            
+        }
+    }
+    
+    func deleteLastWordsData() {
+        
+        do {
+            
+            let realm = try! Realm()
+            let word = realm.objects(WordsDB).last!
+            try  realm.write {
+                // 最後のデータ
+                realm.delete(word)
+
+            }
+            
+        } catch {
+            
+            print("deleteLastWordsData ERROR")
+            
+        }
+    }
+
+
 }
+    
+
 

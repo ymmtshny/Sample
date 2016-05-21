@@ -26,3 +26,5 @@ class UsersDB: Object {
     dynamic var solve_times = ""
     
 }
+
+
