@@ -3,3 +3,4 @@
 //
 
 //#import "MagicalRecord.h"
+#import <MagicalRecord/MagicalRecord.h>
