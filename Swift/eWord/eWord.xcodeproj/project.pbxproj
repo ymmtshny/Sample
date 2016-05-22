@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					C57019561CEF1D2500D9B213 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 555AYYM2W4;
 					};
 				};
 			};
@@ -407,6 +408,7 @@
 			baseConfigurationReference = 149F23A825ADA0A6A2B967FB /* Pods-eWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = eWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -420,6 +422,7 @@
 			baseConfigurationReference = 8669C47C59A900F862E9FF28 /* Pods-eWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = eWord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
