@@ -7,240 +7,125 @@
 //
 
 import UIKit
+import AVFoundation
 import RealmSwift
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    @IBOutlet weak var wordListTableView: UITableView!
+    
+    var wordList = [[String:String]]()
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //let config = Realm.Configuration(schemaVersion: 1)
         //Realm.Configuration.defaultConfiguration = config
+        
+        self.wordListTableView.delegate = self
+        self.wordListTableView.dataSource = self
+        self.loadCSVData()
 
     }
     
-    //MARK:setter
-    func setUsersData(userdata:UsersDB,
-                   answer_time: String,
-                 correct_times: String,
-                   solve_times:String) {
-        
-        userdata.answer_time = answer_time
-        userdata.correct_times = correct_times
-        userdata.solve_times = solve_times
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.wordList.count
         
     }
     
-    func setUserData(userdata:UsersDB, word:WordsDB) {
-        word.usersData.append(userdata);
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
     }
     
-    func setWordsData(word:WordsDB,
-                        id:String,
-                  eng_word:String,
-                   jp_word:String,
-              eng_sentence:String,
-               jp_sentence:String,
-             userDataArray:[UsersDB]) {
-        
-        word.id = id
-        word.eng_word = eng_word
-        word.jp_word = jp_word
-        word.eng_sentence = eng_sentence
-        word.jp_sentence = jp_sentence
-        
-        for userdata in userDataArray {
-            word.usersData.append(userdata)
-        }
-    }
     
-    //MARK:getter
-    func getUsersDB() {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let realm = try! Realm()
-        let dataContent = realm.objects(UsersDB)
-        print(dataContent)
+        
+        let cell = NSBundle.mainBundle().loadNibNamed("CustomCell", owner: self, options: nil).first as! CustomCell
+        
+        let dic = self.wordList[indexPath.row]
+        
+        cell.engLabel.text = dic["english"]
+        cell.jpLabel.text = dic["japanese"]
+        
+        return cell
         
     }
     
-    func getWordsDB() {
-        
-        let realm = try! Realm()
-        let dataContent = realm.objects(WordsDB)
-        print(dataContent)
-        
-    }
     
-    //MARK:save
-    func saveUsersDB(userdata:UsersDB) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        do {
-            let realm = try Realm()
-            
-            try realm.write {
-                realm.add(userdata)
-            }
-        } catch {
-            print("saveUsersDB ERROR")
-            
-        }
-        
-    }
-    
-    func saveWordsDB(word:WordsDB) {
-        
-        do {
-            let realm = try Realm()
-            
-            try realm.write {
-                realm.add(word)
-            }
-        } catch {
-            print("saveWordsDB ERROR")
-            
-        }
-        
-    }
-    
-    //MARK:update
-    func updateUsersDB(answer_time: String,
-                       correct_times: String,
-                       solve_times:String) {
-        
-        do {
-            let realm = try! Realm()
-            
-            let userdata = realm.objects(UsersDB).last!
-            try  realm.write {
-                userdata.answer_time = answer_time
-                userdata.correct_times = correct_times
-                userdata.solve_times = solve_times
-            }
-            
-        } catch {
-            
-            print("updateUsersDB ERROR")
-            
+        let dic = self.wordList[indexPath.row]
+        if let str = dic["english"]  {
+            myUtterance = AVSpeechUtterance(string: str)
+            myUtterance.rate = 0.5
+            synth.speakUtterance(myUtterance)
         }
     }
 
     
-    func updateWordsDB(word:WordsDB,
-                       id:String,
-                       eng_word:String,
-                       jp_word:String,
-                       eng_sentence:String,
-                       jp_sentence:String,
-                       userDataArray:[UsersDB]) {
 
+    
+    //MARK:CSV
+    private func loadCSVData() {
         
-        do {
-            let realm = try! Realm()
+        if let csvFilePath = NSBundle.mainBundle().pathForResource("words", ofType: "csv") {
             
-            let word = realm.objects(WordsDB).last!
-            try  realm.write {
-                word.id = id
-                word.eng_word = eng_word
-                word.jp_word = jp_word
-                word.eng_sentence = eng_sentence
-                word.jp_sentence = jp_sentence
+            do {
+                if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
+                    
+                    let array = csvStringData.characters.split{$0 == ","}.map(String.init)
+                    var enArray = [String]()
+                    var jpArray = [String]()
+                    var word: Dictionary = [String:String]()
+                    
+                    for index in 0...array.count-1 {
+                    
+                        let data = array[index]
+                        
+                        if(index % 2 == 0) {
+                            
+                            enArray.append(data)
+                        
+                        } else {
+                            
+                            jpArray.append(data)
+                        }
                 
-                for userdata in userDataArray {
-                    word.usersData.append(userdata)
+                    }
+                    
+                    for index in 0...enArray.count-1 {
+                        
+                        word["english"] = enArray[index]
+                        word["japanese"] = jpArray[index]
+                        wordList.append(word)
+                    }
+                    
+                    print(array)
                 }
+                
+            } catch let error {
+                
+                print(error)
             }
             
-        } catch {
-            
-            print("updateWordsDB ERROR")
-            
         }
+        
     }
-
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
     
-    // データの削除
-    func dataDelete() {
-        
-        do {
-            let realm = try! Realm()
-        
-            let user = realm.objects(WordsDB).last!
-            try  realm.write {
-            // 最後のデータ
-            realm.delete(user)
-            // 全てのデータ
-            // realm.deleteAll()
-                
-            }
-        } catch {
-            
-        }
-    }
     
-    func deleteLastUsersData() {
-        
-        do {
-            
-            let realm = try! Realm()
-            let user = realm.objects(UsersDB).last!
-            try  realm.write {
-                // 最後のデータ
-                realm.delete(user)
-                // 全てのデータ
-                // realm.deleteAll()
-                
-            }
-            
-        } catch {
-            print("deleteLastUsersData ERROR")
-            }
-    }
-
-    func deleteAllUsersData() {
-        
-        do {
-            
-            let realm = try! Realm()
-            try  realm.write {
-            
-                realm.deleteAll()
-                
-            }
-            
-        } catch {
-            
-            print("deleteAllUsersData ERROR")
-            
-        }
-    }
-    
-    func deleteLastWordsData() {
-        
-        do {
-            
-            let realm = try! Realm()
-            let word = realm.objects(WordsDB).last!
-            try  realm.write {
-                // 最後のデータ
-                realm.delete(word)
-
-            }
-            
-        } catch {
-            
-            print("deleteLastWordsData ERROR")
-            
-        }
-    }
-
 
 }
     

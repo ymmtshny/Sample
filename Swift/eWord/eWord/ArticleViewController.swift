@@ -1,5 +1,5 @@
 //
-//  QuizViewController.swift
+//  ArticleViewContrller.swift
 //  eWord
 //
 //  Created by Shinya Yamamoto on 2016/05/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class ArticleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +25,3 @@ class QuizViewController: UIViewController {
     }
     
 }
-
-

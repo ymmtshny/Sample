@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C29BF9AA74263258865C7332 /* Pods_eWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */; };
+		C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */; };
+		C502CAFD1CF148D800CE6FF1 /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFC1CF148D800CE6FF1 /* ArticleViewController.xib */; };
+		C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */; };
+		C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB001CF149DE00CE6FF1 /* CustomCell.swift */; };
+		C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB011CF149DE00CE6FF1 /* CustomCell.xib */; };
+		C502CB051CF14BE500CE6FF1 /* RealmMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */; };
 		C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195A1CEF1D2600D9B213 /* AppDelegate.swift */; };
 		C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* ViewController.swift */; };
-		C57019601CEF1D2600D9B213 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C570195E1CEF1D2600D9B213 /* Main.storyboard */; };
 		C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */; };
 		C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57019641CEF1D2600D9B213 /* Assets.xcassets */; };
 		C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */; };
@@ -18,7 +23,7 @@
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
 		C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */; };
 		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
-		C5DBA4CC1CF0CEF20056AB8C /* ArticleViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */; };
+		C5DBA4CC1CF0CEF20056AB8C /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CB1CF0CEF20056AB8C /* ArticleViewController.swift */; };
 		C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,10 +31,15 @@
 		149F23A825ADA0A6A2B967FB /* Pods-eWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eWord/Pods-eWord.debug.xcconfig"; sourceTree = "<group>"; };
 		30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8669C47C59A900F862E9FF28 /* Pods-eWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-eWord/Pods-eWord.release.xcconfig"; sourceTree = "<group>"; };
+		C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		C502CAFC1CF148D800CE6FF1 /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
+		C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		C502CB001CF149DE00CE6FF1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		C502CB011CF149DE00CE6FF1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMethod.swift; sourceTree = "<group>"; };
 		C57019571CEF1D2500D9B213 /* eWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C570195A1CEF1D2600D9B213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C570195C1CEF1D2600D9B213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C570195F1CEF1D2600D9B213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C57019621CEF1D2600D9B213 /* eWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eWord.xcdatamodel; sourceTree = "<group>"; };
 		C57019641CEF1D2600D9B213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C57019671CEF1D2600D9B213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDB.swift; sourceTree = "<group>"; };
 		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
-		C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewContrller.swift; sourceTree = "<group>"; };
+		C5DBA4CB1CF0CEF20056AB8C /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,10 +108,15 @@
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
 				C570195C1CEF1D2600D9B213 /* ViewController.swift */,
-				C5DBA4CB1CF0CEF20056AB8C /* ArticleViewContrller.swift */,
+				C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */,
+				C5DBA4CB1CF0CEF20056AB8C /* ArticleViewController.swift */,
+				C502CAFC1CF148D800CE6FF1 /* ArticleViewController.xib */,
 				C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */,
+				C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */,
+				C502CB001CF149DE00CE6FF1 /* CustomCell.swift */,
+				C502CB011CF149DE00CE6FF1 /* CustomCell.xib */,
 				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
-				C570195E1CEF1D2600D9B213 /* Main.storyboard */,
+				C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */,
 				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C57019691CEF1D2600D9B213 /* Info.plist */,
@@ -174,8 +189,11 @@
 			files = (
 				C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */,
 				C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */,
+				C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */,
+				C502CAFD1CF148D800CE6FF1 /* ArticleViewController.xib in Resources */,
+				C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
-				C57019601CEF1D2600D9B213 /* Main.storyboard in Resources */,
+				C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DBA4CC1CF0CEF20056AB8C /* ArticleViewContrller.swift in Sources */,
+				C5DBA4CC1CF0CEF20056AB8C /* ArticleViewController.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
 				C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
+				C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */,
+				C502CB051CF14BE500CE6FF1 /* RealmMethod.swift in Sources */,
 				C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,14 +266,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C570195E1CEF1D2600D9B213 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C570195F1CEF1D2600D9B213 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -356,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = eWord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ymmtshny.eWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -368,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = eWord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ymmtshny.eWord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
