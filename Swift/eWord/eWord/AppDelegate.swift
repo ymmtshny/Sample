@@ -14,16 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var myNavigationController :UINavigationController?
+    var myTabBarController: UITabBarController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let first: ViewController = ViewController()
-        myNavigationController = UINavigationController(rootViewController: first)
+        let firstView: ViewController = ViewController()
+        //let secondView: QuizViewController = QuizViewController()
+        
+        myNavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = myNavigationController
         self.window?.makeKeyAndVisible()
-        myNavigationController?.navigationBarHidden = true
+        myNavigationController?.navigationBarHidden = false
         
         return true
     }

@@ -14,6 +14,8 @@
 		C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB001CF149DE00CE6FF1 /* CustomCell.swift */; };
 		C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB011CF149DE00CE6FF1 /* CustomCell.xib */; };
 		C502CB051CF14BE500CE6FF1 /* RealmMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */; };
+		C502CB0C1CF1A72000CE6FF1 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */; };
+		C502CB0E1CF1A72C00CE6FF1 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */; };
 		C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195A1CEF1D2600D9B213 /* AppDelegate.swift */; };
 		C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* ViewController.swift */; };
 		C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */; };
@@ -37,6 +39,8 @@
 		C502CB001CF149DE00CE6FF1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C502CB011CF149DE00CE6FF1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMethod.swift; sourceTree = "<group>"; };
+		C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		C57019571CEF1D2500D9B213 /* eWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C570195A1CEF1D2600D9B213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C570195C1CEF1D2600D9B213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,44 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C502CB081CF1A6F000CE6FF1 /* wordListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C570195C1CEF1D2600D9B213 /* ViewController.swift */,
+				C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */,
+				C502CB001CF149DE00CE6FF1 /* CustomCell.swift */,
+				C502CB011CF149DE00CE6FF1 /* CustomCell.xib */,
+			);
+			name = wordListViewController;
+			sourceTree = "<group>";
+		};
+		C502CB091CF1A6FC00CE6FF1 /* ArticleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5DBA4CB1CF0CEF20056AB8C /* ArticleViewController.swift */,
+				C502CAFC1CF148D800CE6FF1 /* ArticleViewController.xib */,
+			);
+			name = ArticleViewController;
+			sourceTree = "<group>";
+		};
+		C502CB0A1CF1A70A00CE6FF1 /* QuizViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */,
+				C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */,
+			);
+			name = QuizViewController;
+			sourceTree = "<group>";
+		};
+		C502CB0F1CF1A73100CE6FF1 /* RecoredViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */,
+				C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */,
+			);
+			name = RecoredViewController;
+			sourceTree = "<group>";
+		};
 		C570194E1CEF1D2500D9B213 = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
-				C570195C1CEF1D2600D9B213 /* ViewController.swift */,
-				C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */,
-				C5DBA4CB1CF0CEF20056AB8C /* ArticleViewController.swift */,
-				C502CAFC1CF148D800CE6FF1 /* ArticleViewController.xib */,
-				C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */,
-				C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */,
-				C502CB001CF149DE00CE6FF1 /* CustomCell.swift */,
-				C502CB011CF149DE00CE6FF1 /* CustomCell.xib */,
+				C502CB081CF1A6F000CE6FF1 /* wordListViewController */,
+				C502CB091CF1A6FC00CE6FF1 /* ArticleViewController */,
+				C502CB0A1CF1A70A00CE6FF1 /* QuizViewController */,
+				C502CB0F1CF1A73100CE6FF1 /* RecoredViewController */,
 				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
 				C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */,
 				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
@@ -194,6 +232,7 @@
 				C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */,
+				C502CB0E1CF1A72C00CE6FF1 /* RecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +294,7 @@
 				C5DBA4CC1CF0CEF20056AB8C /* ArticleViewController.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
+				C502CB0C1CF1A72000CE6FF1 /* RecordViewController.swift in Sources */,
 				C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
 				C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */,

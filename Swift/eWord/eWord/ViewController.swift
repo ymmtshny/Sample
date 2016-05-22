@@ -10,14 +10,19 @@ import UIKit
 import AVFoundation
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     
     @IBOutlet weak var wordListTableView: UITableView!
     
+    @IBOutlet weak var wordListButton: UIButton!
+    @IBOutlet weak var quizButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    
+    let RecordView:RecordViewController = RecordViewController()
+    let QuizView:QuizViewController = QuizViewController()
+    
     var wordList = [[String:String]]()
-    let synth = AVSpeechSynthesizer()
-    var myUtterance = AVSpeechUtterance(string: "")
     
     
     override func viewDidLoad() {
@@ -29,9 +34,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.wordListTableView.dataSource = self
         self.loadCSVData()
 
+        self.setupButtonAction()
     }
     
+
+    //MARK:ボタン
+    func setupButtonAction() {
+        
+        wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        quizButton.addTarget(self, action: #selector(ViewController.tapQuizButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        recordButton.addTarget(self, action: #selector(ViewController.tapRecordButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+    }
     
+    @IBAction func tapWordListButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func tapQuizButton(sender: AnyObject) {
+        
+        self.navigationController?.pushViewController(QuizView, animated: true)
+    }
+    
+    @IBAction func tapRecordButton(sender: AnyObject) {
+        QuizView
+        self.navigationController?.pushViewController(RecordView, animated: true)
+    }
+    
+    //MARK: Text to Speech
+    func speachText(string: String) {
+        
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: "")
+        myUtterance = AVSpeechUtterance(string: string)
+        myUtterance.rate = 0.5
+        synth.speakUtterance(myUtterance)
+    }
+    
+    //MARK:テーブルビュー
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.wordList.count
         
@@ -41,6 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         return 1
     }
+    
     
     
     
@@ -63,14 +106,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dic = self.wordList[indexPath.row]
         if let str = dic["english"]  {
-            myUtterance = AVSpeechUtterance(string: str)
-            myUtterance.rate = 0.5
-            synth.speakUtterance(myUtterance)
+            self.speachText(str)
         }
     }
 
     
-
+    
     
     //MARK:CSV
     private func loadCSVData() {
