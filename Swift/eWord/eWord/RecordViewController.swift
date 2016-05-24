@@ -8,46 +8,45 @@
 
 import UIKit
 
-class RecordViewController: UIViewController {
+class RecordViewController: UIViewController, myTabBarDelegate {
     
-    @IBOutlet weak var wordListButton: UIButton!
-    @IBOutlet weak var quizButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //let config = Realm.Configuration(schemaVersion: 1)
         //Realm.Configuration.defaultConfiguration = config
-        
-        self.setupButtonAction()
-    }
+        self.addTabBar()
     
-    func setupButtonAction() {
-        
-        wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        quizButton.addTarget(self, action: #selector(ViewController.tapQuizButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        recordButton.addTarget(self, action: #selector(ViewController.tapRecordButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-    }
-    
-    @IBAction func tapWordListButton(sender: AnyObject) {
-        
-        let wordView:ViewController = ViewController()
-        self.navigationController?.pushViewController(wordView, animated: false)
-    }
-    
-    @IBAction func tapQuizButton(sender: AnyObject) {
-        let QuizView:QuizViewController = QuizViewController()
-        self.navigationController?.pushViewController(QuizView, animated: false)
-    }
-    
-    @IBAction func tapRecordButton(sender: AnyObject) {
-        
-        
     }
 
+    //MARK:タブバー
+    func addTabBar() {
+        
+        let bundle = NSBundle(forClass: tabBarView.self)
+        let myTabBar = bundle.loadNibNamed("tabBarView", owner: nil, options: nil)[0] as! tabBarView
+        myTabBar.frame = CGRectMake(0, self.view.frame.height - 49, self.view.frame.width, 49)
+        myTabBar.delegate = self
+        self.view.addSubview(myTabBar)
+        
+    }
+    
+    func tapTabBarButton(type: BUTTON_TYPE){
+        
+        switch type {
+        case BUTTON_TYPE.LSIT:
+            let ListView = ViewController()
+            self.navigationController?.pushViewController(ListView, animated: false)
+            break
+        case BUTTON_TYPE.QUIZ:
+            let QuizView = QuizViewController()
+            self.navigationController?.pushViewController(QuizView, animated: false)
+            break
+        case BUTTON_TYPE.RECORD:
+            
+            break
+        }
+        
+    }
     
     
     override func didReceiveMemoryWarning() {

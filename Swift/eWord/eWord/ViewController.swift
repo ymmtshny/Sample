@@ -10,17 +10,21 @@ import UIKit
 import AVFoundation
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, myTabBarDelegate  {
 
     
     @IBOutlet weak var wordListTableView: UITableView!
-    
-    @IBOutlet weak var wordListButton: UIButton!
-    @IBOutlet weak var quizButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var myTabBarView: tabBarView!
     
     var wordList = [[String:String]]()
     
+    private var onceTokenViewDidAppear: dispatch_once_t = 0
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,40 +34,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.wordListTableView.delegate = self
         self.wordListTableView.dataSource = self
         self.loadCSVData()
-
-        self.setupButtonAction()
+        self.addTabBar()
         
-        wordListButton.setImage(UIImage(named: "list_orange.png"), forState: UIControlState.Normal)
     }
+    
+    
     
 
-    //MARK:ボタン
-    func setupButtonAction() {
+    //MARK:タブバー
+    func addTabBar() {
         
-        wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        quizButton.addTarget(self, action: #selector(ViewController.tapQuizButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        recordButton.addTarget(self, action: #selector(ViewController.tapRecordButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-    }
-    
-    @IBAction func tapWordListButton(sender: AnyObject) {
+        let bundle = NSBundle(forClass: tabBarView.self)
+        let myTabBar = bundle.loadNibNamed("tabBarView", owner: nil, options: nil)[0] as! tabBarView
+        myTabBar.frame = CGRectMake(0, self.view.frame.height - 49, self.view.frame.width, 49)
+        myTabBar.delegate = self
+        self.view.addSubview(myTabBar)
         
     }
     
-    @IBAction func tapQuizButton(sender: AnyObject) {
+    func tapTabBarButton(type: BUTTON_TYPE){
+    
+        switch type {
+            case BUTTON_TYPE.LSIT:
+                break
+            case BUTTON_TYPE.QUIZ:
+                let QuizView = QuizViewController()
+                self.navigationController?.pushViewController(QuizView, animated: false)
+                break
+            case BUTTON_TYPE.RECORD:
+                let RecordView = RecordViewController()
+                self.navigationController?.pushViewController(RecordView, animated: false)
+                break
+        }
         
-//      quizButton.setImage(UIImage(named: "earth_orange.png"), forState: UIControlState.Normal)
-        let QuizView:QuizViewController = QuizViewController()
-        self.navigationController?.pushViewController(QuizView, animated: false)
     }
     
-    @IBAction func tapRecordButton(sender: AnyObject) {
-        let RecordView:RecordViewController = RecordViewController()
-//        recordButton.setImage(UIImage(named: "calender_orange"), forState: UIControlState.Normal)
-        self.navigationController?.pushViewController(RecordView, animated: false)
-    }
     
     //MARK: Text to Speech
     func speachText(string: String) {
@@ -167,7 +172,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
 
-    
     
 
 }

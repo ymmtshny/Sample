@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, myTabBarDelegate {
     
     @IBOutlet weak var wordListButton: UIButton!
     @IBOutlet weak var quizButton: UIButton!
@@ -26,6 +26,8 @@ class QuizViewController: UIViewController {
     var currentQuizDic = [String:String]() //現在の問題の英語と答えを格納したDictionary
     var answerIdx = 0
 
+    let ListView = ViewController()
+    let RecordView = RecordViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +37,40 @@ class QuizViewController: UIViewController {
         self.loadCSVData()
         self.setupButtonAction()
         self.setQuestion()
+        self.addTabBar()
     }
     
     func setQuestion() {
         let quiz = self.getOneQuiz()
         self.setupLabelWithQuizArray(quiz)
         self.speachText(quiz[0])
+    }
+    
+    //MARK:タブバー
+    func addTabBar() {
+        
+        let bundle = NSBundle(forClass: tabBarView.self)
+        let myTabBar = bundle.loadNibNamed("tabBarView", owner: nil, options: nil)[0] as! tabBarView
+        myTabBar.frame = CGRectMake(0, self.view.frame.height - 49, self.view.frame.width, 49)
+        myTabBar.delegate = self
+        self.view.addSubview(myTabBar)
+        
+    }
+    
+    func tapTabBarButton(type: BUTTON_TYPE){
+        
+        switch type {
+        case BUTTON_TYPE.LSIT:
+            self.navigationController?.pushViewController(ListView, animated: false)
+            break
+        case BUTTON_TYPE.QUIZ:
+    
+            break
+        case BUTTON_TYPE.RECORD:
+            self.navigationController?.pushViewController(RecordView, animated: false)
+            break
+        }
+        
     }
     
     //MARK:Button
@@ -54,11 +84,6 @@ class QuizViewController: UIViewController {
             button.layer.borderWidth = 2
         }
         
-        wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        quizButton.addTarget(self, action: #selector(ViewController.tapQuizButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        recordButton.addTarget(self, action: #selector(ViewController.tapRecordButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     @IBAction func tapAnswerButton(sender: UIButton) {
@@ -87,23 +112,6 @@ class QuizViewController: UIViewController {
         
     }
     
-    @IBAction func tapWordListButton(sender: AnyObject) {
-        
-        let wordView = ViewController()
-        self.navigationController?.pushViewController(wordView, animated: false)
-    }
-    
-    @IBAction func tapQuizButton(sender: AnyObject) {
-        
-        
-    }
-    
-    @IBAction func tapRecordButton(sender: AnyObject) {
-        
-        let RecordView = RecordViewController()
-        self.navigationController?.pushViewController(RecordView, animated: false)
-    }
-
     
     //MARK:Label
     private func setupLabelWithQuizArray(array: [String]) {
