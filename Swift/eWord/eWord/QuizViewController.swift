@@ -11,9 +11,6 @@ import AVFoundation
 
 class QuizViewController: UIViewController, myTabBarDelegate {
     
-    @IBOutlet weak var wordListButton: UIButton!
-    @IBOutlet weak var quizButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
     
     @IBOutlet weak var engLabel: UILabel!
     @IBOutlet weak var jpButtonA: UIButton!
@@ -26,8 +23,9 @@ class QuizViewController: UIViewController, myTabBarDelegate {
     var currentQuizDic = [String:String]() //現在の問題の英語と答えを格納したDictionary
     var answerIdx = 0
 
-    let ListView = ViewController()
-    let RecordView = RecordViewController()
+    var quizView: QuizViewController?
+    var recordView: RecordViewController?
+    var listView: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,23 @@ class QuizViewController: UIViewController, myTabBarDelegate {
         self.setupButtonAction()
         self.setQuestion()
         self.addTabBar()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if quizView == nil {
+            quizView = QuizViewController()
+        }
+        
+        if listView == nil {
+            listView = ViewController()
+        }
+        
+        if recordView == nil {
+            recordView = RecordViewController()
+        }
+        
+        
     }
     
     func setQuestion() {
@@ -61,13 +76,23 @@ class QuizViewController: UIViewController, myTabBarDelegate {
         
         switch type {
         case BUTTON_TYPE.LSIT:
-            self.navigationController?.pushViewController(ListView, animated: false)
+            if let listView = listView {
+                listView.listView = listView
+                listView.quizView = self
+                listView.recordView = recordView
+                self.navigationController?.pushViewController(listView, animated: false)
+            }
             break
         case BUTTON_TYPE.QUIZ:
     
             break
         case BUTTON_TYPE.RECORD:
-            self.navigationController?.pushViewController(RecordView, animated: false)
+            if let recordView = recordView {
+                recordView.listView = listView
+                recordView.quizView = self
+                recordView.recordView = recordView
+                self.navigationController?.pushViewController(recordView, animated: false)
+            }
             break
         }
         

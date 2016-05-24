@@ -10,6 +10,9 @@ import UIKit
 
 class RecordViewController: UIViewController, myTabBarDelegate {
     
+    var quizView: QuizViewController?
+    var recordView: RecordViewController?
+    var listView: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,23 @@ class RecordViewController: UIViewController, myTabBarDelegate {
         //Realm.Configuration.defaultConfiguration = config
         self.addTabBar()
     
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if quizView == nil {
+            quizView = QuizViewController()
+        }
+        
+        if listView == nil {
+            listView = ViewController()
+        }
+        
+        if recordView == nil {
+            recordView = RecordViewController()
+        }
+        
+        
     }
 
     //MARK:タブバー
@@ -34,12 +54,20 @@ class RecordViewController: UIViewController, myTabBarDelegate {
         
         switch type {
         case BUTTON_TYPE.LSIT:
-            let ListView = ViewController()
-            self.navigationController?.pushViewController(ListView, animated: false)
+            if let listView = listView {
+                listView.listView = listView
+                listView.quizView = quizView
+                listView.recordView = self
+                self.navigationController?.pushViewController(listView, animated: false)
+            }
             break
         case BUTTON_TYPE.QUIZ:
-            let QuizView = QuizViewController()
-            self.navigationController?.pushViewController(QuizView, animated: false)
+            if let quizView = quizView {
+                quizView.listView = listView
+                quizView.quizView = quizView
+                quizView.recordView = self
+                self.navigationController?.pushViewController(quizView, animated: false)
+            }
             break
         case BUTTON_TYPE.RECORD:
             
