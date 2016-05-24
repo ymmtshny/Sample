@@ -11,15 +11,21 @@ import AVFoundation
 
 class QuizViewController: UIViewController {
     
+    @IBOutlet weak var wordListButton: UIButton!
+    @IBOutlet weak var quizButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    
     @IBOutlet weak var engLabel: UILabel!
-    @IBOutlet weak var jpLabelA: UIButton!
-    @IBOutlet weak var jpLabelB: UIButton!
-    @IBOutlet weak var jpLabelC: UIButton!
-    @IBOutlet weak var jpLabelD: UIButton!
+    @IBOutlet weak var jpButtonA: UIButton!
+    @IBOutlet weak var jpButtonB: UIButton!
+    @IBOutlet weak var jpButtonC: UIButton!
+    @IBOutlet weak var jpButtonD: UIButton!
+    @IBOutlet weak var check_image: UIImageView!
     
     var wordList = [[String:String]]()
-    var currentEnglish = ""
+    var currentQuizDic = [String:String]() //現在の問題の英語と答えを格納したDictionary
     var answerIdx = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,11 @@ class QuizViewController: UIViewController {
         //Realm.Configuration.defaultConfiguration = config
         
         self.loadCSVData()
+        self.setupButtonAction()
+        self.setQuestion()
+    }
+    
+    func setQuestion() {
         let quiz = self.getOneQuiz()
         self.setupLabelWithQuizArray(quiz)
         self.speachText(quiz[0])
@@ -35,22 +46,72 @@ class QuizViewController: UIViewController {
     //MARK:Button
     func setupButtonAction() {
         
-        //wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        let buttons = [jpButtonA, jpButtonB, jpButtonC, jpButtonD]
+        for button in buttons {
+            button.addTarget(self, action: #selector(QuizViewController.tapAnswerButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            button.layer.cornerRadius = 15;
+            button.layer.borderColor = UIColor(red: 245.0/255.0, green: 166.0/255.0, blue: 35.0/255.0, alpha: 1.0).CGColor
+            button.layer.borderWidth = 2
+        }
         
+        wordListButton.addTarget(self, action: #selector(ViewController.tapWordListButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        quizButton.addTarget(self, action: #selector(ViewController.tapQuizButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        recordButton.addTarget(self, action: #selector(ViewController.tapRecordButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    @IBAction func tapAnswerButton(sender: UIButton) {
+        
+        //check if the answer is correct
+        let userAnswer = sender.titleLabel?.text
+        let quizAnswer = currentQuizDic["japanese"]
+        
+        check_image.hidden = false
+        
+        if userAnswer == quizAnswer {
+            print("CORRECT")
+            self.check_image.image = UIImage(named:"correct")!
+        } else {
+            print("WRONG")
+            self.check_image.image = UIImage(named:"wrong")!
+        }
+        
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.check_image.hidden = true
+//            self.setQuestion()
+//        })
+        
+        self.check_image.hidden = true
+        self.setQuestion()
         
     }
     
     @IBAction func tapWordListButton(sender: AnyObject) {
         
+        let wordView = ViewController()
+        self.navigationController?.pushViewController(wordView, animated: false)
     }
+    
+    @IBAction func tapQuizButton(sender: AnyObject) {
+        
+        
+    }
+    
+    @IBAction func tapRecordButton(sender: AnyObject) {
+        
+        let RecordView = RecordViewController()
+        self.navigationController?.pushViewController(RecordView, animated: false)
+    }
+
     
     //MARK:Label
     private func setupLabelWithQuizArray(array: [String]) {
         engLabel.text = array[0]
-        jpLabelA.setTitle(array[1], forState: UIControlState.Normal)
-        jpLabelB.setTitle(array[2], forState: UIControlState.Normal)
-        jpLabelC.setTitle(array[3], forState: UIControlState.Normal)
-        jpLabelD.setTitle(array[4], forState: UIControlState.Normal)
+        jpButtonA.setTitle(array[1], forState: UIControlState.Normal)
+        jpButtonB.setTitle(array[2], forState: UIControlState.Normal)
+        jpButtonC.setTitle(array[3], forState: UIControlState.Normal)
+        jpButtonD.setTitle(array[4], forState: UIControlState.Normal)
     }
     
     //MARK:Quiz
@@ -71,6 +132,8 @@ class QuizViewController: UIViewController {
         let answerB = self.getJapaneseFromDictionary(dicB)
         let answerC = self.getJapaneseFromDictionary(dicC)
         let answerD = self.getJapaneseFromDictionary(dicD)
+        
+        currentQuizDic = dicA
         
         var quizArray = [question!, answerA!, answerB!, answerC!, answerD!]
         quizArray = self.shuffleArray(quizArray)

@@ -10,6 +10,10 @@ import UIKit
 
 class ArticleViewController: UIViewController {
     
+    @IBOutlet weak var wordListButton: UIButton!
+    @IBOutlet weak var quizButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //let config = Realm.Configuration(schemaVersion: 1)

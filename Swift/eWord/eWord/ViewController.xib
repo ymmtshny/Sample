@@ -61,7 +61,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JHE-dd-3jQ">
                     <rect key="frame" x="70" y="530" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="英単語一覧" image="list_gray"/>
+                    <state key="normal" title="英単語一覧" image="list_orange"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bXW-VN-rax">
                     <rect key="frame" x="148" y="529" width="25" height="25"/>
@@ -102,6 +102,6 @@
     <resources>
         <image name="calender_gray" width="256" height="256"/>
         <image name="earth_gray" width="256" height="256"/>
-        <image name="list_gray" width="256" height="256"/>
+        <image name="list_orange" width="256" height="256"/>
     </resources>
 </document>

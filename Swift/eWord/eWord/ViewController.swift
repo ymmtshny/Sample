@@ -19,9 +19,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var quizButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
-    let RecordView:RecordViewController = RecordViewController()
-    let QuizView:QuizViewController = QuizViewController()
-    
     var wordList = [[String:String]]()
     
     
@@ -35,6 +32,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.loadCSVData()
 
         self.setupButtonAction()
+        
+        wordListButton.setImage(UIImage(named: "list_orange.png"), forState: UIControlState.Normal)
     }
     
 
@@ -55,12 +54,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func tapQuizButton(sender: AnyObject) {
         
-        self.navigationController?.pushViewController(QuizView, animated: true)
+//      quizButton.setImage(UIImage(named: "earth_orange.png"), forState: UIControlState.Normal)
+        let QuizView:QuizViewController = QuizViewController()
+        self.navigationController?.pushViewController(QuizView, animated: false)
     }
     
     @IBAction func tapRecordButton(sender: AnyObject) {
-        QuizView
-        self.navigationController?.pushViewController(RecordView, animated: true)
+        let RecordView:RecordViewController = RecordViewController()
+//        recordButton.setImage(UIImage(named: "calender_orange"), forState: UIControlState.Normal)
+        self.navigationController?.pushViewController(RecordView, animated: false)
     }
     
     //MARK: Text to Speech
