@@ -37,7 +37,6 @@ class tabBarView :UIView {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        //loadViewFromNib()
         
     }
 
@@ -46,17 +45,7 @@ class tabBarView :UIView {
         super.init(coder: aDecoder)
         
     }
-    
-    
-//    func loadViewFromNib() {
-//        let bundle = NSBundle(forClass: self.dynamicType)
-//        let nib = UINib(nibName: "tabBarView", bundle: bundle)
-//        let view = nib.instantiateWithOwner(nil, options: nil)[0] as! tabBarView
-//        self.addSubview(view);
-//        
-//        
-//    }
-    
+
    
     //MARK:ボタン
     func setupButtonAction() {

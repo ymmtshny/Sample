@@ -58,7 +58,9 @@ class RecordViewController: UIViewController, myTabBarDelegate {
                 listView.listView = listView
                 listView.quizView = quizView
                 listView.recordView = self
-                self.navigationController?.pushViewController(listView, animated: false)
+                
+                self.presentViewController(listView, animated: false, completion: nil)
+                self.dismissViewControllerAnimated(false, completion: nil)
             }
             break
         case BUTTON_TYPE.QUIZ:
@@ -66,7 +68,9 @@ class RecordViewController: UIViewController, myTabBarDelegate {
                 quizView.listView = listView
                 quizView.quizView = quizView
                 quizView.recordView = self
-                self.navigationController?.pushViewController(quizView, animated: false)
+                
+                self.presentViewController(quizView, animated: false, completion: nil)
+                self.dismissViewControllerAnimated(false, completion: nil)
             }
             break
         case BUTTON_TYPE.RECORD:
