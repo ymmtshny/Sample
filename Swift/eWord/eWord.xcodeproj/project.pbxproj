@@ -20,6 +20,8 @@
 		C5152C111CF630980042F1C3 /* LevelSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C101CF630980042F1C3 /* LevelSelectView.xib */; };
 		C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C131CF6332E0042F1C3 /* QuizView.swift */; };
 		C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C151CF6333A0042F1C3 /* QuizView.xib */; };
+		C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C181CF63A990042F1C3 /* collectionViewCell.swift */; };
+		C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */; };
 		C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195A1CEF1D2600D9B213 /* AppDelegate.swift */; };
 		C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* ViewController.swift */; };
 		C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */; };
@@ -51,6 +53,8 @@
 		C5152C101CF630980042F1C3 /* LevelSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectView.xib; sourceTree = "<group>"; };
 		C5152C131CF6332E0042F1C3 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C5152C151CF6333A0042F1C3 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
+		C5152C181CF63A990042F1C3 /* collectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
+		C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = collectionViewCell.xib; sourceTree = "<group>"; };
 		C57019571CEF1D2500D9B213 /* eWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C570195A1CEF1D2600D9B213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C570195C1CEF1D2600D9B213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			children = (
 				C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */,
 				C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */,
+				C5152C181CF63A990042F1C3 /* collectionViewCell.swift */,
+				C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */,
 			);
 			name = RecoredViewController;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */,
 				C502CAFD1CF148D800CE6FF1 /* ArticleViewController.xib in Resources */,
 				C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */,
+				C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */,
 				C5EB64931CF480BA00A1F21C /* tabBarView.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */,
@@ -337,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */,
 				C5DBA4CC1CF0CEF20056AB8C /* ArticleViewController.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,

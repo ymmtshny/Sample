@@ -8,11 +8,14 @@
 
 import UIKit
 
-class RecordViewController: UIViewController, myTabBarDelegate {
+class RecordViewController: UIViewController, myTabBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var quizView: QuizViewController?
     var recordView: RecordViewController?
     var listView: ViewController?
+    
+    @IBOutlet weak var calendarCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,25 +23,31 @@ class RecordViewController: UIViewController, myTabBarDelegate {
         //Realm.Configuration.defaultConfiguration = config
         self.addTabBar()
     
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 50, height: 50)
+        
+        
+        calendarCollectionView.dataSource = self
+        calendarCollectionView.delegate = self
+        calendarCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCollectionViewCell")
+        calendarCollectionView.backgroundColor = UIColor.whiteColor()
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if quizView == nil {
-            quizView = QuizViewController()
-        }
-        
-        if listView == nil {
-            listView = ViewController()
-        }
-        
-        if recordView == nil {
-            recordView = RecordViewController()
-        }
-        
-        
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 31
     }
-
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCollectionViewCell", forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.orangeColor()
+        return cell
+    }
+    
+    
     //MARK:タブバー
     func addTabBar() {
         

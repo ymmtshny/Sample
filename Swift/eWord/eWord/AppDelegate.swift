@@ -20,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //let firstView: ViewController = ViewController()
-        let secondView: QuizViewController = QuizViewController()
+        //let secondView: QuizViewController = QuizViewController()
+        let thirdView: RecordViewController = RecordViewController()
         
-        myNavigationController = UINavigationController(rootViewController: secondView)
+        myNavigationController = UINavigationController(rootViewController: thirdView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = myNavigationController
         self.window?.makeKeyAndVisible()

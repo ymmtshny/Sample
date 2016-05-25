@@ -21,9 +21,10 @@ class QuizViewController: UIViewController, myTabBarDelegate {
         //let config = Realm.Configuration(schemaVersion: 1)
         //Realm.Configuration.defaultConfiguration = config
         
-        self.addTabBar()
+        
         self.addQuizView()
         //self.addScrollview()
+        //self.addTabBar()
     }
     
     override func viewWillAppear(animated: Bool) {
