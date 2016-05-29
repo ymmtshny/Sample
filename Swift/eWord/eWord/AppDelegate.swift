@@ -27,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let firstView: ViewController = ViewController()
-        let secondView: QuizViewController = QuizViewController()
-        let thirdView: RecordViewController = RecordViewController()
         
         myNavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

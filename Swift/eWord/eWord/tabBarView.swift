@@ -9,7 +9,7 @@
 import UIKit
 
 enum BUTTON_TYPE :Int{
-    case LSIT
+    case LIST
     case QUIZ
     case RECORD
 }
@@ -68,7 +68,7 @@ class tabBarView :UIView {
     
     @IBAction func tapWordListButton(sender: AnyObject) {
         
-        self.delegate?.tapTabBarButton(BUTTON_TYPE.LSIT)
+        self.delegate?.tapTabBarButton(BUTTON_TYPE.LIST)
         
     }
     

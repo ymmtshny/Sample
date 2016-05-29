@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		C29BF9AA74263258865C7332 /* Pods_eWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */; };
 		C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */; };
-		C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */; };
 		C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB001CF149DE00CE6FF1 /* CustomCell.swift */; };
 		C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB011CF149DE00CE6FF1 /* CustomCell.xib */; };
 		C502CB051CF14BE500CE6FF1 /* RealmMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */; };
-		C502CB0C1CF1A72000CE6FF1 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */; };
-		C502CB0E1CF1A72C00CE6FF1 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */; };
 		C5152C0B1CF5CF7B0042F1C3 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C0A1CF5CF7B0042F1C3 /* LevelSelectView.swift */; };
 		C5152C111CF630980042F1C3 /* LevelSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C101CF630980042F1C3 /* LevelSelectView.xib */; };
 		C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C131CF6332E0042F1C3 /* QuizView.swift */; };
@@ -25,6 +22,8 @@
 		C56D24D91CFAD8C3003D1C72 /* wordListTabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56D24D81CFAD8C3003D1C72 /* wordListTabelView.xib */; };
 		C56D24DC1CFADD38003D1C72 /* calenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D24DB1CFADD38003D1C72 /* calenderView.swift */; };
 		C56D24DE1CFADD49003D1C72 /* calenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56D24DD1CFADD48003D1C72 /* calenderView.xib */; };
+		C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D24E01CFAEDF1003D1C72 /* articleView.swift */; };
+		C56D24E31CFAEE03003D1C72 /* articleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56D24E21CFAEE03003D1C72 /* articleView.xib */; };
 		C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195A1CEF1D2600D9B213 /* AppDelegate.swift */; };
 		C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* ViewController.swift */; };
 		C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */; };
@@ -34,7 +33,6 @@
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
 		C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */; };
 		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
-		C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */; };
 		C5EB64911CF480AD00A1F21C /* tabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB64901CF480AD00A1F21C /* tabBarView.swift */; };
 		C5EB64931CF480BA00A1F21C /* tabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5EB64921CF480BA00A1F21C /* tabBarView.xib */; };
 /* End PBXBuildFile section */
@@ -44,12 +42,9 @@
 		30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8669C47C59A900F862E9FF28 /* Pods-eWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-eWord/Pods-eWord.release.xcconfig"; sourceTree = "<group>"; };
 		C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		C502CB001CF149DE00CE6FF1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C502CB011CF149DE00CE6FF1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMethod.swift; sourceTree = "<group>"; };
-		C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		C5152C0A1CF5CF7B0042F1C3 /* LevelSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
 		C5152C101CF630980042F1C3 /* LevelSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectView.xib; sourceTree = "<group>"; };
 		C5152C131CF6332E0042F1C3 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -60,6 +55,8 @@
 		C56D24D81CFAD8C3003D1C72 /* wordListTabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wordListTabelView.xib; sourceTree = "<group>"; };
 		C56D24DB1CFADD38003D1C72 /* calenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calenderView.swift; sourceTree = "<group>"; };
 		C56D24DD1CFADD48003D1C72 /* calenderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = calenderView.xib; sourceTree = "<group>"; };
+		C56D24E01CFAEDF1003D1C72 /* articleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articleView.swift; sourceTree = "<group>"; };
+		C56D24E21CFAEE03003D1C72 /* articleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = articleView.xib; sourceTree = "<group>"; };
 		C57019571CEF1D2500D9B213 /* eWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C570195A1CEF1D2600D9B213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C570195C1CEF1D2600D9B213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +68,6 @@
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDB.swift; sourceTree = "<group>"; };
 		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
-		C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C5EB64901CF480AD00A1F21C /* tabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarView.swift; sourceTree = "<group>"; };
 		C5EB64921CF480BA00A1F21C /* tabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tabBarView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,26 +105,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C502CB0A1CF1A70A00CE6FF1 /* QuizViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C5DBA4CD1CF0CF030056AB8C /* QuizViewController.swift */,
-				C502CAFE1CF148E600CE6FF1 /* QuizViewController.xib */,
-			);
-			name = QuizViewController;
-			sourceTree = "<group>";
-		};
-		C502CB0F1CF1A73100CE6FF1 /* RecoredViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C502CB0B1CF1A72000CE6FF1 /* RecordViewController.swift */,
-				C502CB0D1CF1A72C00CE6FF1 /* RecordViewController.xib */,
-				C5152C181CF63A990042F1C3 /* collectionViewCell.swift */,
-				C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */,
-			);
-			name = RecoredViewController;
-			sourceTree = "<group>";
-		};
 		C5152C121CF633090042F1C3 /* LevelSelectView */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +139,19 @@
 			children = (
 				C56D24DB1CFADD38003D1C72 /* calenderView.swift */,
 				C56D24DD1CFADD48003D1C72 /* calenderView.xib */,
+				C5152C181CF63A990042F1C3 /* collectionViewCell.swift */,
+				C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */,
 			);
 			name = calenderView;
+			sourceTree = "<group>";
+		};
+		C56D24E41CFAEE09003D1C72 /* articleView */ = {
+			isa = PBXGroup;
+			children = (
+				C56D24E01CFAEDF1003D1C72 /* articleView.swift */,
+				C56D24E21CFAEE03003D1C72 /* articleView.xib */,
+			);
+			name = articleView;
 			sourceTree = "<group>";
 		};
 		C570194E1CEF1D2500D9B213 = {
@@ -196,10 +183,9 @@
 				C5152C121CF633090042F1C3 /* LevelSelectView */,
 				C56D24DA1CFADC9F003D1C72 /* wordListTableView */,
 				C5EB64941CF480EA00A1F21C /* tabBarView */,
-				C502CB0A1CF1A70A00CE6FF1 /* QuizViewController */,
-				C502CB0F1CF1A73100CE6FF1 /* RecoredViewController */,
-				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
+				C56D24E41CFAEE09003D1C72 /* articleView */,
 				C502CB041CF14BE500CE6FF1 /* RealmMethod.swift */,
+				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
 				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C57019691CEF1D2600D9B213 /* Info.plist */,
@@ -282,6 +268,7 @@
 			files = (
 				C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */,
 				C5152C111CF630980042F1C3 /* LevelSelectView.xib in Resources */,
+				C56D24E31CFAEE03003D1C72 /* articleView.xib in Resources */,
 				C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */,
 				C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */,
 				C56D24D91CFAD8C3003D1C72 /* wordListTabelView.xib in Resources */,
@@ -290,8 +277,6 @@
 				C5EB64931CF480BA00A1F21C /* tabBarView.xib in Resources */,
 				C56D24DE1CFADD49003D1C72 /* calenderView.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
-				C502CAFF1CF148E600CE6FF1 /* QuizViewController.xib in Resources */,
-				C502CB0E1CF1A72C00CE6FF1 /* RecordViewController.xib in Resources */,
 				C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,9 +339,8 @@
 				C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
-				C502CB0C1CF1A72000CE6FF1 /* RecordViewController.swift in Sources */,
-				C5DBA4CE1CF0CF030056AB8C /* QuizViewController.swift in Sources */,
 				C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */,
+				C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
 				C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */,
 				C5152C0B1CF5CF7B0042F1C3 /* LevelSelectView.swift in Sources */,

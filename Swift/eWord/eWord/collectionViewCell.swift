@@ -11,6 +11,8 @@ import UIKit
 class collectionViewCell: UICollectionViewCell {
     
 
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,4 +26,9 @@ class collectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    func setDateLabelWith(int :Int) {
+            dateLabel.text = "\(int)"
+    }
 }
+

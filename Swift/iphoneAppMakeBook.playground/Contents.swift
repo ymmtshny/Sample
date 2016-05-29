@@ -403,3 +403,58 @@ for sampleInt in intArray where sampleInt < 0 {
 //case let where
 
 //for case in
+
+
+func getFirstDateOfMonth(month: Int) -> NSString{
+    let components = NSCalendar.currentCalendar().components([.Year, .Month, .Day],fromDate:  NSDate())
+    components.month = month
+    components.day = 1
+    let firstDateMonth = NSCalendar.currentCalendar().dateFromComponents(components)!
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+    return dateFormatter.stringFromDate(firstDateMonth)
+}
+
+func getLastDateOfMonth(month: Int) -> NSString{
+    let components = NSCalendar.currentCalendar().components([.Year, .Month, .Day],fromDate:  NSDate())
+    components.month = month + 1
+    components.day = 0
+    let firstDateMonth = NSCalendar.currentCalendar().dateFromComponents(components)!
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+    return dateFormatter.stringFromDate(firstDateMonth)
+}
+
+func getDaysInMonth(month:Int) -> Int {
+    
+    let dateComponents = NSDateComponents()
+    dateComponents.month = 7
+    let calendar = NSCalendar.currentCalendar()
+    let date = calendar.dateFromComponents(dateComponents)!
+    let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date)
+    let numDays = range.length
+    return numDays
+}
+
+
+print(getFirstDateOfMonth(5))
+print(getLastDateOfMonth(5))
+print(getDaysInMonth(5))
+
+
+let myURLString = "http://www.yahoo.com"
+
+if let myURL = NSURL(string: myURLString) {
+    var error: NSError?
+    let myHTMLString = try! NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding)
+    
+    if let error = error {
+        print("Error : \(error)")
+    } else {
+        print("HTML : \(myHTMLString)")
+    }
+} else {
+    print("Error: \(myURLString) doesn't  URL")
+}
