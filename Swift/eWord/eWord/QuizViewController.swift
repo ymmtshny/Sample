@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QuizViewController: UIViewController, myTabBarDelegate {
+class QuizViewController: UIViewController {
 
     var quizView: QuizViewController?
     var recordView: RecordViewController?
@@ -65,43 +65,43 @@ class QuizViewController: UIViewController, myTabBarDelegate {
     //MARK:タブバー
     func addTabBar() {
         
-        let bundle = NSBundle(forClass: tabBarView.self)
-        let myTabBar = bundle.loadNibNamed("tabBarView", owner: nil, options: nil)[0] as! tabBarView
-        myTabBar.frame = CGRectMake(0, self.view.frame.height - 49, self.view.frame.width, 49)
-        myTabBar.delegate = self
-        self.view.addSubview(myTabBar)
+//        let bundle = NSBundle(forClass: tabBarView.self)
+//        let myTabBar = bundle.loadNibNamed("tabBarView", owner: nil, options: nil)[0] as! tabBarView
+//        myTabBar.frame = CGRectMake(0, self.view.frame.height - 49, self.view.frame.width, 49)
+//        myTabBar.delegate = self
+//        self.view.addSubview(myTabBar)
         
     }
     
-    func tapTabBarButton(type: BUTTON_TYPE){
-        
-        switch type {
-        case BUTTON_TYPE.LSIT:
-            if let listView = listView {
-                listView.listView = listView
-                listView.quizView = self
-                listView.recordView = recordView
-                
-                self.presentViewController(listView, animated: false, completion: nil)
-                self.dismissViewControllerAnimated(false, completion: nil)
-            }
-            break
-        case BUTTON_TYPE.QUIZ:
-    
-            break
-        case BUTTON_TYPE.RECORD:
-            if let recordView = recordView {
-                recordView.listView = listView
-                recordView.quizView = self
-                recordView.recordView = recordView
-                
-                self.presentViewController(recordView, animated: false, completion: nil)
-                self.dismissViewControllerAnimated(false, completion: nil)
-            }
-            break
-        }
-        
-    }
+//    func tapTabBarButton(type: BUTTON_TYPE){
+//        
+//        switch type {
+//        case BUTTON_TYPE.LSIT:
+//            if let listView = listView {
+//                listView.listView = listView
+//                listView.quizView = self
+//                listView.recordView = recordView
+//                
+//                self.presentViewController(listView, animated: false, completion: nil)
+//                self.dismissViewControllerAnimated(false, completion: nil)
+//            }
+//            break
+//        case BUTTON_TYPE.QUIZ:
+//    
+//            break
+//        case BUTTON_TYPE.RECORD:
+//            if let recordView = recordView {
+//                recordView.listView = listView
+//                recordView.quizView = self
+//                recordView.recordView = recordView
+//                
+//                self.presentViewController(recordView, animated: false, completion: nil)
+//                self.dismissViewControllerAnimated(false, completion: nil)
+//            }
+//            break
+//        }
+//        
+//    }
     
     
     override func didReceiveMemoryWarning() {

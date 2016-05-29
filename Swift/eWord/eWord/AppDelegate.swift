@@ -4,7 +4,14 @@
 //
 //  Created by Shinya Yamamoto on 2016/05/20.
 //  Copyright © 2016年 Shinya Yamamoto. All rights reserved.
-//
+//  ----------------------------------------
+//  ViewController
+//  tabBarView(済)
+//  wordListTableView(済)
+//  articleView
+//  QuizView(済)
+//  LevelSelectView(済)
+//  CalenderView
 
 import UIKit
 import CoreData
@@ -19,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        //let firstView: ViewController = ViewController()
-        //let secondView: QuizViewController = QuizViewController()
+        let firstView: ViewController = ViewController()
+        let secondView: QuizViewController = QuizViewController()
         let thirdView: RecordViewController = RecordViewController()
         
-        myNavigationController = UINavigationController(rootViewController: thirdView)
+        myNavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = myNavigationController
         self.window?.makeKeyAndVisible()

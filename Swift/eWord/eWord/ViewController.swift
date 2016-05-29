@@ -11,22 +11,15 @@ import AVFoundation
 import RealmSwift
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, myTabBarDelegate  {
+class ViewController: UIViewController, myTabBarDelegate  {
 
     
     @IBOutlet weak var wordListTableView: UITableView!
     @IBOutlet weak var myTabBarView: tabBarView!
     
-    var wordList = [[String:String]]()
-    var quizView: QuizViewController?
-    var recordView: RecordViewController?
-    var listView: ViewController?
-    
-    private var onceTokenViewDidAppear: dispatch_once_t = 0
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        
     }
     
     override func viewDidLoad() {
@@ -34,33 +27,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //let config = Realm.Configuration(schemaVersion: 1)
         //Realm.Configuration.defaultConfiguration = config
         
-        self.wordListTableView.delegate = self
-        self.wordListTableView.dataSource = self
-        self.loadCSVData()
+        self.addWordListTableView()
         self.addTabBar()
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if quizView == nil {
-            quizView = QuizViewController()
-        }
-        
-        if listView == nil {
-            listView = ViewController()
-        }
-        
-        if recordView == nil {
-            recordView = RecordViewController()
-        }
-        
         
     }
     
+    //MARK:単語リストtableView
+    func addWordListTableView() {
+        
+        let bundle = NSBundle(forClass: wordListTabelView.self)
+        let myTableView = bundle.loadNibNamed("wordListTabelView", owner: nil, options: nil)[0] as! UITableView
+        myTableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 49)
+        self.view.addSubview(myTableView)
+        
+    }
     
-    
-
     //MARK:タブバー
     func addTabBar() {
         
@@ -74,126 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tapTabBarButton(type: BUTTON_TYPE){
         
-        switch type {
-            case BUTTON_TYPE.LSIT:
-                break
-            case BUTTON_TYPE.QUIZ:
-                
-                if let quizView = quizView {
-                    quizView.listView = self
-                    quizView.quizView = quizView
-                    quizView.recordView = recordView
-                    self.navigationController?.pushViewController(quizView, animated: false)
-                }
-                break
-            case BUTTON_TYPE.RECORD:
-                
-                if let recordView = recordView {
-                    recordView.listView = self
-                    recordView.quizView = quizView
-                    recordView.recordView = recordView
-                    self.navigationController?.pushViewController(recordView, animated: false)
-                }
-                break
-        }
-        
-    }
-    
-    
-    //MARK: Text to Speech
-    func speachText(string: String) {
-        
-        let synth = AVSpeechSynthesizer()
-        var myUtterance = AVSpeechUtterance(string: "")
-        myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.5
-        synth.speakUtterance(myUtterance)
-    }
-    
-    //MARK:テーブルビュー
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.wordList.count
-        
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return 1
-    }
-    
-    
-    
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        
-        let cell = NSBundle.mainBundle().loadNibNamed("CustomCell", owner: self, options: nil).first as! CustomCell
-        
-        let dic = self.wordList[indexPath.row]
-        
-        cell.engLabel.text = dic["english"]
-        cell.jpLabel.text = dic["japanese"]
-        
-        return cell
-        
-    }
-    
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let dic = self.wordList[indexPath.row]
-        if let str = dic["english"]  {
-            self.speachText(str)
-        }
-    }
-
-    
-    
-    
-    //MARK:CSV
-    private func loadCSVData() {
-        
-        if let csvFilePath = NSBundle.mainBundle().pathForResource("words", ofType: "csv") {
-            
-            do {
-                if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
-                    
-                    let array = csvStringData.characters.split{$0 == ","}.map(String.init)
-                    var enArray = [String]()
-                    var jpArray = [String]()
-                    var word: Dictionary = [String:String]()
-                    
-                    for index in 0...array.count-1 {
-                    
-                        let data = array[index]
-                        
-                        if(index % 2 == 0) {
-                            
-                            enArray.append(data)
-                        
-                        } else {
-                            
-                            jpArray.append(data)
-                        }
-                
-                    }
-                    
-                    for index in 0...enArray.count-1 {
-                        
-                        word["english"] = enArray[index]
-                        word["japanese"] = jpArray[index]
-                        wordList.append(word)
-                    }
-                    
-                    print(array)
-                }
-                
-            } catch let error {
-                
-                print(error)
-            }
-            
-        }
         
     }
     
