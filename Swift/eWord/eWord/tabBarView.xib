@@ -44,6 +44,10 @@
                     <inset key="imageEdgeInsets" minX="10" minY="5" maxX="10" maxY="16"/>
                     <state key="normal" image="calender_gray"/>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUS-EF-6Il">
+                    <rect key="frame" x="0.0" y="1" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
