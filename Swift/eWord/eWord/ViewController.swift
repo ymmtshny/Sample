@@ -40,6 +40,7 @@ class ViewController: UIViewController, myTabBarDelegate  {
         self.addLevelSelectView()
         self.hideAllViews()
         
+        self.calender.hidden = false;
     }
     
     //MARK:単語リストtableView
@@ -74,12 +75,15 @@ class ViewController: UIViewController, myTabBarDelegate  {
             break
         case .QUIZ:
             self.quizView.hidden = false;
-            self.levelSelectView.hidden = false;
+           //self.levelSelectView.hidden = false;
             break
         case .RECORD:
-            self.article.hidden = true;
+            self.calender.hidden = false;
             break
+            
+            
         }
+        
     }
     
     //MARK:QuizView
@@ -110,7 +114,7 @@ class ViewController: UIViewController, myTabBarDelegate  {
     func addCanlenderView() {
         
         let bundle = NSBundle(forClass: calenderView.self)
-        let calender = bundle.loadNibNamed("calenderView", owner: nil, options: nil)[0] as! calenderView
+        calender = bundle.loadNibNamed("calenderView", owner: nil, options: nil)[0] as! calenderView
         calender.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.tabBarHeight)
         self.view.addSubview(calender)
         
@@ -123,7 +127,7 @@ class ViewController: UIViewController, myTabBarDelegate  {
     func addArticelView() {
         
         let bundle = NSBundle(forClass: articleView.self)
-        let article = bundle.loadNibNamed("articleView", owner: nil, options: nil)[0] as! articleView
+        article = bundle.loadNibNamed("articleView", owner: nil, options: nil)[0] as! articleView
         article.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.tabBarHeight)
         self.view.addSubview(article)
         
@@ -136,6 +140,7 @@ class ViewController: UIViewController, myTabBarDelegate  {
         self.levelSelectView.hidden = true;
         self.calender.hidden = true;
         self.article.hidden = true;
+        
     }
     
     

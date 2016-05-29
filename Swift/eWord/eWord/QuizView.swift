@@ -27,7 +27,6 @@ class QuizView :UIView {
         super.awakeFromNib()
         
         self.loadCSVData()
-        
         self.setupButtonAction()
         self.setQuestion()
         

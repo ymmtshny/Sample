@@ -14,13 +14,18 @@ class calenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+    let daysPerWeek: Int = 7
+    let cellMargin: CGFloat = 2.0
+    var selectedDate = NSDate()
+    var today: NSDate!
+    let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.myCollectionView.delegate = self;
         self.myCollectionView.dataSource = self;
-        self.myCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCollectionViewCell")
-        
-        
+        self.myCollectionView.registerClass(collectionViewCell.self, forCellWithReuseIdentifier: "MyCollectionViewCell")
+        self.myCollectionView.backgroundColor = UIColor.whiteColor()
 
     }
     
@@ -63,8 +68,22 @@ class calenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCollectionViewCell", forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.redColor()
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCollectionViewCell", forIndexPath: indexPath) as! collectionViewCell
+        
+        cell.dateLabel!.text = "1"
+        
+        
+        if indexPath.section == 0 {
+            
+            cell.dateLabel!.text = weekArray[indexPath.row]
+            
+        } else {
+            
+            cell.dateLabel!.text = String(indexPath.row + 1)
+            
+        }
+        
         return cell
     }
     
