@@ -64,7 +64,7 @@ class WordsDB: Object {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "eng_word = %@", "\(eng_word)")
-        let word = realm.objects(WordsDB.self).filter(predicate).first!
+        let word = realm.objects(WordsDB.self).filter(predicate).first
         return word
         
     }
@@ -219,6 +219,36 @@ class UsersDB: Object {
         print(dataContent)
         
     }
+    
+    //とりあえずはじめに正解していたらtrue
+    func getIsCorrectFromEngWord(eng_word:String) -> Bool {
+
+        let wordData = WordsDB().getWord(eng_word)
+        let usersDataArray = wordData!.usersData
+        let userDataWithCorrect = usersDataArray.first
+        
+        if userDataWithCorrect==nil {
+            return false
+        } else {
+            return true
+        }
+     
+    }
+    
+    func getLastAnswerDataFromEngWord(eng_word:String) -> String {
+        
+        let wordData = WordsDB().getWord(eng_word)
+        let usersDataArray = wordData!.usersData
+        let userDataWithDate = usersDataArray.last
+        
+        if userDataWithDate==nil {
+            return "未解答"
+        } else {
+            return (userDataWithDate?.answer_date)!
+        }
+        
+    }
+    
     func saveUsersDB(userdata:UsersDB) {
         
         do {

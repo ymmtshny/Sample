@@ -114,7 +114,7 @@ class QuizView :UIView {
     
     private func getCurrentDateTime() -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/mm/dd/hh/mm/ss"
+        dateFormatter.dateFormat = "yyyy/MM/dd/hh/mm/ss"
         let date = dateFormatter.stringFromDate(NSDate())
         return date
     }
@@ -261,6 +261,7 @@ class QuizView :UIView {
         }
         
     }
+    
     
     //MARK: Text to Speech
     func speachText(string: String) {

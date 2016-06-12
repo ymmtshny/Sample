@@ -66,3 +66,7 @@ for score in individualScores {
 }
 
 print(teamScore)
+
+let dateFormatter = NSDateFormatter()
+dateFormatter.dateFormat = "yyyy/mm/dd/ hh:mm:ss"
+let date = dateFormatter.stringFromDate(NSDate())

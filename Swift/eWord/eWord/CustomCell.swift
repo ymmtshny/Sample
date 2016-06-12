@@ -12,10 +12,13 @@ class CustomCell: UITableViewCell {
 
     @IBOutlet weak var engLabel: UILabel!
     @IBOutlet weak var jpLabel: UILabel!
+    @IBOutlet weak var completeImageView: UIImageView!
+    @IBOutlet weak var lastAnswerDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        completeImageView.hidden = true;
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

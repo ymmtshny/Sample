@@ -16,10 +16,16 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     override func awakeFromNib() {
         super.awakeFromNib()
     
-        self.loadCSVData()
-        self.delegate = self;
-        self.dataSource = self;
-
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
+        if(!isLoadedCSVData){
+            self.loadCSVData()
+        } else {
+            wordList = self.loadWordListFromRealm()
+        }
+        
+        self.delegate = self
+        self.dataSource = self
         
     }
     
@@ -66,9 +72,10 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         
         let dic = self.wordList[indexPath.row]
         
-        cell.engLabel.text = dic["english"]
-        cell.jpLabel.text = dic["japanese"]
-        
+        cell.engLabel.text = dic["eng_word"]
+        cell.jpLabel.text = dic["jp_word"]
+        cell.completeImageView.hidden = !UsersDB().getIsCorrectFromEngWord(cell.engLabel.text!)
+        cell.lastAnswerDateLabel.text = UsersDB().getLastAnswerDataFromEngWord(cell.engLabel.text!)
         return cell
         
     }
@@ -77,7 +84,7 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let dic = self.wordList[indexPath.row]
-        if let str = dic["english"]  {
+        if let str = dic["eng_word"]  {
             self.speachText(str)
         }
     }
@@ -115,8 +122,8 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
                     
                     for index in 0...enArray.count-1 {
                         
-                        word["english"] = enArray[index]
-                        word["japanese"] = jpArray[index]
+                        word["eng_word"] = enArray[index]
+                        word["jp_word"] = jpArray[index]
                         wordList.append(word)
                     }
                     
@@ -130,6 +137,11 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
             
         }
         
+    }
+    
+    func loadWordListFromRealm() -> [[String:String]] {
+        
+        return WordsDB().getWordsDB()
     }
 
 }

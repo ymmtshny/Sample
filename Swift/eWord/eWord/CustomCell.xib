@@ -49,14 +49,22 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="FO4-RI-I3e">
+                        <rect key="frame" x="258" y="11" width="25" height="25"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="completeImageView" destination="FO4-RI-I3e" id="uL8-cw-QNn"/>
                 <outlet property="engLabel" destination="ZMb-xM-aD3" id="MFU-bJ-asy"/>
                 <outlet property="jpLabel" destination="jiG-N4-my3" id="jhG-6a-nih"/>
+                <outlet property="lastAnswerDateLabel" destination="FQh-zA-cBa" id="puz-zU-eyY"/>
             </connections>
             <point key="canvasLocation" x="324" y="277"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="check" width="25" height="25"/>
+    </resources>
 </document>
