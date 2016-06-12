@@ -19,9 +19,9 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         let defaults = NSUserDefaults.standardUserDefaults()
         let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
         if(!isLoadedCSVData){
-            self.loadCSVData()
+            wordList = WordsDB().loadCSVData()
         } else {
-            wordList = self.loadWordListFromRealm()
+            wordList = WordsDB().getWordsDB()
         }
         
         self.delegate = self
@@ -85,63 +85,8 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         
         let dic = self.wordList[indexPath.row]
         if let str = dic["eng_word"]  {
-            self.speachText(str)
+            ViewController().speachText(str)
         }
-    }
-    
-    
-    
-    
-    //MARK:CSV
-    private func loadCSVData() {
-        
-        if let csvFilePath = NSBundle.mainBundle().pathForResource("words", ofType: "csv") {
-            
-            do {
-                if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
-                    
-                    let array = csvStringData.characters.split{$0 == ","}.map(String.init)
-                    var enArray = [String]()
-                    var jpArray = [String]()
-                    var word: Dictionary = [String:String]()
-                    
-                    for index in 0...array.count-1 {
-                        
-                        let data = array[index]
-                        
-                        if(index % 2 == 0) {
-                            
-                            enArray.append(data)
-                            
-                        } else {
-                            
-                            jpArray.append(data)
-                        }
-                        
-                    }
-                    
-                    for index in 0...enArray.count-1 {
-                        
-                        word["eng_word"] = enArray[index]
-                        word["jp_word"] = jpArray[index]
-                        wordList.append(word)
-                    }
-                    
-//                    print(array)
-                }
-                
-            } catch let error {
-                
-                print(error)
-            }
-            
-        }
-        
-    }
-    
-    func loadWordListFromRealm() -> [[String:String]] {
-        
-        return WordsDB().getWordsDB()
     }
 
 }

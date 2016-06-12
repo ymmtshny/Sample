@@ -172,6 +172,16 @@ class ViewController: UIViewController, myTabBarDelegate  {
     }
     
     
+    //MARK: Text to Speech
+    func speachText(string: String) {
+        
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: "")
+        myUtterance = AVSpeechUtterance(string: string)
+        myUtterance.rate = 0.5
+        synth.speakUtterance(myUtterance)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

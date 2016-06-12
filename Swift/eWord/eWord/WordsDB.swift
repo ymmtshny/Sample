@@ -159,7 +159,66 @@ class WordsDB: Object {
         }
         
     }
-
+    
+    //MARK:CSV
+    func loadCSVData()-> [[String:String]]{
+        
+        var wordList = [[String:String]]()
+        if let csvFilePath = NSBundle.mainBundle().pathForResource("words", ofType: "csv") {
+            
+            do {
+                if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
+                    
+                    let array = csvStringData.characters.split{$0 == ","}.map(String.init)
+                    var enArray = [String]()
+                    var jpArray = [String]()
+                    var word: Dictionary = [String:String]()
+                    var wordsdb = WordsDB()
+                    // wordsdb.deleteAll()
+                    
+                    
+                    for index in 0...array.count-1 {
+                        
+                        let data = array[index]
+                        
+                        if(index % 2 == 0) {
+                            wordsdb = WordsDB()
+                            enArray.append(data)
+                            wordsdb.eng_word = data
+                            
+                        } else {
+                            
+                            jpArray.append(data)
+                            wordsdb.jp_word = data
+                            wordsdb.saveWordsDB(wordsdb)
+                        }
+                        
+                        
+                        
+                    }
+                    
+                    for index in 0...enArray.count-1 {
+                        
+                        word["eng_word"] = enArray[index]
+                        word["jp_word"] = jpArray[index]
+                        wordList.append(word)
+                    }
+                    
+                    
+                    //csv一回読み込んでrealmに保存したよと。
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setBool(true, forKey: "isLoadedWordsCSV")
+                }
+                
+            } catch let error {
+                
+                print(error)
+            }
+            
+        }
+        
+        return wordList;
+    }
 
 }
 

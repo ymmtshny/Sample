@@ -481,22 +481,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "eWord/QuizView.swift"
-            timestampString = "487412675.286726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "loadWordListFromRealm()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "eWord/WordsDB.swift"
             timestampString = "487410700.067353"
             startingColumnNumber = "9223372036854775807"
@@ -504,22 +488,6 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "getWordsDB()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eWord/QuizView.swift"
-            timestampString = "487412675.286726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "loadWordListFromRealm()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -610,11 +578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eWord/WordsDB.swift"
-            timestampString = "487415948.480972"
+            timestampString = "487434039.065266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "getIsCorrectFromEngWord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -626,11 +594,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eWord/WordsDB.swift"
-            timestampString = "487415948.480972"
+            timestampString = "487434039.065266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "getIsCorrectFromEngWord(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -642,12 +610,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eWord/WordsDB.swift"
-            timestampString = "487415948.480972"
+            timestampString = "487434039.065266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "getIsCorrectFromEngWord(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eWord/ViewController.swift"
+            timestampString = "487434247.61657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eWord/ViewController.swift"
+            timestampString = "487434264.016349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

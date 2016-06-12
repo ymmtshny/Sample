@@ -22,7 +22,7 @@ class QuizView :UIView {
     var currentQuizDic = [String:String]() //現在の問題の英語と答えを格納したDictionary
     var answerIdx = 0
     
-    
+    //MARK:init関連
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,9 +30,9 @@ class QuizView :UIView {
         let defaults = NSUserDefaults.standardUserDefaults()
         let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
         if(!isLoadedCSVData){
-            self.loadCSVData()
+            wordList = WordsDB().loadCSVData()
         } else {
-            wordList = self.loadWordListFromRealm()
+            wordList = WordsDB().getWordsDB()
         }
         self.setupButtonAction()
         self.setQuestion()
@@ -52,7 +52,7 @@ class QuizView :UIView {
     func setQuestion() {
         let quiz = self.getOneQuiz()
         self.setupLabelWithQuizArray(quiz)
-        self.speachText(quiz[0])
+        ViewController().speachText(quiz[0])
     }
     
     //MARK:Button
@@ -198,86 +198,5 @@ class QuizView :UIView {
         return dic["jp_word"]
     }
     
-    
-    
-    
-    //MARK:CSV
-    private func loadCSVData() {
-        
-        if let csvFilePath = NSBundle.mainBundle().pathForResource("words", ofType: "csv") {
-            
-            do {
-                if let csvStringData: String = try String(contentsOfFile: csvFilePath) {
-                    
-                    let array = csvStringData.characters.split{$0 == ","}.map(String.init)
-                    var enArray = [String]()
-                    var jpArray = [String]()
-                    var word: Dictionary = [String:String]()
-                    var wordsdb = WordsDB()
-//                    wordsdb.deleteAll()
-                
-                    
-                    for index in 0...array.count-1 {
-                        
-                        let data = array[index]
-                        
-                        if(index % 2 == 0) {
-                            wordsdb = WordsDB()
-                            enArray.append(data)
-                            wordsdb.eng_word = data
-                            
-                        } else {
-                            
-                            jpArray.append(data)
-                            wordsdb.jp_word = data
-                            wordsdb.saveWordsDB(wordsdb)
-                        }
-                        
-                        
-                        
-                    }
-                    
-                    for index in 0...enArray.count-1 {
-                        
-                        word["eng_word"] = enArray[index]
-                        word["jp_word"] = jpArray[index]
-                        wordList.append(word)
-                    }
-                    
-                    //print(array)
-                    
-                    wordsdb.getWordsDB()
-                    
-                    //csv一回読み込んでrealmに保存したよと。
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setBool(true, forKey: "isLoadedWordsCSV")
-                }
-                
-            } catch let error {
-                
-                print(error)
-            }
-            
-        }
-        
-    }
-    
-    
-    //MARK: Text to Speech
-    func speachText(string: String) {
-        
-        let synth = AVSpeechSynthesizer()
-        var myUtterance = AVSpeechUtterance(string: "")
-        myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.5
-        synth.speakUtterance(myUtterance)
-    }
-    
-    func loadWordListFromRealm() -> [[String:String]] {
-        
-        return WordsDB().getWordsDB()
-    }
-
-
 
 }
