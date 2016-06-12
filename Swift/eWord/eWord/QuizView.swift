@@ -26,7 +26,14 @@ class QuizView :UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.loadCSVData()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
+        if(!isLoadedCSVData){
+            self.loadCSVData()
+        } else {
+            wordList = self.loadWordListFromRealm()
+        }
         self.setupButtonAction()
         self.setQuestion()
         
@@ -68,39 +75,32 @@ class QuizView :UIView {
         
         //check if the answer is correct
         let userAnswer = sender.titleLabel?.text
-        let quizAnswer = currentQuizDic["japanese"]
+        let quizAnswer = currentQuizDic["jp_word"]
         
         check_image.hidden = false
         
         let userdb = UsersDB()
-        userdb.correct_times = "1"
-        userdb.answer_duration = "10s"
-        userdb.solve_times = "1"
-        userdb.solve_date = "\(NSDate())"
-        userdb.saveUsersDB(userdb)
-        
-        
-        
         var word = WordsDB()
-        
-        word = word.getWord((engLabel?.text)!)!
-        
-        
-        userdb.setUserData(userdb, word: word)
-        
-        print(word)
+        userdb.answer_duration = "10s"
+        userdb.answer_date = self.getCurrentDateTime()
         
         if userAnswer == quizAnswer {
             
             print("CORRECT")
             self.check_image.image = UIImage(named:"correct")!
+            userdb.isCorrect = "true"
             
         } else {
             
             print("WRONG")
             self.check_image.image = UIImage(named:"wrong")!
-            
+            userdb.isCorrect = "false"
         }
+        
+        userdb.saveUsersDB(userdb)
+        word = word.getWord((engLabel?.text)!)!
+        userdb.setUserData(userdb, word: word)
+        print(word)
         
         //        UIView.animateWithDuration(0.5, animations: {
         //            self.check_image.hidden = true
@@ -110,6 +110,13 @@ class QuizView :UIView {
         self.check_image.hidden = true
         self.setQuestion()
         
+    }
+    
+    private func getCurrentDateTime() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/mm/dd/hh/mm/ss"
+        let date = dateFormatter.stringFromDate(NSDate())
+        return date
     }
     
     
@@ -183,12 +190,12 @@ class QuizView :UIView {
     
     private func getEnglishFromDictionary(dic :Dictionary<String, String>) -> String! {
         
-        return dic["english"]
+        return dic["eng_word"]
     }
     
     private func getJapaneseFromDictionary(dic :Dictionary<String, String>) -> String! {
         
-        return dic["japanese"]
+        return dic["jp_word"]
     }
     
     
@@ -207,7 +214,7 @@ class QuizView :UIView {
                     var jpArray = [String]()
                     var word: Dictionary = [String:String]()
                     var wordsdb = WordsDB()
-                    wordsdb.deleteAll()
+//                    wordsdb.deleteAll()
                 
                     
                     for index in 0...array.count-1 {
@@ -232,14 +239,18 @@ class QuizView :UIView {
                     
                     for index in 0...enArray.count-1 {
                         
-                        word["english"] = enArray[index]
-                        word["japanese"] = jpArray[index]
+                        word["eng_word"] = enArray[index]
+                        word["jp_word"] = jpArray[index]
                         wordList.append(word)
                     }
                     
                     //print(array)
                     
                     wordsdb.getWordsDB()
+                    
+                    //csv一回読み込んでrealmに保存したよと。
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setBool(true, forKey: "isLoadedWordsCSV")
                 }
                 
             } catch let error {
@@ -259,6 +270,11 @@ class QuizView :UIView {
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.5
         synth.speakUtterance(myUtterance)
+    }
+    
+    func loadWordListFromRealm() -> [[String:String]] {
+        
+        return WordsDB().getWordsDB()
     }
 
 

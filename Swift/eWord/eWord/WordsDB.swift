@@ -40,11 +40,23 @@ class WordsDB: Object {
     }
     
     //MARK:getter
-    func getWordsDB() {
+    func getWordsDB() -> [[String:String]]{
+
+        var dicArray = [[String:String]]()
         
         let realm = try! Realm()
-        let dataContent = realm.objects(WordsDB)
-        print(dataContent)
+        let results = realm.objects(WordsDB)
+
+        for result in results {
+            var dictinary = [String:String]()
+            print("eng_word:\((result as WordsDB).eng_word)")
+            dictinary["eng_word"] = (result as WordsDB).eng_word;
+            dictinary["jp_word"] = (result as WordsDB).jp_word;
+            dicArray.append(dictinary);
+        }
+    
+        print(dicArray)
+        return dicArray;
         
     }
     
@@ -177,21 +189,18 @@ class WordsDB: Object {
 
 class UsersDB: Object {
 
-    dynamic var correct_times = "" //正解回数
-    dynamic var answer_duration = ""   //解答時間　0~10sec
-    dynamic var solve_times = ""   //回答日数
-    dynamic var solve_date = ""    //解答日時
+    dynamic var isCorrect = ""
+    dynamic var answer_duration = ""
+    dynamic var answer_date = ""
     
     func setUsersData(userdata:UsersDB,
+                      isCorrect: String,
                       answer_duration: String,
-                      correct_times: String,
-                      solve_times:String,
-                      solve_date:String) {
+                      answer_date:String) {
         
+        userdata.isCorrect = isCorrect
         userdata.answer_duration = answer_duration
-        userdata.correct_times = correct_times
-        userdata.solve_times = solve_times
-        userdata.solve_date = solve_date
+        userdata.answer_date = answer_date
         
     }
     
@@ -225,26 +234,6 @@ class UsersDB: Object {
         
     }
     
-    func updateUsersDB(answer_duration: String,
-                       correct_times: String,
-                       solve_times:String) {
-        
-        do {
-            let realm = try! Realm()
-            
-            let userdata = realm.objects(UsersDB).last!
-            try realm.write {
-                userdata.answer_duration = answer_duration
-                userdata.correct_times = correct_times
-                userdata.solve_times = solve_times
-            }
-            
-        } catch {
-            
-            print("updateUsersDB ERROR")
-            
-        }
-    }
     
     func deleteLastUsersData() {
         
