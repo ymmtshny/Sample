@@ -72,12 +72,34 @@ class QuizView :UIView {
         
         check_image.hidden = false
         
+        let userdb = UsersDB()
+        userdb.correct_times = "1"
+        userdb.answer_duration = "10s"
+        userdb.solve_times = "1"
+        userdb.solve_date = "\(NSDate())"
+        userdb.saveUsersDB(userdb)
+        
+        
+        
+        var word = WordsDB()
+        
+        word = word.getWord((engLabel?.text)!)!
+        
+        
+        userdb.setUserData(userdb, word: word)
+        
+        print(word)
+        
         if userAnswer == quizAnswer {
+            
             print("CORRECT")
             self.check_image.image = UIImage(named:"correct")!
+            
         } else {
+            
             print("WRONG")
             self.check_image.image = UIImage(named:"wrong")!
+            
         }
         
         //        UIView.animateWithDuration(0.5, animations: {
@@ -184,19 +206,27 @@ class QuizView :UIView {
                     var enArray = [String]()
                     var jpArray = [String]()
                     var word: Dictionary = [String:String]()
+                    var wordsdb = WordsDB()
+                    wordsdb.deleteAll()
+                
                     
                     for index in 0...array.count-1 {
                         
                         let data = array[index]
                         
                         if(index % 2 == 0) {
-                            
+                            wordsdb = WordsDB()
                             enArray.append(data)
+                            wordsdb.eng_word = data
                             
                         } else {
                             
                             jpArray.append(data)
+                            wordsdb.jp_word = data
+                            wordsdb.saveWordsDB(wordsdb)
                         }
+                        
+                        
                         
                     }
                     
@@ -207,7 +237,9 @@ class QuizView :UIView {
                         wordList.append(word)
                     }
                     
-                    print(array)
+                    //print(array)
+                    
+                    wordsdb.getWordsDB()
                 }
                 
             } catch let error {

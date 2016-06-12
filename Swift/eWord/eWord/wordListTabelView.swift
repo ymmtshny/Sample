@@ -11,8 +11,6 @@ import AVFoundation
 
 class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var myTabBarView: tabBarView!
-
     var wordList = [[String:String]]()
     
     override func awakeFromNib() {
@@ -122,7 +120,7 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
                         wordList.append(word)
                     }
                     
-                    print(array)
+//                    print(array)
                 }
                 
             } catch let error {

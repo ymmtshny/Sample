@@ -14,12 +14,12 @@ import RealmSwift
 class ViewController: UIViewController, myTabBarDelegate  {
 
     let tabBarHeight:CGFloat = 50.0
-    var myTabBarView: tabBarView = tabBarView()
-    var wordListView:wordListTabelView = wordListTabelView()
-    var quizView: QuizView = QuizView()
-    var levelSelectView:LevelSelectView = LevelSelectView()
-    var calender: calenderView = calenderView()
-    var article: articleView = articleView()
+    var myTabBarView: tabBarView!
+    var wordListView:wordListTabelView!
+    var quizView: QuizView!
+    var levelSelectView:LevelSelectView!
+    var calender: calenderView!
+    var article: articleView!
     
     
     override func viewDidAppear(animated: Bool) {
@@ -33,26 +33,10 @@ class ViewController: UIViewController, myTabBarDelegate  {
         //Realm.Configuration.defaultConfiguration = config
         
         self.addTabBar()
-        self.addCanlenderView()
-        self.addArticelView()
         self.addWordListTableView()
-        self.addQuizView()
-        self.addLevelSelectView()
-        self.hideAllViews()
-        
-        self.calender.hidden = false;
-    }
-    
-    //MARK:単語リストtableView
-    func addWordListTableView() {
-        
-        let bundle = NSBundle(forClass: wordListTabelView.self)
-        wordListView = bundle.loadNibNamed("wordListTabelView", owner: nil, options: nil)[0] as! wordListTabelView
-        wordListView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.tabBarHeight)
-        self.view.addSubview(wordListView)
+        //self.addArticelView()
         
     }
-    
     
     
     //MARK:タブバー
@@ -71,20 +55,48 @@ class ViewController: UIViewController, myTabBarDelegate  {
         self.hideAllViews()
         switch type {
         case .LIST:
-            self.wordListView.hidden = false;
+            
+            if (wordListView == nil) {
+                self.addWordListTableView()
+            }
+            
+            self.wordListView.hidden = false
+            
             break
         case .QUIZ:
-            self.quizView.hidden = false;
-           //self.levelSelectView.hidden = false;
+            
+            if (levelSelectView == nil) {
+                self.addLevelSelectView()
+            }
+            
+            self.levelSelectView.hidden = false
+           
             break
         case .RECORD:
-            self.calender.hidden = false;
+            
+            if (calender == nil) {
+                self.addCanlenderView()
+            }
+            
+            self.calender.hidden = false
+            
             break
             
             
         }
         
     }
+    
+    //MARK:単語リストtableView
+    func addWordListTableView() {
+        
+        let bundle = NSBundle(forClass: wordListTabelView.self)
+        wordListView = bundle.loadNibNamed("wordListTabelView", owner: nil, options: nil)[0] as! wordListTabelView
+        wordListView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.tabBarHeight)
+        self.view.addSubview(wordListView)
+        
+    }
+    
     
     //MARK:QuizView
     func addQuizView() {
@@ -106,7 +118,23 @@ class ViewController: UIViewController, myTabBarDelegate  {
         levelSelectView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.tabBarHeight)
         self.view.addSubview(levelSelectView)
         
+        for button in levelSelectView.levelButtonsArray {
+            button.addTarget(self, action: #selector(self.tapLevelButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        
     }
+    
+    @IBAction func tapLevelButton(sender: UIButton) {
+        
+        print(sender.tag)
+        
+        if(quizView==nil) {
+            self.addQuizView()
+        }
+        
+        quizView.hidden = false;
+    }
+    
     
     
     
@@ -135,11 +163,11 @@ class ViewController: UIViewController, myTabBarDelegate  {
     
     func hideAllViews() {
         
-        self.wordListView.hidden = true;
-        self.quizView.hidden = true;
-        self.levelSelectView.hidden = true;
-        self.calender.hidden = true;
-        self.article.hidden = true;
+        self.wordListView?.hidden = true;
+        self.quizView?.hidden = true;
+        self.levelSelectView?.hidden = true;
+        self.calender?.hidden = true;
+        self.article?.hidden = true;
         
     }
     
