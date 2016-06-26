@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import RealmSwift
 
 
@@ -27,7 +26,6 @@ class WordListViewController: UIViewController  {
         //Realm.Configuration.defaultConfiguration = config
 
         self.addWordListTableView()
-        
     }
     
     
@@ -41,19 +39,7 @@ class WordListViewController: UIViewController  {
         
     }
     
-    //MARK: Text to Speech
-    func speachText(string: String) {
-        
-        let synth = AVSpeechSynthesizer()
-        let engVoice = AVSpeechSynthesisVoice(language:"en-US")
-        
-        var myUtterance = AVSpeechUtterance(string: "")
-        myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.5
-        myUtterance.voice = engVoice
-        synth.speakUtterance(myUtterance)
-        
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

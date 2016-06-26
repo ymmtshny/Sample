@@ -50,7 +50,7 @@ class AnswersModel: Object {
         
     }
     
-    func setUserData(answer:AnswersModel, word:WordsModel) {
+    func setAnswer(answer:AnswersModel, word:WordsModel) {
         
         try! realm!.write {
             word.answers.append(answer);
@@ -58,12 +58,26 @@ class AnswersModel: Object {
         
     }
     
-    func getUsersDB() {
+
+    //[2016/06/26,...]を返す
+    func getAnswersDateArray() -> [String] {
         
+        var dateArray = [String]()
         let realm = try! Realm()
-        let dataContent = realm.objects(WordsModel)
-        print(dataContent)
+        let results = realm.objects(AnswersModel)
         
+        for result in results {
+            let temp_answer_date = (result as AnswersModel).answer_date
+            print("answer_date:\(temp_answer_date)")
+            let date =  temp_answer_date.characters.split{$0 == "/"}.map(String.init)
+            let year = date[0]
+            let month = date[1]
+            let day = date[2]
+            let dateStr = "\(year)/\(month)/\(day)"
+            dateArray.append(dateStr)
+        }
+        
+        return dateArray
     }
     
     //とりあえずはじめに正解していたらtrue

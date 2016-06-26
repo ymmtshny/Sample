@@ -13,11 +13,15 @@ class CalendarViewController: UIViewController {
     
     @IBOutlet weak var calender: calenderView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addCanlenderView()
-        
+        self.colorCalenderCell()
+    }
+    
+    func colorCalenderCell() {
+        calender.dateArray = AnswersModel().getAnswersDateArray()
+        calender.myCollectionView.reloadData()
     }
     
     //MARK:canlenderView

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource {
 
@@ -37,18 +36,12 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
     
-    //MARK: Text to Speech
-    func speachText(string: String) {
-        
-        let synth = AVSpeechSynthesizer()
-        var myUtterance = AVSpeechUtterance(string: "")
-        myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.5
-        synth.speakUtterance(myUtterance)
+    func setDataAndReloadTableView(wordList :[[String:String]]) {
+        self.wordList = wordList;
+        self.reloadData()
     }
-    
+
     //MARK:テーブルビュー
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.wordList.count
@@ -65,15 +58,13 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        
         let cell = NSBundle.mainBundle().loadNibNamed("CustomCell", owner: self, options: nil).first as! CustomCell
-        
+    
         let dic = self.wordList[indexPath.row]
-        
         cell.engLabel.text = dic["eng_word"]
         cell.jpLabel.text = dic["jp_word"]
         cell.completeImageView.hidden = !AnswersModel().isCorrectFromEngWord(cell.engLabel.text!)
-        cell.lastAnswerDateLabel.text = AnswersModel().getLastAnswerFromEngWord(cell.engLabel.text!)
+        cell.lastAnswerDateLabel.text =  AnswersModel().getLastAnswerFromEngWord(cell.engLabel.text!)
         return cell
         
     }
@@ -83,7 +74,7 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         
         let dic = self.wordList[indexPath.row]
         if let str = dic["eng_word"]  {
-            WordListViewController().speachText(str)
+            Static.speachText(str)
         }
     }
 

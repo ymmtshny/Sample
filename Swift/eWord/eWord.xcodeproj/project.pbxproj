@@ -15,8 +15,8 @@
 		C5152C111CF630980042F1C3 /* LevelSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C101CF630980042F1C3 /* LevelSelectView.xib */; };
 		C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C131CF6332E0042F1C3 /* QuizView.swift */; };
 		C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C151CF6333A0042F1C3 /* QuizView.xib */; };
-		C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C181CF63A990042F1C3 /* collectionViewCell.swift */; };
-		C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */; };
+		C5152C191CF63A990042F1C3 /* calenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C181CF63A990042F1C3 /* calenderCell.swift */; };
+		C5152C1B1CF63AA70042F1C3 /* calenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C1A1CF63AA70042F1C3 /* calenderCell.xib */; };
 		C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE71D1C3205008AEC84 /* AnswersModel.swift */; };
 		C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE91D1C328B008AEC84 /* WordsModel.swift */; };
 		C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5649DEB1D1C32AD008AEC84 /* Main.storyboard */; };
@@ -33,6 +33,7 @@
 		C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */; };
 		C5A2B37E1CEFBE2400AEE0FE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */; };
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
+		C5C0A4DA1D2011A800DC9AAB /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C0A4D91D2011A800DC9AAB /* Static.swift */; };
 		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
 		C5E2EFDF1D1F9EE200118A1B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */; };
 		C5E2EFE11D1F9EF200118A1B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */; };
@@ -55,8 +56,8 @@
 		C5152C101CF630980042F1C3 /* LevelSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectView.xib; sourceTree = "<group>"; };
 		C5152C131CF6332E0042F1C3 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C5152C151CF6333A0042F1C3 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
-		C5152C181CF63A990042F1C3 /* collectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
-		C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = collectionViewCell.xib; sourceTree = "<group>"; };
+		C5152C181CF63A990042F1C3 /* calenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calenderCell.swift; sourceTree = "<group>"; };
+		C5152C1A1CF63AA70042F1C3 /* calenderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = calenderCell.xib; sourceTree = "<group>"; };
 		C5649DE71D1C3205008AEC84 /* AnswersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersModel.swift; sourceTree = "<group>"; };
 		C5649DE91D1C328B008AEC84 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
 		C5649DEB1D1C32AD008AEC84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		C57019691CEF1D2600D9B213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		C5C0A4D91D2011A800DC9AAB /* Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
 		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
 		C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
@@ -153,8 +155,8 @@
 			children = (
 				C56D24DB1CFADD38003D1C72 /* calenderView.swift */,
 				C56D24DD1CFADD48003D1C72 /* calenderView.xib */,
-				C5152C181CF63A990042F1C3 /* collectionViewCell.swift */,
-				C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */,
+				C5152C181CF63A990042F1C3 /* calenderCell.swift */,
+				C5152C1A1CF63AA70042F1C3 /* calenderCell.xib */,
 			);
 			name = calenderView;
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
+				C5C0A4D91D2011A800DC9AAB /* Static.swift */,
 				C5E2EFEB1D1FC04700118A1B /* assets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C5649DEB1D1C32AD008AEC84 /* Main.storyboard */,
@@ -240,10 +243,10 @@
 		C5F0553D1D0D259100F4C678 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C56D24DA1CFADC9F003D1C72 /* wordListTableView */,
 				C56D24DF1CFADD4D003D1C72 /* calenderView */,
 				C5152C171CF633430042F1C3 /* QuizView */,
 				C5152C121CF633090042F1C3 /* LevelSelectView */,
-				C56D24DA1CFADC9F003D1C72 /* wordListTableView */,
 				C56D24E41CFAEE09003D1C72 /* articleView */,
 			);
 			name = View;
@@ -319,7 +322,7 @@
 				C56D24D91CFAD8C3003D1C72 /* wordListTabelView.xib in Resources */,
 				C502CAFB1CF148CC00CE6FF1 /* WordListViewController.xib in Resources */,
 				C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */,
-				C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */,
+				C5152C1B1CF63AA70042F1C3 /* calenderCell.xib in Resources */,
 				C56D24DE1CFADD49003D1C72 /* calenderView.xib in Resources */,
 				C5E2EFE71D1F9F2E00118A1B /* CalendarViewController.xib in Resources */,
 				C5E2EFEE1D1FC06C00118A1B /* correct.mp3 in Resources */,
@@ -386,7 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */,
+				C5152C191CF63A990042F1C3 /* calenderCell.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* WordListViewController.swift in Sources */,
 				C5E2EFE51D1F9F2200118A1B /* CalendarViewController.swift in Sources */,
 				C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */,
@@ -401,6 +404,7 @@
 				C56D24DC1CFADD38003D1C72 /* calenderView.swift in Sources */,
 				C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */,
 				C56D24D71CFAD8A4003D1C72 /* wordListTabelView.swift in Sources */,
+				C5C0A4DA1D2011A800DC9AAB /* Static.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

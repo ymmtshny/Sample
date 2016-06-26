@@ -49,17 +49,16 @@ class WordsModel: Object {
 
         for result in results {
             var dictinary = [String:String]()
-            print("eng_word:\((result as WordsModel).eng_word)")
             dictinary["eng_word"] = (result as WordsModel).eng_word;
             dictinary["jp_word"] = (result as WordsModel).jp_word;
             dicArray.append(dictinary);
         }
 
-        print(dicArray)
+        //print(dicArray)
         return dicArray;
 
     }
-
+    
     func getWord(eng_word:String) -> WordsModel? {
 
         let realm = try! Realm()
@@ -218,6 +217,82 @@ class WordsModel: Object {
         }
 
         return wordList;
+    }
+    
+    private func getRandomNumberWithMax(max: Int) -> Int {
+        let count = UInt32(max)
+        let random = arc4random_uniform(count)
+        let randomInt = Int(random)
+        return randomInt
+    }
+    
+    private func getEnglishFromDictionary(dic :Dictionary<String, String>) -> String! {
+        
+        return dic["eng_word"]
+    }
+    
+    private func getJapaneseFromDictionary(dic :Dictionary<String, String>) -> String! {
+        
+        return dic["jp_word"]
+    }
+    
+    private func shuffleArray(array:[String]) -> [String] {
+        var array = array
+        let idx = self.getRandomNumberWithMax(array.count)
+        let elem = array[idx]
+        let answer = array[1] //答え
+        if idx != 0 {//array[0]は英語
+            
+            array[idx] = answer
+            array[1] = elem
+            //self.answerIdx = idx
+            
+        } else {
+            
+            //self.answerIdx = 1
+        }
+        return array
+        
+    }
+    
+    func getOneQuiz() -> [String:String]{
+        
+        var wordList = [[String:String]]()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
+        if(!isLoadedCSVData){
+            wordList = WordsModel().loadCSVData()
+        } else {
+            wordList = WordsModel().getWord()
+        }
+        
+        let idxA = self.getRandomNumberWithMax(wordList.count)
+        let idxB = self.getRandomNumberWithMax(wordList.count)
+        let idxC = self.getRandomNumberWithMax(wordList.count)
+        let idxD = self.getRandomNumberWithMax(wordList.count)
+        
+        let dicA = wordList[idxA]
+        let dicB = wordList[idxB]
+        let dicC = wordList[idxC]
+        let dicD = wordList[idxD]
+        
+        let question = self.getEnglishFromDictionary(dicA)
+        let optionA = self.getJapaneseFromDictionary(dicA)
+        let optionB = self.getJapaneseFromDictionary(dicB)
+        let optionC = self.getJapaneseFromDictionary(dicC)
+        let optionD = self.getJapaneseFromDictionary(dicD)
+        let answer  = self.getJapaneseFromDictionary(dicA)
+        
+        let quizDic: Dictionary = ["question":question!,
+                                       "optionA":optionA!,
+                                       "optionB":optionB!,
+                                       "optionC":optionC!,
+                                       "optionD":optionD!,
+                                        "answer":answer!]
+        
+        return quizDic
+        
     }
 
 }
