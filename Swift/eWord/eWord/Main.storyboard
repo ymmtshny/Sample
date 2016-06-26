@@ -22,26 +22,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjw-rS-BeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="753"/>
+            <point key="canvasLocation" x="693" y="718"/>
         </scene>
         <!--WordList-->
         <scene sceneID="BOk-ID-RuD">
             <objects>
                 <viewController id="ZLY-VN-6ve" userLabel="WordList" customClass="WordListViewController" customModule="eWord" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sKm-9Q-2TR"/>
-                        <viewControllerLayoutGuide type="bottom" id="d08-L2-3a2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G7N-ug-g3F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="qKN-YL-RaS"/>
+                    <navigationItem key="navigationItem" id="XeV-30-gYF"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb4-d9-1n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-513" y="741"/>
+            <point key="canvasLocation" x="-572" y="1522"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mCb-ei-dMA">
@@ -53,7 +46,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZLY-VN-6ve" kind="relationship" relationship="viewControllers" id="LJ9-Fy-LiA"/>
+                        <segue destination="Ocb-5C-n1a" kind="relationship" relationship="viewControllers" id="LJ9-Fy-LiA"/>
                         <segue destination="DOC-I2-0sI" kind="relationship" relationship="viewControllers" id="1bl-Cb-wO2"/>
                         <segue destination="gNJ-5k-2Bl" kind="relationship" relationship="viewControllers" id="v0P-2b-o2X"/>
                     </connections>
@@ -79,7 +72,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyN-Qz-HTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="753"/>
+            <point key="canvasLocation" x="55" y="718"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="hD2-nH-hfZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peZ-B3-rTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ocb-5C-n1a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="qKN-YL-RaS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5u5-cm-5Oj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZLY-VN-6ve" kind="relationship" relationship="rootViewController" id="7Es-mx-RMj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-572" y="718"/>
         </scene>
     </scenes>
 </document>

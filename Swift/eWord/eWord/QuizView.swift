@@ -22,6 +22,13 @@ class QuizView :UIView {
     var currentQuizDic = [String:String]() //現在の問題の英語と答えを格納したDictionary
     var answerIdx = 0
     
+    var correctAudioPlayer = AVAudioPlayer()
+    let correctSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("correct", ofType: "mp3")!)
+    
+    var wrongAudioPlayer = AVAudioPlayer()
+    let wrongSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")!)
+    
+    
     //MARK:init関連
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,6 +81,8 @@ class QuizView :UIView {
     
     @IBAction func tapAnswerButton(sender: UIButton) {
         
+        sender.enabled = false
+        
         //check if the answer is correct
         let userAnswer = sender.titleLabel?.text
         let quizAnswer = currentQuizDic["jp_word"]
@@ -90,19 +99,20 @@ class QuizView :UIView {
             print("CORRECT")
             self.check_image.image = UIImage(named:"correct")!
             answer.isCorrect = "true"
+            self.soundAnswerCheck(correct: true)
             
         } else {
             
             print("WRONG")
             self.check_image.image = UIImage(named:"wrong")!
             answer.isCorrect = "false"
+            self.soundAnswerCheck(correct: false)
         }
         
         answer.saveAnswer(answer)
         word = word.getWord((engLabel?.text)!)!
         answer.setUserData(answer, word: word)
         print(word)
-        
         
         
         UIView.animateWithDuration(1, animations: {
@@ -112,10 +122,33 @@ class QuizView :UIView {
             }, completion: {(value: Bool) in
                 
             self.setQuestion()
+            sender.enabled = true
                 
         })
         
-
+    }
+    
+    //MARK:サウンド系
+    func soundAnswerCheck(correct isCorrect: Bool) {
+        
+        if(isCorrect){
+            
+            do {
+                try correctAudioPlayer = AVAudioPlayer(contentsOfURL: correctSound)
+                correctAudioPlayer.prepareToPlay()
+                correctAudioPlayer.play()
+                
+            } catch { print("error") }
+            
+        } else {
+            
+            do {
+                try wrongAudioPlayer = AVAudioPlayer(contentsOfURL: wrongSound)
+                wrongAudioPlayer.prepareToPlay()
+                wrongAudioPlayer.play()
+                
+            } catch { print("error") }
+        }
         
     }
     

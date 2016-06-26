@@ -45,10 +45,14 @@ class WordListViewController: UIViewController  {
     func speachText(string: String) {
         
         let synth = AVSpeechSynthesizer()
+        let engVoice = AVSpeechSynthesisVoice(language:"en-US")
+        
         var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.5
+        myUtterance.voice = engVoice
         synth.speakUtterance(myUtterance)
+        
     }
     
     override func didReceiveMemoryWarning() {

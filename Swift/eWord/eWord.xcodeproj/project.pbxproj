@@ -33,7 +33,6 @@
 		C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */; };
 		C5A2B37E1CEFBE2400AEE0FE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */; };
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
-		C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */; };
 		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
 		C5E2EFDF1D1F9EE200118A1B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */; };
 		C5E2EFE11D1F9EF200118A1B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */; };
@@ -41,6 +40,8 @@
 		C5E2EFE51D1F9F2200118A1B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFE41D1F9F2200118A1B /* CalendarViewController.swift */; };
 		C5E2EFE71D1F9F2E00118A1B /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE61D1F9F2E00118A1B /* CalendarViewController.xib */; };
 		C5E2EFE91D1F9F3800118A1B /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE81D1F9F3800118A1B /* ArticleViewController.xib */; };
+		C5E2EFEE1D1FC06C00118A1B /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFEC1D1FC06C00118A1B /* correct.mp3 */; };
+		C5E2EFEF1D1FC06C00118A1B /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFED1D1FC06C00118A1B /* wrong.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +75,6 @@
 		C57019691CEF1D2600D9B213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5A2B37C1CEFBE2400AEE0FE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
-		C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDB.swift; sourceTree = "<group>"; };
 		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
 		C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		C5E2EFE41D1F9F2200118A1B /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C5E2EFE61D1F9F2E00118A1B /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		C5E2EFE81D1F9F3800118A1B /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
+		C5E2EFEC1D1FC06C00118A1B /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		C5E2EFED1D1FC06C00118A1B /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,23 +190,32 @@
 			isa = PBXGroup;
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
+				C5E2EFEB1D1FC04700118A1B /* assets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C5649DEB1D1C32AD008AEC84 /* Main.storyboard */,
 				C5F0553C1D0D258300F4C678 /* ViewController */,
 				C5F0553D1D0D259100F4C678 /* View */,
 				C5F0553B1D0D257B00F4C678 /* Model */,
+			);
+			path = eWord;
+			sourceTree = "<group>";
+		};
+		C5E2EFEB1D1FC04700118A1B /* assets */ = {
+			isa = PBXGroup;
+			children = (
 				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019691CEF1D2600D9B213 /* Info.plist */,
 				C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */,
 				C5DBA4C71CF0C6FB0056AB8C /* words.csv */,
+				C5E2EFEC1D1FC06C00118A1B /* correct.mp3 */,
+				C5E2EFED1D1FC06C00118A1B /* wrong.mp3 */,
 			);
-			path = eWord;
+			name = assets;
 			sourceTree = "<group>";
 		};
 		C5F0553B1D0D257B00F4C678 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
 				C5649DE71D1C3205008AEC84 /* AnswersModel.swift */,
 				C5649DE91D1C328B008AEC84 /* WordsModel.swift */,
 			);
@@ -311,10 +322,12 @@
 				C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */,
 				C56D24DE1CFADD49003D1C72 /* calenderView.xib in Resources */,
 				C5E2EFE71D1F9F2E00118A1B /* CalendarViewController.xib in Resources */,
+				C5E2EFEE1D1FC06C00118A1B /* correct.mp3 in Resources */,
 				C5E2EFE11D1F9EF200118A1B /* QuizViewController.xib in Resources */,
 				C5E2EFE91D1F9F3800118A1B /* ArticleViewController.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */,
+				C5E2EFEF1D1FC06C00118A1B /* wrong.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +389,6 @@
 				C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */,
 				C570195D1CEF1D2600D9B213 /* WordListViewController.swift in Sources */,
 				C5E2EFE51D1F9F2200118A1B /* CalendarViewController.swift in Sources */,
-				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
 				C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */,
 				C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */,
 				C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */,

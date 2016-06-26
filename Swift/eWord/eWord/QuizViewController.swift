@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuizViewController: UIViewController {
     
-    var quizView: QuizView!
+    @IBOutlet weak var quizView: QuizView!
     var levelSelectView:LevelSelectView!
     
     override func viewDidLoad() {
@@ -18,7 +19,6 @@ class QuizViewController: UIViewController {
         
         self.addQuizView()
         //self.addLevelSelectView()
-        
     }
     
     //MARK:QuizView
@@ -30,7 +30,6 @@ class QuizViewController: UIViewController {
         self.view.addSubview(quizView)
         
     }
-    
     
     
     //MARK:LevelSelectView
@@ -57,7 +56,6 @@ class QuizViewController: UIViewController {
         
         quizView.hidden = false;
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

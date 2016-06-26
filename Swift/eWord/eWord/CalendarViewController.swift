@@ -11,7 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController {
     
     
-    var calender: calenderView!
+    @IBOutlet weak var calender: calenderView!
     
     
     override func viewDidLoad() {
