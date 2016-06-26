@@ -15,13 +15,13 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
         if(!isLoadedCSVData){
-            wordList = WordsDB().loadCSVData()
+            wordList = WordsModel().loadCSVData()
         } else {
-            wordList = WordsDB().getWordsDB()
+            wordList = WordsModel().getWord()
         }
         
         self.delegate = self
@@ -31,13 +31,11 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
     
     override init(frame: CGRect, style: UITableViewStyle){
         super.init(frame: frame, style: style)
-        
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
 
     
@@ -74,8 +72,8 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         
         cell.engLabel.text = dic["eng_word"]
         cell.jpLabel.text = dic["jp_word"]
-        cell.completeImageView.hidden = !UsersDB().getIsCorrectFromEngWord(cell.engLabel.text!)
-        cell.lastAnswerDateLabel.text = UsersDB().getLastAnswerDataFromEngWord(cell.engLabel.text!)
+        cell.completeImageView.hidden = !AnswersModel().isCorrectFromEngWord(cell.engLabel.text!)
+        cell.lastAnswerDateLabel.text = AnswersModel().getLastAnswerFromEngWord(cell.engLabel.text!)
         return cell
         
     }
@@ -85,7 +83,7 @@ class wordListTabelView :UITableView, UITableViewDelegate, UITableViewDataSource
         
         let dic = self.wordList[indexPath.row]
         if let str = dic["eng_word"]  {
-            ViewController().speachText(str)
+            WordListViewController().speachText(str)
         }
     }
 

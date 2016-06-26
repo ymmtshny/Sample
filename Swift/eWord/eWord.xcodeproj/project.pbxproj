@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C29BF9AA74263258865C7332 /* Pods_eWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */; };
-		C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */; };
+		C502CAFB1CF148CC00CE6FF1 /* WordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CAFA1CF148CC00CE6FF1 /* WordListViewController.xib */; };
 		C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502CB001CF149DE00CE6FF1 /* CustomCell.swift */; };
 		C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502CB011CF149DE00CE6FF1 /* CustomCell.xib */; };
 		C5152C0B1CF5CF7B0042F1C3 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C0A1CF5CF7B0042F1C3 /* LevelSelectView.swift */; };
@@ -17,6 +17,9 @@
 		C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C151CF6333A0042F1C3 /* QuizView.xib */; };
 		C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C181CF63A990042F1C3 /* collectionViewCell.swift */; };
 		C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */; };
+		C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE71D1C3205008AEC84 /* AnswersModel.swift */; };
+		C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE91D1C328B008AEC84 /* WordsModel.swift */; };
+		C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5649DEB1D1C32AD008AEC84 /* Main.storyboard */; };
 		C56D24D71CFAD8A4003D1C72 /* wordListTabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D24D61CFAD8A3003D1C72 /* wordListTabelView.swift */; };
 		C56D24D91CFAD8C3003D1C72 /* wordListTabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56D24D81CFAD8C3003D1C72 /* wordListTabelView.xib */; };
 		C56D24DC1CFADD38003D1C72 /* calenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D24DB1CFADD38003D1C72 /* calenderView.swift */; };
@@ -24,7 +27,7 @@
 		C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D24E01CFAEDF1003D1C72 /* articleView.swift */; };
 		C56D24E31CFAEE03003D1C72 /* articleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56D24E21CFAEE03003D1C72 /* articleView.xib */; };
 		C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195A1CEF1D2600D9B213 /* AppDelegate.swift */; };
-		C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* ViewController.swift */; };
+		C570195D1CEF1D2600D9B213 /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570195C1CEF1D2600D9B213 /* WordListViewController.swift */; };
 		C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */; };
 		C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57019641CEF1D2600D9B213 /* Assets.xcassets */; };
 		C57019681CEF1D2600D9B213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */; };
@@ -32,15 +35,19 @@
 		C5A2B37F1CEFBE2400AEE0FE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */; };
 		C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */; };
 		C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */ = {isa = PBXBuildFile; fileRef = C5DBA4C71CF0C6FB0056AB8C /* words.csv */; };
-		C5EB64911CF480AD00A1F21C /* tabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB64901CF480AD00A1F21C /* tabBarView.swift */; };
-		C5EB64931CF480BA00A1F21C /* tabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5EB64921CF480BA00A1F21C /* tabBarView.xib */; };
+		C5E2EFDF1D1F9EE200118A1B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */; };
+		C5E2EFE11D1F9EF200118A1B /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */; };
+		C5E2EFE31D1F9F0C00118A1B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFE21D1F9F0C00118A1B /* ArticleViewController.swift */; };
+		C5E2EFE51D1F9F2200118A1B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2EFE41D1F9F2200118A1B /* CalendarViewController.swift */; };
+		C5E2EFE71D1F9F2E00118A1B /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE61D1F9F2E00118A1B /* CalendarViewController.xib */; };
+		C5E2EFE91D1F9F3800118A1B /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E2EFE81D1F9F3800118A1B /* ArticleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		149F23A825ADA0A6A2B967FB /* Pods-eWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eWord/Pods-eWord.debug.xcconfig"; sourceTree = "<group>"; };
 		30C52D2B05B1E06D02BE45BE /* Pods_eWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8669C47C59A900F862E9FF28 /* Pods-eWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-eWord/Pods-eWord.release.xcconfig"; sourceTree = "<group>"; };
-		C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		C502CAFA1CF148CC00CE6FF1 /* WordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordListViewController.xib; sourceTree = "<group>"; };
 		C502CB001CF149DE00CE6FF1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C502CB011CF149DE00CE6FF1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C5152C0A1CF5CF7B0042F1C3 /* LevelSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
@@ -49,6 +56,9 @@
 		C5152C151CF6333A0042F1C3 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
 		C5152C181CF63A990042F1C3 /* collectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
 		C5152C1A1CF63AA70042F1C3 /* collectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = collectionViewCell.xib; sourceTree = "<group>"; };
+		C5649DE71D1C3205008AEC84 /* AnswersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersModel.swift; sourceTree = "<group>"; };
+		C5649DE91D1C328B008AEC84 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
+		C5649DEB1D1C32AD008AEC84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C56D24D61CFAD8A3003D1C72 /* wordListTabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordListTabelView.swift; sourceTree = "<group>"; };
 		C56D24D81CFAD8C3003D1C72 /* wordListTabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wordListTabelView.xib; sourceTree = "<group>"; };
 		C56D24DB1CFADD38003D1C72 /* calenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calenderView.swift; sourceTree = "<group>"; };
@@ -57,7 +67,7 @@
 		C56D24E21CFAEE03003D1C72 /* articleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = articleView.xib; sourceTree = "<group>"; };
 		C57019571CEF1D2500D9B213 /* eWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C570195A1CEF1D2600D9B213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C570195C1CEF1D2600D9B213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C570195C1CEF1D2600D9B213 /* WordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
 		C57019621CEF1D2600D9B213 /* eWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eWord.xcdatamodel; sourceTree = "<group>"; };
 		C57019641CEF1D2600D9B213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C57019671CEF1D2600D9B213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,8 +76,12 @@
 		C5A2B37D1CEFBE2400AEE0FE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/eWord-edrwsdsxzndvbwbpwhvayyfmcauy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsDB.swift; sourceTree = "<group>"; };
 		C5DBA4C71CF0C6FB0056AB8C /* words.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.csv; sourceTree = "<group>"; };
-		C5EB64901CF480AD00A1F21C /* tabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabBarView.swift; sourceTree = "<group>"; };
-		C5EB64921CF480BA00A1F21C /* tabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tabBarView.xib; sourceTree = "<group>"; };
+		C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		C5E2EFE21D1F9F0C00118A1B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		C5E2EFE41D1F9F2200118A1B /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		C5E2EFE61D1F9F2E00118A1B /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		C5E2EFE81D1F9F3800118A1B /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,11 +188,12 @@
 			isa = PBXGroup;
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
-				C5F0553C1D0D258300F4C678 /* controller */,
-				C5F0553D1D0D259100F4C678 /* view */,
-				C5F0553B1D0D257B00F4C678 /* model */,
-				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
+				C5649DEB1D1C32AD008AEC84 /* Main.storyboard */,
+				C5F0553C1D0D258300F4C678 /* ViewController */,
+				C5F0553D1D0D259100F4C678 /* View */,
+				C5F0553B1D0D257B00F4C678 /* Model */,
+				C57019641CEF1D2600D9B213 /* Assets.xcassets */,
 				C57019691CEF1D2600D9B213 /* Info.plist */,
 				C57019611CEF1D2600D9B213 /* eWord.xcdatamodeld */,
 				C5DBA4C71CF0C6FB0056AB8C /* words.csv */,
@@ -186,43 +201,41 @@
 			path = eWord;
 			sourceTree = "<group>";
 		};
-		C5EB64941CF480EA00A1F21C /* tabBarView */ = {
-			isa = PBXGroup;
-			children = (
-				C5EB64901CF480AD00A1F21C /* tabBarView.swift */,
-				C5EB64921CF480BA00A1F21C /* tabBarView.xib */,
-			);
-			name = tabBarView;
-			sourceTree = "<group>";
-		};
-		C5F0553B1D0D257B00F4C678 /* model */ = {
+		C5F0553B1D0D257B00F4C678 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				C5A2B3801CEFBEC100AEE0FE /* WordsDB.swift */,
+				C5649DE71D1C3205008AEC84 /* AnswersModel.swift */,
+				C5649DE91D1C328B008AEC84 /* WordsModel.swift */,
 			);
-			name = model;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		C5F0553C1D0D258300F4C678 /* controller */ = {
+		C5F0553C1D0D258300F4C678 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C570195C1CEF1D2600D9B213 /* ViewController.swift */,
-				C502CAFA1CF148CC00CE6FF1 /* ViewController.xib */,
+				C570195C1CEF1D2600D9B213 /* WordListViewController.swift */,
+				C502CAFA1CF148CC00CE6FF1 /* WordListViewController.xib */,
+				C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */,
+				C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */,
+				C5E2EFE21D1F9F0C00118A1B /* ArticleViewController.swift */,
+				C5E2EFE81D1F9F3800118A1B /* ArticleViewController.xib */,
+				C5E2EFE41D1F9F2200118A1B /* CalendarViewController.swift */,
+				C5E2EFE61D1F9F2E00118A1B /* CalendarViewController.xib */,
 			);
-			name = controller;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
-		C5F0553D1D0D259100F4C678 /* view */ = {
+		C5F0553D1D0D259100F4C678 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C56D24DF1CFADD4D003D1C72 /* calenderView */,
 				C5152C171CF633430042F1C3 /* QuizView */,
 				C5152C121CF633090042F1C3 /* LevelSelectView */,
 				C56D24DA1CFADC9F003D1C72 /* wordListTableView */,
-				C5EB64941CF480EA00A1F21C /* tabBarView */,
 				C56D24E41CFAEE09003D1C72 /* articleView */,
 			);
-			name = view;
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +306,13 @@
 				C57019651CEF1D2600D9B213 /* Assets.xcassets in Resources */,
 				C502CB031CF149DE00CE6FF1 /* CustomCell.xib in Resources */,
 				C56D24D91CFAD8C3003D1C72 /* wordListTabelView.xib in Resources */,
-				C502CAFB1CF148CC00CE6FF1 /* ViewController.xib in Resources */,
+				C502CAFB1CF148CC00CE6FF1 /* WordListViewController.xib in Resources */,
+				C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */,
 				C5152C1B1CF63AA70042F1C3 /* collectionViewCell.xib in Resources */,
-				C5EB64931CF480BA00A1F21C /* tabBarView.xib in Resources */,
 				C56D24DE1CFADD49003D1C72 /* calenderView.xib in Resources */,
+				C5E2EFE71D1F9F2E00118A1B /* CalendarViewController.xib in Resources */,
+				C5E2EFE11D1F9EF200118A1B /* QuizViewController.xib in Resources */,
+				C5E2EFE91D1F9F3800118A1B /* ArticleViewController.xib in Resources */,
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */,
 			);
@@ -358,16 +374,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5152C191CF63A990042F1C3 /* collectionViewCell.swift in Sources */,
-				C570195D1CEF1D2600D9B213 /* ViewController.swift in Sources */,
+				C570195D1CEF1D2600D9B213 /* WordListViewController.swift in Sources */,
+				C5E2EFE51D1F9F2200118A1B /* CalendarViewController.swift in Sources */,
 				C5A2B3811CEFBEC100AEE0FE /* WordsDB.swift in Sources */,
 				C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */,
 				C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */,
+				C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */,
+				C5E2EFDF1D1F9EE200118A1B /* QuizViewController.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
 				C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */,
+				C5E2EFE31D1F9F0C00118A1B /* ArticleViewController.swift in Sources */,
 				C5152C0B1CF5CF7B0042F1C3 /* LevelSelectView.swift in Sources */,
-				C5EB64911CF480AD00A1F21C /* tabBarView.swift in Sources */,
 				C570195B1CEF1D2600D9B213 /* AppDelegate.swift in Sources */,
 				C56D24DC1CFADD38003D1C72 /* calenderView.swift in Sources */,
+				C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */,
 				C56D24D71CFAD8A4003D1C72 /* wordListTabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

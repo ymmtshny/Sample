@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var itemsArray  = [items]()
     var itemPageURL:String = ""
     
-    let appid:String = "アプリケーションID"
+    let appid:String = "dj0zaiZpPW9BTUhQS3d4VFo3ZiZzPWNvbnN1bWVyc2VjcmV0Jng9ZjI-"
     let entryURL:String = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch"
     var searchWord:String = "iphone"
     

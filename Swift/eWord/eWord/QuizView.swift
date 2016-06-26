@@ -30,12 +30,13 @@ class QuizView :UIView {
         let defaults = NSUserDefaults.standardUserDefaults()
         let isLoadedCSVData = defaults.boolForKey("isLoadedWordsCSV");
         if(!isLoadedCSVData){
-            wordList = WordsDB().loadCSVData()
+            wordList = WordsModel().loadCSVData()
         } else {
-            wordList = WordsDB().getWordsDB()
+            wordList = WordsModel().getWord()
         }
         self.setupButtonAction()
         self.setQuestion()
+        self.check_image.alpha = 0
         
     }
     
@@ -52,7 +53,7 @@ class QuizView :UIView {
     func setQuestion() {
         let quiz = self.getOneQuiz()
         self.setupLabelWithQuizArray(quiz)
-        ViewController().speachText(quiz[0])
+        WordListViewController().speachText(quiz[0])
     }
     
     //MARK:Button
@@ -77,38 +78,44 @@ class QuizView :UIView {
         let userAnswer = sender.titleLabel?.text
         let quizAnswer = currentQuizDic["jp_word"]
         
-        check_image.hidden = false
+        self.check_image.alpha = 1
         
-        let userdb = UsersDB()
-        var word = WordsDB()
-        userdb.answer_duration = "10s"
-        userdb.answer_date = self.getCurrentDateTime()
+        let answer = AnswersModel()
+        var word = WordsModel()
+        answer.answer_duration = "10s"
+        answer.answer_date = self.getCurrentDateTime()
         
         if userAnswer == quizAnswer {
             
             print("CORRECT")
             self.check_image.image = UIImage(named:"correct")!
-            userdb.isCorrect = "true"
+            answer.isCorrect = "true"
             
         } else {
             
             print("WRONG")
             self.check_image.image = UIImage(named:"wrong")!
-            userdb.isCorrect = "false"
+            answer.isCorrect = "false"
         }
         
-        userdb.saveUsersDB(userdb)
+        answer.saveAnswer(answer)
         word = word.getWord((engLabel?.text)!)!
-        userdb.setUserData(userdb, word: word)
+        answer.setUserData(answer, word: word)
         print(word)
         
-        //        UIView.animateWithDuration(0.5, animations: {
-        //            self.check_image.hidden = true
-        //            self.setQuestion()
-        //        })
         
-        self.check_image.hidden = true
-        self.setQuestion()
+        
+        UIView.animateWithDuration(1, animations: {
+            
+            self.check_image.alpha = 0
+            
+            }, completion: {(value: Bool) in
+                
+            self.setQuestion()
+                
+        })
+        
+
         
     }
     
